@@ -1,0 +1,45 @@
+// Brand palette enforced: $brandColor, $emerald, $slate, $gold, $white, $paragraph, $headingColor
+// Mappings:
+// $offWhite, $ashColor, $borderColor, $hvrColor, $black, $blackSoft → mapped to closest brand color
+//
+// $offWhite → $white
+// $ashColor → $slate
+// $borderColor → $slate
+// $hvrColor → $brandColor
+// $black, $blackSoft → $brandColor
+//
+// Social and legacy colors removed
+
+//== Typography Variable
+$baseFont: 'Montserrat', sans-serif;
+$baseFontSize: 15px;
+$mdi-icon: 'Material Design Icons';
+$fa-icon: 'FontAwesome';
+
+//== Site Typography Colors
+$paragraph: #505A6B; // Slate Gray
+$headingColor: #1A2340; // Deep Blue
+
+//== Site Brand Color
+$brandColor: #1A2340; // Deep Blue
+$emerald: #2AD18B; // Emerald Green
+$slate: #505A6B; // Slate Gray
+$gold: #FFD166; // Gold Accent
+$white: #FFFFFF;
+
+//== Social Media Icons Color (kept for icons only)
+$facebook: #3B5999;
+$twitter: #1DA1F2;
+$pinterest: #CB2028;
+$youtube: #CC332D;
+$reddit: #FF4500;
+$linkedin: #0077B5;
+
+//== Responsive Media Query Variables
+$xlmax-device: 'only screen and (min-width: 1200px) and (max-width: 1599.98px)';
+$xl-device: 'only screen and (min-width: 1200px)';
+$lg-device: 'only screen and (min-width: 992px) and (max-width: 1199.98px)';
+$md-device: 'only screen and (min-width: 768px) and (max-width: 991.98px)';
+$sm-device: 'only screen and (max-width: 767.98px)';
+$xs-device: 'only screen and (max-width: 575.98px)';
+$xxs-device: 'only screen and (max-width: 479.98px)';

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Purpose-built AI solutions. Making AI safe for any size business",
+    "text": "Transform your business potential into measurable reality with our revolutionary AI implementation platform, built on years of enterprise success and proven methodologies.",
+    "bg": "slider/h-2-01.jpg",
+    "btnText": "Learn More",
+    "btnLink": "/ai-accelerator/about"
+  },
+  {
+    "id": 2,
+    "title": "Purpose-Built Intelligence that works:",
+    "text": "Experience the power of Smart Factory AI Accelerator™ - where innovation meets implementation.",
+    "bg": "slider/h-2-02.jpg",
+    "btnText": "Learn More",
+    "btnLink": "/ai-accelerator/about"
+  }
+]

@@ -1,0 +1,186 @@
+/*====================
+07. Slider Style CSS
+=======================*/
+.slider {
+  &-item {
+    background-size: cover;
+    background-position: center center;
+    display: flex !important;
+    align-items: center;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+
+    @media #{$md-device} {
+      height: 600px;
+    }
+
+    @media #{$sm-device} {
+      height: 500px;
+    }
+  }
+
+  &-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &-content {
+    font-size: 18px;
+    font-weight: 400;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+    padding: 60px 0;
+
+    @media #{$md-device,$lg-device} {
+      max-width: 600px;
+    }
+
+    @media #{$sm-device} {
+      max-width: 400px;
+    }
+
+    h2 {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: $white;
+      margin-bottom: 30px;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+      @media #{$md-device,$lg-device} {
+        font-size: 56px;
+      }
+
+      @media #{$sm-device} {
+        font-size: 36px;
+        margin-bottom: 20px;
+
+        br {
+          display: block;
+        }
+      }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      
+      @media #{$xl-device} {
+        max-width: 600px;
+      }
+      
+      @media #{$sm-device} {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .btn {
+      margin-top: 40px;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+
+      @media #{$sm-device} {
+        margin-top: 30px;
+        padding: 14px 28px;
+        font-size: 14px;
+      }
+    }
+
+    &--2 {
+      h2 {
+        @media #{$xl-device,$lg-device} {
+          font-size: 55px;
+        }
+      }
+    }
+
+    &.light {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+    }
+  }
+}
+
+.slider-area {
+  position: relative;
+
+  .slick-arrow {
+    color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    font-size: 70px;
+    z-index: 9;
+    text-shadow: 2px 2px 4px rgba($brandColor, 0.7);
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-width: unset !important;
+    min-height: unset !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+
+    &:hover, &:focus {
+      color: $emerald;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    @media #{$sm-device} {
+      font-size: 40px;
+      left: 30px;
+    }
+
+    &.slick-next {
+      left: auto;
+      right: 50px;
+
+      @media #{$sm-device} {
+        right: 30px;
+      }
+    }
+  }
+
+  .slick-dots{
+    display: flex !important;
+    position: absolute;
+    margin-top: 0;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+  }
+
+  &--2{
+    .slick-arrow{
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+Version: 1.0.3 ---------- Date: 26-02-2023
+===========================
+
+## Update
+- React 17.0.2 to v18.2.0
+- Bootstrap v4.4.1 to v5.2.3
+
+
+Version: 1.0.2 ---------- Date: 3 July, 2021
+
+===========================
+
+## Update
+- React to v17.x.x
+- Class Component to React Hook

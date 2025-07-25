@@ -1,0 +1,114 @@
+/*==========================================
+28. Contact Page Style CSS
+===========================================*/
+.single-input-item {
+  color: $paragraph;
+  margin-bottom: 30px;
+
+  label, .custom-control-label {
+    color: $paragraph;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    position: relative;
+
+    &.required {
+      &:after {
+        content: '*';
+        color: $gold;
+        margin-left: 2px;
+      }
+    }
+  }
+
+  input, textarea {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: $white;
+    font-weight: 500;
+    display: block;
+    outline: none;
+    padding: 15px 20px;
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      border-color: $emerald;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+  }
+
+  .nice-select {
+    line-height: 30px;
+    height: 50px;
+    width: 100%;
+
+    .current {
+      color: $slate;
+      font-weight: 400;
+    }
+
+    .list {
+      font-size: 14px;
+    }
+  }
+}
+
+.contact-method {
+  h3 {
+    font-weight: 600;
+    margin-bottom: 43px;
+  }
+
+  &.contact-form-area {
+    padding: 45px 0 45px 30px;
+
+    @media #{$md-device, $sm-device} {
+      padding: 45px 30px 45px 30px;
+    }
+  }
+
+  &.contact-information {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    color: $white;
+    padding: 45px 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+
+    @media #{$lg-device,$xl-device} {
+      justify-content: center;
+    }
+
+    h3 {
+      color: $white;
+    }
+
+    .member-social-icons {
+      a {
+        height: auto;
+        width: auto;
+        margin-right: 15px;
+        opacity: 0.9;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.contact-content-wrap {
+  box-shadow: 0 10px 60px 0 rgba($brandColor, 0.15);
+}

@@ -1,0 +1,37 @@
+/*==========================
+02. Color CSS
+============================*/
+// Background Colors
+.bg {
+
+  &-white {
+    background-color: $white;
+  }
+
+  &-offwhite {
+    background-color: $white;
+  }
+
+  &-brand {
+    background-color: $brandColor;
+  }
+
+  // Removed .bg-blackSoft, use .bg-brand for deep backgrounds
+}
+
+// Text Colors
+.text {
+  &-brand {
+    color: $brandColor;
+  }
+}
+
+.bg-brand { background-color: $brandColor !important; }
+.bg-emerald { background-color: $emerald !important; }
+.bg-slate { background-color: $slate !important; }
+.bg-gold { background-color: $gold !important; }
+.text-brand { color: $brandColor !important; }
+.text-emerald { color: $emerald !important; }
+.text-slate { color: $slate !important; }
+.text-gold { color: $gold !important; }
+.text-white { color: $white !important; }

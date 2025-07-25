@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 2000,
+    "standard": "WCAG2AA",
+    "ignore": [
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl"
+    ]
+  },
+  "urls": [
+    "http://localhost:3000",
+    "http://localhost:3000/#about",
+    "http://localhost:3000/#services",
+    "http://localhost:3000/#ai-accelerator",
+    "http://localhost:3000/#method",
+    "http://localhost:3000/#results",
+    "http://localhost:3000/#team",
+    "http://localhost:3000/#social",
+    "http://localhost:3000/#contact"
+  ]
+} 

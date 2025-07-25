@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "name": "Doug Richards",
+    "designation": "Executive Chairman",
+    "profilePic": "Ideogram Batch Download - Ideogram_Batch_Generation___Smart_Factory_v1.2/0047_1_professional-headshot-of-doug-richards-e_qSem89FAQQuuWvG6cMsolg_G9qfAEa4Sjy0L1eGtkJHyw_cover.png",
+    "bio": "Doug Richards is the Executive Chairman of Smart Factory, bringing decades of experience in manufacturing and technology innovation. As a Kansas City business leader, Doug has pioneered the integration of AI and advanced automation in manufacturing processes, driving transformative growth for companies across industries.",
+    "address": "Kansas City, Missouri",
+    "phone": "+1 (816) 555-0123",
+    "email": "doug@smartfactory.io",
+    "website": "www.smartfactory.io",
+    "socials": {
+      "linkedin": "dougrichardsKC",
+      "twitter": "dougrichardsKC"
+    },
+    "skills": [
+      {
+        "no": 1,
+        "title": "AI Strategy",
+        "percentage": 95
+      },
+      {
+        "no": 2,
+        "title": "Manufacturing",
+        "percentage": 92
+      },
+      {
+        "no": 3,
+        "title": "Leadership",
+        "percentage": 90
+      },
+      {
+        "no": 4,
+        "title": "Innovation",
+        "percentage": 88
+      }
+    ],
+    "experiences": [
+      {
+        "no": 1,
+        "designation": "Executive Chairman",
+        "icon": "team/details/date-1.png",
+        "comment": "Leading Smart Factory's strategic vision and AI transformation initiatives"
+      },
+      {
+        "no": 2,
+        "designation": "Manufacturing Expert",
+        "icon": "team/details/date-2.png",
+        "comment": "Pioneering Industry 4.0 solutions and smart factory implementations"
+      },
+      {
+        "no": 3,
+        "designation": "Technology Innovator",
+        "icon": "team/details/date-3.png",
+        "comment": "Driving AI integration and automation across manufacturing sectors"
+      }
+    ],
+    "education": [
+      {
+        "no": 1,
+        "institute": "University of Kansas",
+        "degree": "BACHELOR IN ENGINEERING",
+        "duration": "1985 - 1989",
+        "comment": "Foundational education in engineering principles and manufacturing processes"
+      },
+      {
+        "no": 2,
+        "institute": "Industry Experience",
+        "degree": "MANUFACTURING LEADERSHIP",
+        "duration": "1990 - 2020",
+        "comment": "Three decades of hands-on experience in manufacturing and technology innovation"
+      },
+      {
+        "no": 3,
+        "institute": "Smart Factory",
+        "degree": "AI TRANSFORMATION",
+        "duration": "2020 - Present",
+        "comment": "Leading the future of manufacturing through AI and automation"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Heather Richards",
+    "designation": "Managing Partner",
+    "profilePic": "Ideogram Batch Download - Ideogram_Batch_Generation___Smart_Factory_v1.2/0046_1_professional-headshot-of-heather-richard_DDD16nTMQ9q0lUYu6zBPnw_uCZW58-kQ2CyXII_tQw05g_cover.png",
+    "bio": "Heather Richards serves as Managing Partner of Smart Factory, overseeing day-to-day operations and client relationships. With expertise in business strategy and technology implementation, Heather ensures seamless delivery of AI transformation projects for manufacturing clients.",
+    "address": "Kansas City, Missouri",
+    "phone": "+1 (816) 555-0124",
+    "email": "heather@smartfactory.io",
+    "website": "www.smartfactory.io",
+    "socials": {
+      "linkedin": "heatherrichardsKC",
+      "twitter": "heatherrichardsKC"
+    },
+    "skills": [
+      {
+        "no": 1,
+        "title": "Business Strategy",
+        "percentage": 94
+      },
+      {
+        "no": 2,
+        "title": "Client Relations",
+        "percentage": 91
+      },
+      {
+        "no": 3,
+        "title": "Operations",
+        "percentage": 89
+      },
+      {
+        "no": 4,
+        "title": "Technology",
+        "percentage": 87
+      }
+    ],
+    "experiences": [
+      {
+        "no": 1,
+        "designation": "Managing Partner",
+        "icon": "team/details/date-1.png",
+        "comment": "Overseeing Smart Factory operations and strategic client partnerships"
+      },
+      {
+        "no": 2,
+        "designation": "Business Strategist",
+        "icon": "team/details/date-2.png",
+        "comment": "Developing comprehensive AI transformation strategies for manufacturing clients"
+      },
+      {
+        "no": 3,
+        "designation": "Technology Leader",
+        "icon": "team/details/date-3.png",
+        "comment": "Leading implementation of cutting-edge AI solutions in manufacturing"
+      }
+    ],
+    "education": [
+      {
+        "no": 1,
+        "institute": "University of Missouri",
+        "degree": "BACHELOR IN BUSINESS",
+        "duration": "2000 - 2004",
+        "comment": "Comprehensive business education with focus on technology and innovation"
+      },
+      {
+        "no": 2,
+        "institute": "Industry Experience",
+        "degree": "BUSINESS LEADERSHIP",
+        "duration": "2004 - 2020",
+        "comment": "Extensive experience in business operations and technology consulting"
+      },
+      {
+        "no": 3,
+        "institute": "Smart Factory",
+        "degree": "AI PARTNERSHIP",
+        "duration": "2020 - Present",
+        "comment": "Managing strategic partnerships and AI transformation initiatives"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Alex Chen",
+    "designation": "Senior AI Engineer",
+    "profilePic": "Ideogram Batch Download - Ideogram_Batch_Generation___Smart_Factory_v1.2/0045_1_professional-headshot-of-a-male-engineer_AhY99fhmQeyeEvp4OF4J4A_ZUpP8qKqS-a1EFv3w11MnA_cover.png",
+    "bio": "Alex Chen leads our AI engineering team, specializing in machine learning algorithms and predictive analytics for manufacturing applications. With deep expertise in Industry 4.0 technologies, Alex develops custom AI solutions that drive operational efficiency.",
+    "address": "Kansas City, Missouri",
+    "phone": "+1 (816) 555-0125",
+    "email": "alex@smartfactory.io",
+    "website": "www.smartfactory.io",
+    "socials": {
+      "linkedin": "alexchenAI",
+      "twitter": "alexchenAI"
+    },
+    "skills": [
+      {
+        "no": 1,
+        "title": "Machine Learning",
+        "percentage": 96
+      },
+      {
+        "no": 2,
+        "title": "Python",
+        "percentage": 94
+      },
+      {
+        "no": 3,
+        "title": "AI Algorithms",
+        "percentage": 92
+      },
+      {
+        "no": 4,
+        "title": "Manufacturing AI",
+        "percentage": 90
+      }
+    ],
+    "experiences": [
+      {
+        "no": 1,
+        "designation": "Senior AI Engineer",
+        "icon": "team/details/date-1.png",
+        "comment": "Developing advanced AI solutions for manufacturing automation"
+      },
+      {
+        "no": 2,
+        "designation": "ML Specialist",
+        "icon": "team/details/date-2.png",
+        "comment": "Creating predictive maintenance and quality control systems"
+      },
+      {
+        "no": 3,
+        "designation": "Industry 4.0 Expert",
+        "icon": "team/details/date-3.png",
+        "comment": "Implementing smart factory technologies and IoT solutions"
+      }
+    ],
+    "education": [
+      {
+        "no": 1,
+        "institute": "MIT",
+        "degree": "MASTER IN AI",
+        "duration": "2018 - 2020",
+        "comment": "Advanced studies in artificial intelligence and machine learning"
+      },
+      {
+        "no": 2,
+        "institute": "Stanford University",
+        "degree": "BACHELOR IN COMPUTER SCIENCE",
+        "duration": "2014 - 2018",
+        "comment": "Foundation in computer science and software engineering"
+      },
+      {
+        "no": 3,
+        "institute": "Smart Factory",
+        "degree": "AI INNOVATION",
+        "duration": "2020 - Present",
+        "comment": "Leading AI transformation in manufacturing industries"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sarah Johnson",
+    "designation": "Data Scientist",
+    "profilePic": "Ideogram Batch Download - Ideogram_Batch_Generation___Smart_Factory_v1.2/0044_1_professional-headshot-of-a-female-data-s_wC0Z1UEZS8eji-acX_tqMg_JXMZXGaQStWqLuSgpPwuCQ_cover.png",
+    "bio": "Sarah Johnson is our lead data scientist, transforming manufacturing data into actionable insights. She specializes in predictive analytics, quality control optimization, and real-time monitoring systems that drive smart factory performance.",
+    "address": "Kansas City, Missouri",
+    "phone": "+1 (816) 555-0126",
+    "email": "sarah@smartfactory.io",
+    "website": "www.smartfactory.io",
+    "socials": {
+      "linkedin": "sarahjohnsonDS",
+      "twitter": "sarahjohnsonDS"
+    },
+    "skills": [
+      {
+        "no": 1,
+        "title": "Data Analytics",
+        "percentage": 95
+      },
+      {
+        "no": 2,
+        "title": "Predictive Modeling",
+        "percentage": 93
+      },
+      {
+        "no": 3,
+        "title": "R/Python",
+        "percentage": 91
+      },
+      {
+        "no": 4,
+        "title": "Manufacturing Analytics",
+        "percentage": 89
+      }
+    ],
+    "experiences": [
+      {
+        "no": 1,
+        "designation": "Lead Data Scientist",
+        "icon": "team/details/date-1.png",
+        "comment": "Developing predictive analytics for manufacturing optimization"
+      },
+      {
+        "no": 2,
+        "designation": "Analytics Expert",
+        "icon": "team/details/date-2.png",
+        "comment": "Creating real-time monitoring and quality control systems"
+      },
+      {
+        "no": 3,
+        "designation": "BI Specialist",
+        "icon": "team/details/date-3.png",
+        "comment": "Building comprehensive business intelligence solutions"
+      }
+    ],
+    "education": [
+      {
+        "no": 1,
+        "institute": "University of California",
+        "degree": "MASTER IN STATISTICS",
+        "duration": "2017 - 2019",
+        "comment": "Advanced statistical analysis and predictive modeling"
+      },
+      {
+        "no": 2,
+        "institute": "University of Michigan",
+        "degree": "BACHELOR IN MATHEMATICS",
+        "duration": "2013 - 2017",
+        "comment": "Strong foundation in mathematical modeling and analysis"
+      },
+      {
+        "no": 3,
+        "institute": "Smart Factory",
+        "degree": "DATA INNOVATION",
+        "duration": "2019 - Present",
+        "comment": "Transforming manufacturing through data-driven insights"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mike Rodriguez",
+    "designation": "Operations Manager",
+    "profilePic": "Ideogram Batch Download - Ideogram_Batch_Generation___Smart_Factory_v1.2/0043_1_professional-headshot-of-a-male-operatio_XU-5wHT9TnK_aolEGMoOZw_-tKEaMHcQmWNqCbUA2uPXw_cover.png",
+    "bio": "Mike Rodriguez manages our operations team, ensuring seamless delivery of AI transformation projects. With extensive experience in manufacturing operations, Mike bridges the gap between technology and practical implementation.",
+    "address": "Kansas City, Missouri",
+    "phone": "+1 (816) 555-0127",
+    "email": "mike@smartfactory.io",
+    "website": "www.smartfactory.io",
+    "socials": {
+      "linkedin": "mikerodriguezOps",
+      "twitter": "mikerodriguezOps"
+    },
+    "skills": [
+      {
+        "no": 1,
+        "title": "Operations Management",
+        "percentage": 94
+      },
+      {
+        "no": 2,
+        "title": "Project Management",
+        "percentage": 92
+      },
+      {
+        "no": 3,
+        "title": "Manufacturing",
+        "percentage": 90
+      },
+      {
+        "no": 4,
+        "title": "Process Optimization",
+        "percentage": 88
+      }
+    ],
+    "experiences": [
+      {
+        "no": 1,
+        "designation": "Operations Manager",
+        "icon": "team/details/date-1.png",
+        "comment": "Overseeing project delivery and client implementation"
+      },
+      {
+        "no": 2,
+        "designation": "Manufacturing Expert",
+        "icon": "team/details/date-2.png",
+        "comment": "Optimizing production processes and quality control"
+      },
+      {
+        "no": 3,
+        "designation": "Process Leader",
+        "icon": "team/details/date-3.png",
+        "comment": "Implementing lean manufacturing and automation solutions"
+      }
+    ],
+    "education": [
+      {
+        "no": 1,
+        "institute": "University of Kansas",
+        "degree": "BACHELOR IN INDUSTRIAL ENGINEERING",
+        "duration": "2010 - 2014",
+        "comment": "Comprehensive education in manufacturing and operations"
+      },
+      {
+        "no": 2,
+        "institute": "Industry Experience",
+        "degree": "MANUFACTURING LEADERSHIP",
+        "duration": "2014 - 2020",
+        "comment": "Extensive experience in manufacturing operations and management"
+      },
+      {
+        "no": 3,
+        "institute": "Smart Factory",
+        "degree": "AI OPERATIONS",
+        "duration": "2020 - Present",
+        "comment": "Leading AI transformation in manufacturing operations"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Lisa Wang",
+    "designation": "Project Manager",
+    "profilePic": "Ideogram Batch Download - Ideogram_Batch_Generation___Smart_Factory_v1.2/0042_1_professional-headshot-of-a-female-projec_hYfDx8-QTbOERke0fEmbbw_vZzvlLVASDOZ_wFS9G8dGA_cover.png",
+    "bio": "Lisa Wang leads our project management team, ensuring successful delivery of AI transformation initiatives. With expertise in both technology and business processes, Lisa coordinates complex projects across multiple manufacturing clients.",
+    "address": "Kansas City, Missouri",
+    "phone": "+1 (816) 555-0128",
+    "email": "lisa@smartfactory.io",
+    "website": "www.smartfactory.io",
+    "socials": {
+      "linkedin": "lisawangPM",
+      "twitter": "lisawangPM"
+    },
+    "skills": [
+      {
+        "no": 1,
+        "title": "Project Management",
+        "percentage": 95
+      },
+      {
+        "no": 2,
+        "title": "Agile Methodology",
+        "percentage": 93
+      },
+      {
+        "no": 3,
+        "title": "Client Relations",
+        "percentage": 91
+      },
+      {
+        "no": 4,
+        "title": "Technology Implementation",
+        "percentage": 89
+      }
+    ],
+    "experiences": [
+      {
+        "no": 1,
+        "designation": "Senior Project Manager",
+        "icon": "team/details/date-1.png",
+        "comment": "Leading complex AI transformation projects for manufacturing clients"
+      },
+      {
+        "no": 2,
+        "designation": "Implementation Specialist",
+        "icon": "team/details/date-2.png",
+        "comment": "Ensuring successful technology deployment and adoption"
+      },
+      {
+        "no": 3,
+        "designation": "Client Success Manager",
+        "icon": "team/details/date-3.png",
+        "comment": "Driving client satisfaction and project success metrics"
+      }
+    ],
+    "education": [
+      {
+        "no": 1,
+        "institute": "Northwestern University",
+        "degree": "MASTER IN PROJECT MANAGEMENT",
+        "duration": "2016 - 2018",
+        "comment": "Advanced project management methodologies and leadership"
+      },
+      {
+        "no": 2,
+        "institute": "University of Illinois",
+        "degree": "BACHELOR IN BUSINESS",
+        "duration": "2012 - 2016",
+        "comment": "Foundation in business administration and management"
+      },
+      {
+        "no": 3,
+        "institute": "Smart Factory",
+        "degree": "AI PROJECTS",
+        "duration": "2018 - Present",
+        "comment": "Managing cutting-edge AI transformation initiatives"
+      }
+    ]
+  }
+]

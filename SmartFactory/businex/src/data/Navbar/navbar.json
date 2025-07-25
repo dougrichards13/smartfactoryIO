@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Company",
+    "link": "/company",
+    "megaMenu": false,
+    "subMenu": [
+      {
+        "id": 1.1,
+        "title": "AI Accelerator",
+        "link": "/ai-accelerator"
+      },
+      {
+        "id": 1.2,
+        "title": "Our Team",
+        "link": "/team"
+      }
+    ]
+  },
+
+  {
+    "id": 2,
+    "title": "News",
+    "link": "/news",
+    "megaMenu": false,
+    "subMenu": false
+  },
+  {
+    "id": 3,
+    "title": "Contact",
+    "link": "/contact"
+  }
+]

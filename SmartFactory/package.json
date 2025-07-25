@@ -1,0 +1,16 @@
+{
+  "name": "SmartFactory",
+  "version": "1.0.0",
+  "description": "Corporate website for Smart Factory at https://smartfactory.io",
+  "main": "index.js",
+  "repository": "https://github.com/dougrichards13/smartfactoryIO",
+  "author": "Doug Richards",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "build": "echo 'No build script defined'",
+    "test": "echo 'No test script defined'"
+  }
+}

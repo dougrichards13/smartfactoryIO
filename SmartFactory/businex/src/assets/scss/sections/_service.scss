@@ -1,0 +1,125 @@
+/*======================
+10. Services Style CSS
+========================*/
+
+.service-area-top {
+  padding: 110px 0 130px;
+  position: relative;
+  z-index: 1;
+
+  @media #{$md-device} {
+    padding: 90px 0 135px;
+  }
+
+  @media #{$sm-device} {
+    padding: 60px 0 135px;
+  }
+
+  &:before {
+    @include overlay($brandColor, 0.9);
+    z-index: -1;
+  }
+}
+
+.service-content-area {
+  margin-top: -170px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-section {
+  background: linear-gradient(135deg, $brandColor 0%, rgba(15, 23, 42, 0.95) 100%);
+  color: $white;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+.service-section .highlight {
+  color: $emerald;
+  font-weight: 600;
+}
+
+.service-section .secondary-bg {
+  background: rgba(16, 185, 129, 0.1);
+  color: $white;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+
+.service-item {
+  margin-top: 30px;
+  transition: 0.4s;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+
+  .service-txt {
+    background-color: $white;
+    padding: 25px 0;
+
+    h5 {
+      font-weight: 600;
+      margin-bottom: 0;
+
+      @media #{$sm-device} {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .service-content {
+    background-color: rgba($brandColor, 0.95);
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    position: absolute;
+    transition: 0.4s;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+
+    @media #{$sm-device} {
+      padding: 15px;
+    }
+
+    h5 {
+      color: $white;
+      font-weight: 500;
+      margin-bottom: 18px;
+
+      a{
+        color: $white;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26);
+
+    .service-content{
+      left: 0;
+    }
+  }
+}
+
+.non-opacity{
+  &:after,&:before{
+    display: none;
+  }
+}

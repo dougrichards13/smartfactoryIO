@@ -1,0 +1,1 @@
+This project is a simple website that informs visitors about our company, Smart Factory.

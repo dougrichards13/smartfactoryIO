@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Smart Factory Website
 
 This project is a modern, single-page website for Smart Factory (https://smartfactory.io) that will be served from a GoDaddy server.
@@ -131,6 +132,10 @@ The project uses GitHub Actions for continuous integration and deployment. The p
 3. **Deploy Stage**
    - Download build artifacts
    - Deploy to GoDaddy via FTP
+=======
+=======
+This project is a simple website that informs visitors about our company, Smart Factory. The URL is https://smartfactory.io . This website will be served from a GoDaddy server.
+>>>>>>> f68f8402dad24b05677f848f9dd5c36e849a3444
 
 The pipeline runs on:
 - Every push to main

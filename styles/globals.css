@@ -8,9 +8,9 @@
   --font-size: 16px;
   
   /* FUTURISTIC CYBERPUNK COLOR PALETTE */
-  /* Dark Teal Base */
-  --background: #0a1f1c;
-  --foreground: #ffffff;
+  /* Warm Peach Base */
+  --background: #FFCB9A;
+  --foreground: #2c1810;
   --card: rgba(17, 100, 102, 0.15);
   --card-foreground: #ffffff;
   --popover: rgba(17, 100, 102, 0.95);
@@ -24,13 +24,13 @@
   
   /* Secondary - Bright Coral */
   --secondary: #d9808c;
-  --secondary-foreground: #0a1f1c;
+  --secondary-foreground: #ffffff;
   --secondary-light: #e6a5ae;
   --secondary-dark: #c2616f;
   
   /* Accent - Warm Peach */
   --accent: #ffcb9a;
-  --accent-foreground: #0a1f1c;
+  --accent-foreground: #2c1810;
   --accent-light: #ffddb8;
   --accent-dark: #f5b07c;
   
@@ -165,24 +165,30 @@
   body {
     @apply text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    /* Futuristic cyberpunk gradient background */
-    background: linear-gradient(135deg, 
-      #0a1f1c 0%,     /* Dark teal */
-      #116466 25%,    /* Primary teal */
-      #0a4a4d 50%,    /* Deep teal */
-      #116466 75%,    /* Back to primary */
-      #0a1f1c 100%    /* Dark teal */
-    );
+    /* Warm peach background with subtle texture */
+    background-color: #FFCB9A;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(245, 176, 124, 0.15) 0%, transparent 50%),
+      linear-gradient(135deg, 
+        rgba(255, 203, 154, 0.95) 0%, 
+        rgba(255, 221, 184, 0.98) 25%, 
+        rgba(245, 176, 124, 0.96) 50%, 
+        rgba(255, 203, 154, 0.97) 75%, 
+        rgba(255, 203, 154, 0.95) 100%
+      );
     background-attachment: fixed;
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
+    background-size: 800px 800px, 600px 600px, 400px 400px, 100% 100%;
+    animation: subtleShift 30s ease-in-out infinite;
   }
   
-  /* Subtle gradient animation for premium feel */
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  /* Subtle texture animation for premium feel */
+  @keyframes subtleShift {
+    0% { background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%; }
+    33% { background-position: 100% 50%, 0% 50%, 25% 75%, 0% 0%; }
+    66% { background-position: 50% 100%, 50% 0%, 75% 25%, 0% 0%; }
+    100% { background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%; }
   }
 }
 

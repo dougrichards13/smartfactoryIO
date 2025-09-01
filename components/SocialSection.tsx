@@ -80,7 +80,7 @@ export function SocialSection() {
             Join Our Global Community
             <span className="text-gradient block">Connect, Learn, Transform</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             Follow Smart Factory across social channels for the latest insights in enterprise AI, 
             digital transformation strategies, and exclusive content for C-level executives driving innovation.
           </p>
@@ -107,8 +107,8 @@ export function SocialSection() {
                     
                     {/* Channel Info */}
                     <h3 className="text-lg font-semibold mb-1">{channel.name}</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">{channel.handle}</p>
-                    <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{channel.description}</p>
+                    <p className="text-sm text-white/80 font-medium mb-2">{channel.handle}</p>
+                    <p className="text-xs text-white/80 mb-4 leading-relaxed">{channel.description}</p>
                     
                     {/* Followers */}
                     <Badge variant="outline" className="mb-4 bg-primary/10 border-primary/20 text-primary">
@@ -159,7 +159,7 @@ export function SocialSection() {
                         <IconComponent className="w-8 h-8 text-secondary" />
                       </div>
                       <h4 className="text-xl font-semibold mb-4">{initiative.title}</h4>
-                      <p className="text-muted-foreground leading-relaxed">{initiative.description}</p>
+                      <p className="text-white/80 leading-relaxed">{initiative.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -178,7 +178,7 @@ export function SocialSection() {
         >
           <Heart className="w-12 h-12 text-accent mx-auto mb-6" />
           <h3 className="text-2xl font-semibold mb-4">Diversity, Inclusion & Social Impact</h3>
-          <p className="text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
             Smart Factory is committed to building diverse, inclusive teams that reflect the global 
             communities we serve. We believe that diverse perspectives drive innovation, and we're 
             dedicated to using AI and technology as forces for positive social and environmental change. 
@@ -188,15 +188,15 @@ export function SocialSection() {
           <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-lg font-bold text-secondary mb-1">40%</div>
-              <div className="text-sm text-muted-foreground">Women in Leadership</div>
+              <div className="text-sm text-white/80">Women in Leadership</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-lg font-bold text-primary mb-1">60%</div>
-              <div className="text-sm text-muted-foreground">Diverse Team Members</div>
+              <div className="text-sm text-white/80">Diverse Team Members</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-lg font-bold text-accent mb-1">$1M+</div>
-              <div className="text-sm text-muted-foreground">Social Impact Investment</div>
+              <div className="text-sm text-white/80">Social Impact Investment</div>
             </div>
           </div>
         </motion.div>
@@ -204,3 +204,4 @@ export function SocialSection() {
     </section>
   );
 }
+

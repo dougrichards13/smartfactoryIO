@@ -83,7 +83,7 @@ export function TeamSection() {
             C-Level Expertise
             <span className="text-gradient block">Enterprise Leadership Experience</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             Our leadership team consists of former C-suite executives with proven track records 
             of driving transformation at Fortune 500 companies. We understand enterprise challenges 
             because we've lived them.
@@ -108,7 +108,7 @@ export function TeamSection() {
                       <IconComponent className="w-6 h-6 text-accent" />
                     </div>
                     <div className="text-2xl font-bold text-accent mb-1">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-sm text-white/80">{stat.label}</div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -139,7 +139,7 @@ export function TeamSection() {
                     </div>
                     <h3 className="text-xl font-semibold mb-1">{leader.name}</h3>
                     <p className="text-sm font-medium text-primary mb-2">{leader.title}</p>
-                    <p className="text-xs text-muted-foreground">{leader.background}</p>
+                    <p className="text-xs text-white/80">{leader.background}</p>
                   </div>
 
                   {/* Expertise */}
@@ -155,7 +155,7 @@ export function TeamSection() {
                   </div>
 
                   {/* Bio */}
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm text-white/80 mb-6 leading-relaxed">
                     {leader.bio}
                   </p>
 
@@ -166,7 +166,7 @@ export function TeamSection() {
                       {leader.achievements.map((achievement, achIndex) => (
                         <div key={achIndex} className="flex items-center space-x-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></div>
-                          <span className="text-xs text-muted-foreground">{achievement}</span>
+                          <span className="text-xs text-white/80">{achievement}</span>
                         </div>
                       ))}
                     </div>
@@ -212,7 +212,7 @@ export function TeamSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold mb-4">Enterprise Leadership. Startup Agility.</h3>
-          <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-3xl mx-auto">
             Our team combines the strategic insight and operational experience of Fortune 500 executives 
             with the innovation and agility of a technology startup. We understand both the challenges 
             and opportunities of enterprise transformation because we've successfully navigated them before.
@@ -220,15 +220,15 @@ export function TeamSection() {
           <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-lg font-bold text-primary mb-1">Fortune 500</div>
-              <div className="text-sm text-muted-foreground">Executive Experience</div>
+              <div className="text-sm text-white/80">Executive Experience</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-lg font-bold text-secondary mb-1">Startup</div>
-              <div className="text-sm text-muted-foreground">Innovation Mindset</div>
+              <div className="text-sm text-white/80">Innovation Mindset</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-lg font-bold text-accent mb-1">AI-First</div>
-              <div className="text-sm text-muted-foreground">Technology Approach</div>
+              <div className="text-sm text-white/80">Technology Approach</div>
             </div>
           </div>
         </motion.div>
@@ -236,3 +236,4 @@ export function TeamSection() {
     </section>
   );
 }
+

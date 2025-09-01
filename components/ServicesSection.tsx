@@ -98,7 +98,7 @@ export function ServicesSection() {
           bg: 'bg-muted/50',
           border: 'border-border',
           icon: 'text-foreground',
-          badge: 'bg-muted text-muted-foreground border-border',
+          badge: 'bg-muted text-white/80 border-border',
           gradient: 'gradient-primary'
         };
     }
@@ -122,7 +122,7 @@ export function ServicesSection() {
             Three Pillars of Enterprise 
             <span className="text-gradient block">Transformation Excellence</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             Our specialized consultant types work seamlessly together or independently to deliver 
             comprehensive enterprise transformation with measurable ROI and strategic impact.
           </p>
@@ -150,11 +150,11 @@ export function ServicesSection() {
                         <IconComponent className={`w-10 h-10 ${colorClasses.icon}`} />
                       </div>
                       <h3 className="text-xl font-semibold mb-1">{consultant.title}</h3>
-                      <p className="text-sm text-muted-foreground font-medium">{consultant.subtitle}</p>
+                      <p className="text-sm text-white/80 font-medium">{consultant.subtitle}</p>
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground leading-relaxed mb-6 text-center">
+                    <p className="text-white/80 leading-relaxed mb-6 text-center">
                       {consultant.description}
                     </p>
 
@@ -165,7 +165,7 @@ export function ServicesSection() {
                         {consultant.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-2">
                             <div className={`w-1.5 h-1.5 rounded-full ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'}`}></div>
-                            <span className="text-xs text-muted-foreground">{feature}</span>
+                            <span className="text-xs text-white/80">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -181,7 +181,7 @@ export function ServicesSection() {
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-medium text-foreground">Timeline:</span>
-                        <span className="text-sm text-muted-foreground">{consultant.duration}</span>
+                        <span className="text-sm text-white/80">{consultant.duration}</span>
                       </div>
                     </div>
 
@@ -209,7 +209,7 @@ export function ServicesSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold mb-4">The Smart Factory Assembly Line</h3>
-          <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
+          <p className="text-white/80 mb-6 max-w-3xl mx-auto">
             Like a precision manufacturing facility, our three consultant types work in orchestrated 
             harmony to transform your enterprise. Smart Architects™ design the strategy, Smart Engineers™ 
             build the solutions, and Smart Assurance™ guarantees quality outcomes.
@@ -236,3 +236,4 @@ export function ServicesSection() {
     </section>
   );
 }
+

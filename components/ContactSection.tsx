@@ -71,7 +71,7 @@ export function ContactSection() {
             Talk to a Smart Architect™
             <span className="text-gradient block">Strategic Consultation Awaits</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             Ready to transform your enterprise with AI? Our Smart Assistant will qualify your needs 
             and connect you with the right Smart Architect™ for a strategic consultation tailored 
             to your organization's goals and budget.
@@ -95,7 +95,7 @@ export function ContactSection() {
                   <MessageCircle className="w-10 h-10 text-primary" />
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Smart Factory AI Assistant</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-white/80 mb-6 leading-relaxed">
                   Our AI-powered assistant will qualify your needs, understand your organization's 
                   requirements, and connect you with the perfect Smart Architect™ for your transformation journey.
                 </p>
@@ -107,7 +107,7 @@ export function ContactSection() {
                   Start Smart Conversation
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-white/80">
                   Available 24/7 • Instant qualification • Direct scheduling
                 </p>
               </CardContent>
@@ -116,14 +116,14 @@ export function ContactSection() {
             {/* Qualification Criteria */}
             <div className="p-6 bg-card border border-border rounded-xl">
               <h4 className="text-lg font-semibold mb-4">Ideal Client Profile</h4>
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-sm text-white/80 mb-4">
                 Smart Factory works exclusively with qualified enterprise prospects who meet these criteria:
               </p>
               <div className="space-y-3">
                 {qualificationCriteria.map((criteria, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-4 h-4 text-accent flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{criteria}</span>
+                    <span className="text-sm text-white/80">{criteria}</span>
                   </div>
                 ))}
               </div>
@@ -159,7 +159,7 @@ export function ContactSection() {
                         </div>
                         <div className="flex-1">
                           <h4 className="font-semibold mb-2">{method.title}</h4>
-                          <p className="text-sm text-muted-foreground mb-4">{method.description}</p>
+                          <p className="text-sm text-white/80 mb-4">{method.description}</p>
                           <Button 
                             variant={method.primary ? "default" : "outline"} 
                             size="sm"
@@ -210,7 +210,7 @@ export function ContactSection() {
                   <CheckCircle className="w-6 h-6 text-secondary" />
                 </div>
                 <h4 className="font-semibold mb-2">{feature.title}</h4>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <p className="text-sm text-white/80">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -225,22 +225,22 @@ export function ContactSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold mb-4">Enterprise-Grade Responsiveness</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             We understand that C-level time is valuable. Our commitment to qualified prospects includes 
             guaranteed response times and priority access to our leadership team.
           </p>
           <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-2xl font-bold text-accent mb-1">&lt; 2 Hours</div>
-              <div className="text-sm text-muted-foreground">Qualified Lead Response</div>
+              <div className="text-sm text-white/80">Qualified Lead Response</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-              <div className="text-sm text-muted-foreground">AI Assistant Availability</div>
+              <div className="text-sm text-white/80">AI Assistant Availability</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-2xl font-bold text-secondary mb-1">Same Day</div>
-              <div className="text-sm text-muted-foreground">C-Suite Emergency Line</div>
+              <div className="text-sm text-white/80">C-Suite Emergency Line</div>
             </div>
           </div>
         </motion.div>
@@ -272,10 +272,10 @@ export function ContactSection() {
             </div>
             <div className="p-4 h-full flex items-center justify-center text-center">
               <div>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-white/80 mb-4">
                   Smart Factory AI Assistant would be integrated here using a chatbot service like Elfsight or similar.
                 </p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-white/80">
                   The chatbot would qualify leads, collect contact info, and schedule consultations.
                 </p>
               </div>
@@ -286,3 +286,4 @@ export function ContactSection() {
     </section>
   );
 }
+

@@ -62,7 +62,7 @@ export function AIAcceleratorSection() {
             Smart Factory AI Accelerator™
             <span className="text-gradient block">Secure, Private, Enterprise-Grade</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             The industry's most comprehensive AI platform designed for rapid, risk-managed AI implementation 
             with complete data sovereignty and seamless enterprise integration.
           </p>
@@ -81,7 +81,7 @@ export function AIAcceleratorSection() {
             {/* Platform Overview */}
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold">Enterprise AI Without Compromise</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 The Smart Factory AI Accelerator™ is a secure, private, enterprise-grade AI platform 
                 that enables rapid AI implementation while maintaining complete control over your data, 
                 ensuring compliance, and delivering measurable business outcomes.
@@ -109,7 +109,7 @@ export function AIAcceleratorSection() {
                     </div>
                     <div>
                       <h5 className="font-semibold mb-1">{feature.title}</h5>
-                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      <p className="text-sm text-white/80">{feature.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -123,7 +123,7 @@ export function AIAcceleratorSection() {
                 {acceleratorComponents.map((component, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{component}</span>
+                    <span className="text-sm text-white/80">{component}</span>
                   </div>
                 ))}
               </div>
@@ -183,7 +183,7 @@ export function AIAcceleratorSection() {
               <CardContent className="p-8 text-center">
                 <Rocket className="w-12 h-12 text-accent mx-auto mb-4" />
                 <h4 className="text-xl font-semibold mb-3">Experience the AI Accelerator™</h4>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-white/80 mb-6">
                   See how the Smart Factory AI Accelerator™ can transform your enterprise 
                   with a personalized demo tailored to your industry and use cases.
                 </p>
@@ -196,7 +196,7 @@ export function AIAcceleratorSection() {
                     Request a Demo
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-white/80">
                     Custom demo environments available for qualified enterprise prospects
                   </p>
                 </div>
@@ -207,11 +207,11 @@ export function AIAcceleratorSection() {
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-card border border-border rounded-xl">
                 <div className="text-2xl font-bold text-primary mb-1">99.9%</div>
-                <div className="text-xs text-muted-foreground">Platform Uptime</div>
+                <div className="text-xs text-white/80">Platform Uptime</div>
               </div>
               <div className="text-center p-4 bg-card border border-border rounded-xl">
                 <div className="text-2xl font-bold text-secondary mb-1">SOC2</div>
-                <div className="text-xs text-muted-foreground">Compliance Ready</div>
+                <div className="text-xs text-white/80">Compliance Ready</div>
               </div>
             </div>
           </motion.div>
@@ -226,7 +226,7 @@ export function AIAcceleratorSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold mb-4">Ready to Accelerate Your AI Journey?</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             Join leading enterprises who have transformed their operations with the Smart Factory AI Accelerator™. 
             Schedule a personalized demonstration and strategy session.
           </p>
@@ -252,3 +252,4 @@ export function AIAcceleratorSection() {
     </section>
   );
 }
+

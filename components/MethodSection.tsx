@@ -73,7 +73,7 @@ export function MethodSection() {
             The Smart Factory Method™
             <span className="text-gradient block">Precision-Engineered Transformation</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             Like a modern manufacturing facility, our proprietary methodology applies systematic, 
             repeatable processes to transform human potential into measurable business reality with 
             precision, scale, and guaranteed outcomes.
@@ -92,7 +92,7 @@ export function MethodSection() {
           >
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold">The Assembly Line for Business Transformation</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 Just as Henry Ford revolutionized manufacturing with the assembly line, Smart Factory 
                 has revolutionized consulting with systematic, repeatable processes that deliver 
                 predictable outcomes at enterprise scale.
@@ -119,7 +119,7 @@ export function MethodSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">{principle.title}</h4>
-                      <p className="text-sm text-muted-foreground">{principle.description}</p>
+                      <p className="text-sm text-white/80">{principle.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -148,12 +148,12 @@ export function MethodSection() {
                 <div className="absolute inset-6 flex flex-col justify-between">
                   <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-lg p-3 shadow-lg self-start">
                     <div className="text-sm font-semibold text-secondary">Systematic Process</div>
-                    <div className="text-xs text-muted-foreground">Repeatable • Scalable • Predictable</div>
+                    <div className="text-xs text-white/80">Repeatable • Scalable • Predictable</div>
                   </div>
                   
                   <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-lg p-3 shadow-lg self-end">
                     <div className="text-sm font-semibold text-primary">Quality Assured</div>
-                    <div className="text-xs text-muted-foreground">Every step validated and optimized</div>
+                    <div className="text-xs text-white/80">Every step validated and optimized</div>
                   </div>
                 </div>
               </div>
@@ -188,14 +188,14 @@ export function MethodSection() {
                     </div>
                     
                     <h4 className="text-lg font-semibold mb-3">{step.title}</h4>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{step.description}</p>
+                    <p className="text-sm text-white/80 mb-4 leading-relaxed">{step.description}</p>
                     
                     <div className="space-y-2">
                       <h5 className="text-xs font-semibold text-foreground uppercase tracking-wide">Key Outcomes:</h5>
                       {step.outcomes.map((outcome, outcomeIndex) => (
                         <div key={outcomeIndex} className="flex items-center space-x-2">
                           <CheckCircle2 className="w-3 h-3 text-secondary flex-shrink-0" />
-                          <span className="text-xs text-muted-foreground">{outcome}</span>
+                          <span className="text-xs text-white/80">{outcome}</span>
                         </div>
                       ))}
                     </div>
@@ -224,7 +224,7 @@ export function MethodSection() {
         >
           <Factory className="w-16 h-16 text-secondary mx-auto mb-6" />
           <h3 className="text-2xl font-semibold mb-4">Proprietary Frameworks & Tools</h3>
-          <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-3xl mx-auto">
             Over 13 years, we've developed proprietary frameworks, assessment tools, and implementation 
             methodologies that ensure consistent, high-quality outcomes. Our "Act as If" principle means 
             our consultants become extensions of your team, thinking and acting with your organization's 
@@ -241,7 +241,7 @@ export function MethodSection() {
                 key={index}
                 className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30"
               >
-                <div className="text-sm font-medium text-muted-foreground">{framework}</div>
+                <div className="text-sm font-medium text-white/80">{framework}</div>
               </div>
             ))}
           </div>
@@ -250,3 +250,4 @@ export function MethodSection() {
     </section>
   );
 }
+

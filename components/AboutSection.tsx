@@ -53,7 +53,7 @@ export function AboutSection() {
             The Factory Approach to
             <span className="text-gradient block">Enterprise Transformation</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white">
             Since 2011, Smart Factory has pioneered a unique approach to enterprise consulting, 
             combining C-level strategic expertise with AI-driven implementation methodologies. 
             Our factory approach delivers predictable, scalable results for visionary leaders.
@@ -78,7 +78,7 @@ export function AboutSection() {
                     <Building2 className="w-5 h-5 mr-2" />
                     The Factory Approach
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     Like a modern manufacturing facility, we apply systematic, repeatable processes 
                     to transform human potential into business reality with precision and scale.
                   </p>
@@ -88,7 +88,7 @@ export function AboutSection() {
                     <Users className="w-5 h-5 mr-2" />
                     C-Level Expertise
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     Our team consists of former C-suite executives who understand the strategic 
                     challenges and opportunities facing enterprise leaders today.
                   </p>
@@ -98,7 +98,7 @@ export function AboutSection() {
                     <TrendingUp className="w-5 h-5 mr-2" />
                     AI Leadership
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     We don't just implement AI - we lead the industry in AI-driven consulting 
                     methodologies that accelerate transformation and guarantee results.
                   </p>
@@ -128,7 +128,7 @@ export function AboutSection() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                     <div className="text-sm font-semibold text-primary mb-1">Enterprise Excellence</div>
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-white/70">
                       Trusted by industry leaders worldwide for strategic transformation initiatives
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export function AboutSection() {
                       <IconComponent className="w-8 h-8 text-primary" />
                     </div>
                     <h4 className="font-semibold mb-2">{credential.title}</h4>
-                    <p className="text-sm text-muted-foreground">{credential.description}</p>
+                    <p className="text-sm text-white/80">{credential.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -173,7 +173,7 @@ export function AboutSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold mb-6">Trusted by Industry Leaders</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             Our clients represent the most innovative and forward-thinking organizations across industries, 
             all committed to transforming their businesses through strategic AI implementation.
           </p>
@@ -183,11 +183,11 @@ export function AboutSection() {
                 key={index}
                 className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30"
               >
-                <div className="text-sm font-medium text-muted-foreground">{client}</div>
+                <div className="text-sm font-medium text-white/70">{client}</div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground mt-6">
+          <p className="text-xs text-white/60 mt-6">
             Client names and specific case studies available under NDA upon qualification.
           </p>
         </motion.div>

@@ -77,7 +77,7 @@ export function ResultsSection() {
             Measurable Transformation
             <span className="text-gradient block">Real Results, Real Impact</span>
           </h2>
-          <p className="lead text-muted-foreground">
+          <p className="lead text-white/80">
             Since 2011, Smart Factory has delivered transformational results for enterprise clients worldwide. 
             Our data-driven approach ensures every engagement produces measurable business outcomes and sustained competitive advantage.
           </p>
@@ -102,7 +102,7 @@ export function ResultsSection() {
                     </div>
                     <div className="text-4xl font-bold text-primary mb-2">{metric.value}</div>
                     <div className="font-semibold text-foreground mb-2">{metric.label}</div>
-                    <p className="text-sm text-muted-foreground">{metric.description}</p>
+                    <p className="text-sm text-white/80">{metric.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -122,7 +122,7 @@ export function ResultsSection() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Impact Across Industries</h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-white/80 mb-6">
                   Our transformational impact spans across multiple industries, with consistently 
                   high ROI and client satisfaction rates that demonstrate the effectiveness of 
                   the Smart Factory Method™.
@@ -188,8 +188,8 @@ export function ResultsSection() {
                     </div>
                     
                     {/* Quote */}
-                    <Quote className="w-8 h-8 text-muted-foreground mb-4" />
-                    <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                    <Quote className="w-8 h-8 text-white/80 mb-4" />
+                    <p className="text-white/80 mb-6 leading-relaxed italic">
                       "{testimonial.quote}"
                     </p>
                     
@@ -202,8 +202,8 @@ export function ResultsSection() {
                     {/* Author */}
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.title}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                      <div className="text-sm text-white/80">{testimonial.title}</div>
+                      <div className="text-sm text-white/80">{testimonial.company}</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -221,7 +221,7 @@ export function ResultsSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold mb-4">Ready to Join Our Success Stories?</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             Every enterprise transformation begins with a conversation. Discover how Smart Factory 
             can deliver measurable results for your organization with our proven methodology and 
             world-class expertise.
@@ -229,15 +229,15 @@ export function ResultsSection() {
           <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-2xl font-bold text-primary mb-1">98%</div>
-              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+              <div className="text-sm text-white/80">Client Satisfaction</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-2xl font-bold text-secondary mb-1">340%</div>
-              <div className="text-sm text-muted-foreground">Average ROI</div>
+              <div className="text-sm text-white/80">Average ROI</div>
             </div>
             <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
               <div className="text-2xl font-bold text-accent mb-1">90 Days</div>
-              <div className="text-sm text-muted-foreground">Avg. Implementation</div>
+              <div className="text-sm text-white/80">Avg. Implementation</div>
             </div>
           </div>
         </motion.div>
@@ -245,3 +245,4 @@ export function ResultsSection() {
     </section>
   );
 }
+

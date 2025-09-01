@@ -244,13 +244,13 @@
       font-size: 1rem;
       font-weight: var(--font-weight-normal);
       line-height: 1.6;
-      color: var(--muted-foreground);
+      color: var(--foreground);
     }
 
     .lead {
       font-size: 1.125rem;
       line-height: 1.6;
-      color: var(--muted-foreground);
+      color: var(--foreground);
     }
 
     label {

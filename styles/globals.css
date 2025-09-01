@@ -7,14 +7,14 @@
 :root {
   --font-size: 16px;
   
-  /* NEW AGGRESSIVE BRAND COLORS */
+  /* NEW AGGRESSIVE BRAND COLORS - Dark Theme Optimized */
   /* Deep Blue - Primary */
-  --background: #ffffff;
-  --foreground: #1a2340;
-  --card: #ffffff;
-  --card-foreground: #1a2340;
-  --popover: #ffffff;
-  --popover-foreground: #1a2340;
+  --background: #0f1a2e;
+  --foreground: #ffffff;
+  --card: rgba(26, 35, 64, 0.8);
+  --card-foreground: #ffffff;
+  --popover: rgba(26, 35, 64, 0.95);
+  --popover-foreground: #ffffff;
   
   /* Primary - Deep Blue */
   --primary: #1a2340;
@@ -34,18 +34,18 @@
   --accent-light: #ffe194;
   --accent-dark: #f5c842;
   
-  /* Slate Gray for neutral elements */
-  --muted: #f5f6f8;
-  --muted-foreground: #505a6b;
+  /* Slate Gray for neutral elements - Dark optimized */
+  --muted: rgba(42, 52, 80, 0.6);
+  --muted-foreground: #bdc1c9;
   --neutral-100: #f5f6f8;
   --neutral-200: #e8eaed;
   --neutral-300: #dadce1;
   --neutral-400: #bdc1c9;
-  --neutral-500: #505a6b;
-  --neutral-600: #404854;
-  --neutral-700: #30363d;
-  --neutral-800: #1a2340;
-  --neutral-900: #0f1a2e;
+  --neutral-500: #bdc1c9;
+  --neutral-600: #dadce1;
+  --neutral-700: #e8eaed;
+  --neutral-800: #f5f6f8;
+  --neutral-900: #ffffff;
   
   /* System Colors */
   --destructive: #dc3545;
@@ -157,8 +157,26 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    /* Modern dark gradient background for better contrast */
+    background: linear-gradient(135deg, 
+      #0f1a2e 0%,     /* Deep blue dark */
+      #1a2340 25%,    /* Primary dark */
+      #2a3450 50%,    /* Primary light */
+      #1a2340 75%,    /* Back to primary */
+      #0f1a2e 100%    /* Deep blue dark */
+    );
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+  }
+  
+  /* Subtle gradient animation for premium feel */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }
 

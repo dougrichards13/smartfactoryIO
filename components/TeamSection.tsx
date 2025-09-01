@@ -113,23 +113,36 @@ export function TeamSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="relative text-center group overflow-hidden bg-gradient-to-br from-accent/5 to-primary/5 border border-white/10 hover:border-accent/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
-                  <CardContent className="p-8 relative z-10">
-                    <div className="relative mx-auto mb-6">
-                      <div className="w-16 h-16 mx-auto bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-8 h-8 text-white" />
+                <Card className="relative text-center group overflow-hidden bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105">
+                  <CardContent className="p-10 relative z-10">
+                    {/* Premium glass reflection */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent rounded-3xl opacity-60"></div>
+                    
+                    <div className="relative mx-auto mb-8">
+                      <div className="w-20 h-20 mx-auto bg-gradient-to-br from-accent via-accent-light to-accent rounded-3xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-500"
+                           style={{
+                             boxShadow: '0 20px 40px rgba(255, 203, 154, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                           }}>
+                        <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent/40 to-accent-light/40 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/60 to-accent-light/60 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-                    <div className="text-3xl font-black text-white mb-2">{stat.value}</div>
-                    <div className="text-sm text-white/80 font-semibold uppercase tracking-wider">{stat.label}</div>
+                    
+                    <div className="text-4xl font-black text-white mb-3 drop-shadow-lg">{stat.value}</div>
+                    <div className="text-base text-white/90 font-bold uppercase tracking-[0.1em]">{stat.label}</div>
                   </CardContent>
                   
-                  {/* Animated background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  {/* Premium hover effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl"></div>
                   
-                  {/* Geometric accent */}
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-accent rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Enhanced border glow */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-br from-accent/30 to-accent/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
+                  
+                  {/* Premium geometric accent */}
+                  <div className="absolute top-6 right-6 w-3 h-3 bg-accent rounded-full opacity-40 group-hover:opacity-100 transition-all duration-300"
+                       style={{
+                         boxShadow: '0 4px 12px rgba(255, 203, 154, 0.6)'
+                       }}></div>
                 </Card>
               </motion.div>
             );
@@ -146,13 +159,19 @@ export function TeamSection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-white/10 hover:border-primary/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
-                <CardContent className="p-8 relative z-10">
+              <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105">
+                <CardContent className="p-10 relative z-10">
+                  {/* Premium glass layers */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent rounded-3xl opacity-60"></div>
+                  
                   {/* Enhanced Profile Image */}
-                  <div className="text-center mb-8">
-                    <div className="relative mx-auto mb-6">
-                      <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary to-secondary p-1 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <div className="w-full h-full rounded-full overflow-hidden">
+                  <div className="text-center mb-10">
+                    <div className="relative mx-auto mb-8">
+                      <div className="w-36 h-36 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent p-2 shadow-2xl group-hover:scale-110 transition-all duration-500"
+                           style={{
+                             boxShadow: '0 25px 50px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(217, 128, 140, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                           }}>
+                        <div className="w-full h-full rounded-full overflow-hidden border-2 border-white/20">
                           <ImageWithFallback
                             src={leader.image}
                             alt={leader.name}
@@ -160,11 +179,12 @@ export function TeamSection() {
                           />
                         </div>
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 rounded-full blur-2xl opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wider">{leader.name}</h3>
-                    <p className="text-lg font-semibold text-primary mb-2">{leader.title}</p>
-                    <p className="text-sm text-white/80 font-medium">{leader.background}</p>
+                    
+                    <h3 className="text-2xl font-black mb-3 text-white uppercase tracking-[0.1em] leading-tight">{leader.name}</h3>
+                    <p className="text-xl font-bold text-primary mb-3">{leader.title}</p>
+                    <p className="text-base text-white/85 font-semibold">{leader.background}</p>
                   </div>
 
                   {/* Expertise */}

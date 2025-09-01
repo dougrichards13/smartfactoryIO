@@ -153,70 +153,92 @@ export function ServicesSection() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-white/10 hover:border-secondary/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
-                  <CardContent className="p-8 relative z-10">
+                <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105">
+                  <CardContent className="p-10 relative z-10">
+                    {/* Premium glass layers */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent rounded-3xl opacity-60"></div>
+                    
                     {/* Enhanced Icon & Title */}
-                    <div className="text-center mb-8">
-                      <div className="relative mx-auto mb-6">
-                        <div className={`w-24 h-24 mx-auto bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary to-primary-light' : consultant.color === 'secondary' ? 'from-secondary to-secondary-light' : 'from-accent to-accent-light'} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="w-12 h-12 text-white" />
+                    <div className="text-center mb-10">
+                      <div className="relative mx-auto mb-8">
+                        <div className={`w-28 h-28 mx-auto bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} rounded-3xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-500`}
+                             style={{
+                               boxShadow: consultant.color === 'primary' ? '0 20px 40px rgba(17, 100, 102, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : consultant.color === 'secondary' ? '0 20px 40px rgba(217, 128, 140, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : '0 20px 40px rgba(255, 203, 154, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                             }}>
+                          <IconComponent className="w-14 h-14 text-white drop-shadow-lg" />
                         </div>
-                        <div className={`absolute inset-0 bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/40 to-primary-light/40' : consultant.color === 'secondary' ? 'from-secondary/40 to-secondary-light/40' : 'from-accent/40 to-accent-light/40'} rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/60 to-primary-light/60' : consultant.color === 'secondary' ? 'from-secondary/60 to-secondary-light/60' : 'from-accent/60 to-accent-light/60'} rounded-3xl blur-2xl opacity-40 group-hover:opacity-100 transition-opacity duration-500`}></div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wider">{consultant.title}</h3>
-                      <p className="text-lg text-white/80 font-semibold">{consultant.subtitle}</p>
+                      <h3 className="text-2xl font-black mb-3 text-white uppercase tracking-[0.1em] leading-tight">{consultant.title}</h3>
+                      <p className="text-xl text-white/90 font-bold">{consultant.subtitle}</p>
                     </div>
 
                     {/* Enhanced Description */}
-                    <p className="text-white/85 leading-relaxed mb-8 text-center text-lg">
+                    <p className="text-white/90 leading-relaxed mb-10 text-center text-xl font-medium">
                       {consultant.description}
                     </p>
 
                     {/* Enhanced Features */}
-                    <div className="mb-8">
-                      <h4 className="text-lg font-bold mb-4 text-white uppercase tracking-wider text-center">Core Capabilities</h4>
-                      <div className="space-y-3">
+                    <div className="mb-10">
+                      <h4 className="text-xl font-black mb-6 text-white uppercase tracking-[0.1em] text-center">Core Capabilities</h4>
+                      <div className="space-y-4">
                         {consultant.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors duration-200">
-                            <div className={`w-2 h-2 rounded-full ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} shadow-lg`}></div>
-                            <span className="text-sm text-white/80 font-medium">{feature}</span>
+                          <div key={featureIndex} className="flex items-center space-x-4 p-3 rounded-xl hover:bg-white/[0.05] transition-all duration-300 group/feature">
+                            <div className={`w-3 h-3 rounded-full ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} shadow-lg group-hover/feature:shadow-xl transition-shadow duration-300`}
+                                 style={{
+                                   boxShadow: consultant.color === 'primary' ? '0 2px 8px rgba(17, 100, 102, 0.6)' : consultant.color === 'secondary' ? '0 2px 8px rgba(217, 128, 140, 0.6)' : '0 2px 8px rgba(255, 203, 154, 0.6)'
+                                 }}></div>
+                            <span className="text-base text-white/85 font-semibold">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Enhanced Investment & Duration */}
-                    <div className="space-y-4 mb-8 p-4 bg-white/5 rounded-xl border border-white/10">
+                    {/* Premium Investment & Duration */}
+                    <div className="space-y-5 mb-10 p-6 bg-gradient-to-br from-white/[0.08] to-white/[0.02] rounded-2xl border border-white/[0.1] backdrop-blur-sm">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-bold text-white uppercase tracking-wider">Investment:</span>
-                        <Badge className={`px-3 py-1 ${consultant.color === 'primary' ? 'bg-primary/20 text-primary border-primary/30' : consultant.color === 'secondary' ? 'bg-secondary/20 text-secondary border-secondary/30' : 'bg-accent/20 text-accent border-accent/30'} border font-bold`}>
+                        <span className="text-base font-black text-white uppercase tracking-[0.1em]">Investment:</span>
+                        <Badge className={`px-4 py-2 text-base font-bold ${consultant.color === 'primary' ? 'bg-gradient-to-r from-primary to-primary-light text-white' : consultant.color === 'secondary' ? 'bg-gradient-to-r from-secondary to-secondary-light text-white' : 'bg-gradient-to-r from-accent to-accent-light text-white'} border-0 shadow-lg`}
+                               style={{
+                                 boxShadow: consultant.color === 'primary' ? '0 4px 12px rgba(17, 100, 102, 0.4)' : consultant.color === 'secondary' ? '0 4px 12px rgba(217, 128, 140, 0.4)' : '0 4px 12px rgba(255, 203, 154, 0.4)'
+                               }}>
                           {consultant.investment}
                         </Badge>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-bold text-white uppercase tracking-wider">Timeline:</span>
-                        <span className="text-sm text-white/90 font-semibold">{consultant.duration}</span>
+                        <span className="text-base font-black text-white uppercase tracking-[0.1em]">Timeline:</span>
+                        <span className="text-base text-white/95 font-bold">{consultant.duration}</span>
                       </div>
                     </div>
 
-                    {/* Enhanced CTA */}
+                    {/* Premium CTA */}
                     <Button 
                       onClick={scrollToContact}
-                      className={`w-full py-4 text-lg font-bold uppercase tracking-wider bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary to-primary-light' : consultant.color === 'secondary' ? 'from-secondary to-secondary-light' : 'from-accent to-accent-light'} text-white hover:shadow-2xl transition-all duration-300 group border border-white/20`}
+                      className={`relative w-full py-5 text-xl font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-white transition-all duration-500 group border-0 rounded-2xl overflow-hidden`}
                       style={{
-                        boxShadow: consultant.color === 'primary' ? '0 4px 20px rgba(17, 100, 102, 0.4)' : consultant.color === 'secondary' ? '0 4px 20px rgba(217, 128, 140, 0.4)' : '0 4px 20px rgba(255, 203, 154, 0.4)'
+                        boxShadow: consultant.color === 'primary' ? '0 8px 32px rgba(17, 100, 102, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : consultant.color === 'secondary' ? '0 8px 32px rgba(217, 128, 140, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : '0 8px 32px rgba(255, 203, 154, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
                       }}
                     >
-                      {consultant.cta}
-                      <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
-                      <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center justify-center">
+                        {consultant.cta}
+                        <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-3 transition-transform duration-300" />
+                      </span>
+                      <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </Button>
                     
-                    {/* Geometric accent */}
-                    <div className={`absolute top-4 right-4 w-3 h-3 ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                    {/* Premium geometric accents */}
+                    <div className={`absolute top-8 right-8 w-4 h-4 ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} rounded-full opacity-30 group-hover:opacity-100 transition-all duration-300`}
+                         style={{
+                           boxShadow: consultant.color === 'primary' ? '0 4px 12px rgba(17, 100, 102, 0.6)' : consultant.color === 'secondary' ? '0 4px 12px rgba(217, 128, 140, 0.6)' : '0 4px 12px rgba(255, 203, 154, 0.6)'
+                         }}></div>
+                    <div className={`absolute bottom-8 left-8 w-2 h-2 ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} rounded-full opacity-20 group-hover:opacity-80 transition-all duration-500`}></div>
                     
-                    {/* Animated background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/10 to-primary-light/10' : consultant.color === 'secondary' ? 'from-secondary/10 to-secondary-light/10' : 'from-accent/10 to-accent-light/10'} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg`}></div>
+                    {/* Premium hover effects */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/8 via-primary/4 to-transparent' : consultant.color === 'secondary' ? 'from-secondary/8 via-secondary/4 to-transparent' : 'from-accent/8 via-accent/4 to-transparent'} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl`}></div>
+                    
+                    {/* Enhanced border glow */}
+                    <div className={`absolute -inset-[1px] bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/30 to-primary/10' : consultant.color === 'secondary' ? 'from-secondary/30 to-secondary/10' : 'from-accent/30 to-accent/10'} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm`}></div>
                   </CardContent>
                 </Card>
               </motion.div>

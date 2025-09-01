@@ -85,63 +85,102 @@ export function AboutSection() {
               <h3 className="text-2xl font-semibold">Our Vision & Differentiation</h3>
               <div className="space-y-4">
                 <motion.div 
-                  className="relative p-6 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-2xl backdrop-blur-sm group hover:border-primary/50 transition-all duration-300"
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="relative p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl group hover:border-primary/40 transition-all duration-500"
+                  whileHover={{ scale: 1.03, y: -8 }}
                   style={{
-                    boxShadow: '0 8px 32px rgba(17, 100, 102, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(17, 100, 102, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                   }}
                 >
-                  <div className="absolute top-4 right-4 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Building2 className="w-4 h-4 text-primary" />
+                  {/* Premium glass reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.1] via-transparent to-transparent rounded-3xl opacity-50"></div>
+                  
+                  {/* Icon with premium styling */}
+                  <div className="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-primary via-primary-light to-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-primary/30 transition-all duration-300">
+                    <Building2 className="w-6 h-6 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-primary-light/60 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">
-                    The Factory Approach
-                  </h4>
-                  <p className="text-white/85 leading-relaxed">
-                    Like a modern manufacturing facility, we apply systematic, repeatable processes 
-                    to transform human potential into business reality with precision and scale.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <h4 className="font-black mb-4 text-2xl text-white uppercase tracking-[0.1em] leading-tight">
+                      The Factory Approach
+                    </h4>
+                    <p className="text-white/90 leading-relaxed text-lg font-medium">
+                      Like a modern manufacturing facility, we apply systematic, repeatable processes 
+                      to transform human potential into business reality with precision and scale.
+                    </p>
+                  </div>
+                  
+                  {/* Premium hover glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  {/* Subtle border glow */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-br from-primary/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </motion.div>
                 
                 <motion.div 
-                  className="relative p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/30 rounded-2xl backdrop-blur-sm group hover:border-secondary/50 transition-all duration-300"
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="relative p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl group hover:border-secondary/40 transition-all duration-500"
+                  whileHover={{ scale: 1.03, y: -8 }}
                   style={{
-                    boxShadow: '0 8px 32px rgba(217, 128, 140, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(217, 128, 140, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                   }}
                 >
-                  <div className="absolute top-4 right-4 w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
-                    <Users className="w-4 h-4 text-secondary" />
+                  {/* Premium glass reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.1] via-transparent to-transparent rounded-3xl opacity-50"></div>
+                  
+                  {/* Icon with premium styling */}
+                  <div className="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-secondary via-secondary-light to-secondary rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-secondary/30 transition-all duration-300">
+                    <Users className="w-6 h-6 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 to-secondary-light/60 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">
-                    C-Level Expertise
-                  </h4>
-                  <p className="text-white/85 leading-relaxed">
-                    Our team consists of former C-suite executives who understand the strategic 
-                    challenges and opportunities facing enterprise leaders today.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <h4 className="font-black mb-4 text-2xl text-white uppercase tracking-[0.1em] leading-tight">
+                      C-Level Expertise
+                    </h4>
+                    <p className="text-white/90 leading-relaxed text-lg font-medium">
+                      Our team consists of former C-suite executives who understand the strategic 
+                      challenges and opportunities facing enterprise leaders today.
+                    </p>
+                  </div>
+                  
+                  {/* Premium hover glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-secondary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  {/* Subtle border glow */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-br from-secondary/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </motion.div>
                 
                 <motion.div 
-                  className="relative p-6 bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/30 rounded-2xl backdrop-blur-sm group hover:border-accent/50 transition-all duration-300"
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="relative p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl group hover:border-accent/40 transition-all duration-500"
+                  whileHover={{ scale: 1.03, y: -8 }}
                   style={{
-                    boxShadow: '0 8px 32px rgba(255, 203, 154, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(255, 203, 154, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                   }}
                 >
-                  <div className="absolute top-4 right-4 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-accent" />
+                  {/* Premium glass reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.1] via-transparent to-transparent rounded-3xl opacity-50"></div>
+                  
+                  {/* Icon with premium styling */}
+                  <div className="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-accent via-accent-light to-accent rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-accent/30 transition-all duration-300">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/60 to-accent-light/60 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">
-                    AI Leadership
-                  </h4>
-                  <p className="text-white/85 leading-relaxed">
-                    We don't just implement AI - we lead the industry in AI-driven consulting 
-                    methodologies that accelerate transformation and guarantee results.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <h4 className="font-black mb-4 text-2xl text-white uppercase tracking-[0.1em] leading-tight">
+                      AI Leadership
+                    </h4>
+                    <p className="text-white/90 leading-relaxed text-lg font-medium">
+                      We don't just implement AI - we lead the industry in AI-driven consulting 
+                      methodologies that accelerate transformation and guarantee results.
+                    </p>
+                  </div>
+                  
+                  {/* Premium hover glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  {/* Subtle border glow */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-br from-accent/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </motion.div>
               </div>
             </div>
@@ -190,23 +229,30 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="relative h-full text-center group overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-white/10 hover:border-secondary/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
-                  <CardContent className="p-8 relative z-10">
-                    <div className="relative mx-auto mb-6">
-                      <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg">
-                        <IconComponent className="w-10 h-10 text-white" />
+                <Card className="relative h-full text-center group overflow-hidden bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/[0.12] rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:border-secondary/30">
+                  <CardContent className="p-10 relative z-10">
+                    {/* Premium shadow layers */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent rounded-3xl opacity-60"></div>
+                    
+                    <div className="relative mx-auto mb-8">
+                      <div className="w-24 h-24 mx-auto bg-gradient-to-br from-primary via-secondary to-accent rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-secondary/30 transition-all duration-300">
+                        <IconComponent className="w-12 h-12 text-white" />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 rounded-3xl blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500"></div>
                     </div>
-                    <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">{credential.title}</h4>
-                    <p className="text-white/80 leading-relaxed">{credential.description}</p>
+                    
+                    <h4 className="font-black mb-4 text-xl text-white uppercase tracking-[0.1em]">{credential.title}</h4>
+                    <p className="text-white/85 leading-relaxed text-lg font-medium">{credential.description}</p>
                   </CardContent>
                   
-                  {/* Animated background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  {/* Premium hover effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/8 via-accent/4 to-primary/8 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl"></div>
                   
-                  {/* Geometric accent */}
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-secondary rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Enhanced border glow */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-br from-secondary/20 via-accent/10 to-primary/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
+                  
+                  {/* Geometric accent with glow */}
+                  <div className="absolute top-6 right-6 w-3 h-3 bg-secondary rounded-full opacity-40 group-hover:opacity-100 group-hover:shadow-lg group-hover:shadow-secondary/50 transition-all duration-300"></div>
                 </Card>
               </motion.div>
             );

@@ -153,7 +153,7 @@ export function ServicesSection() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105">
+                <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-primary/90 to-primary-dark/95 border border-primary/25 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105">
                   <CardContent className="p-10 relative z-10">
                     {/* Premium glass layers */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent rounded-3xl opacity-60"></div>

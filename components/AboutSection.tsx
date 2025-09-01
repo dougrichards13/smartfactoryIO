@@ -85,7 +85,7 @@ export function AboutSection() {
               <h3 className="text-2xl font-semibold">Our Vision & Differentiation</h3>
               <div className="space-y-4">
                 <motion.div 
-                  className="relative p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl group hover:border-primary/40 transition-all duration-500"
+                  className="relative p-8 bg-gradient-to-br from-primary/90 to-primary-dark/95 border border-primary/30 rounded-3xl backdrop-blur-xl group hover:border-primary/60 transition-all duration-500"
                   whileHover={{ scale: 1.03, y: -8 }}
                   style={{
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(17, 100, 102, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
@@ -118,7 +118,7 @@ export function AboutSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="relative p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl group hover:border-secondary/40 transition-all duration-500"
+                  className="relative p-8 bg-gradient-to-br from-primary/90 to-primary-dark/95 border border-secondary/30 rounded-3xl backdrop-blur-xl group hover:border-secondary/60 transition-all duration-500"
                   whileHover={{ scale: 1.03, y: -8 }}
                   style={{
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(217, 128, 140, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
@@ -151,7 +151,7 @@ export function AboutSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="relative p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.15] rounded-3xl backdrop-blur-xl group hover:border-accent/40 transition-all duration-500"
+                  className="relative p-8 bg-gradient-to-br from-primary/90 to-primary-dark/95 border border-accent/30 rounded-3xl backdrop-blur-xl group hover:border-accent/60 transition-all duration-500"
                   whileHover={{ scale: 1.03, y: -8 }}
                   style={{
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(255, 203, 154, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
@@ -229,7 +229,7 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="relative h-full text-center group overflow-hidden bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/[0.12] rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:border-secondary/30">
+                <Card className="relative h-full text-center group overflow-hidden bg-gradient-to-br from-primary/85 to-primary-dark/90 border border-primary/25 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:border-secondary/40">
                   <CardContent className="p-10 relative z-10">
                     {/* Premium shadow layers */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent rounded-3xl opacity-60"></div>

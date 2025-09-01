@@ -7,54 +7,60 @@
 :root {
   --font-size: 16px;
   
-  /* NEW AGGRESSIVE BRAND COLORS - Dark Theme Optimized */
-  /* Deep Blue - Primary */
-  --background: #0f1a2e;
+  /* FUTURISTIC CYBERPUNK COLOR PALETTE */
+  /* Dark Teal Base */
+  --background: #0a1f1c;
   --foreground: #ffffff;
-  --card: rgba(26, 35, 64, 0.8);
+  --card: rgba(17, 100, 102, 0.15);
   --card-foreground: #ffffff;
-  --popover: rgba(26, 35, 64, 0.95);
+  --popover: rgba(17, 100, 102, 0.95);
   --popover-foreground: #ffffff;
   
-  /* Primary - Deep Blue */
-  --primary: #1a2340;
+  /* Primary - Deep Teal */
+  --primary: #116466;
   --primary-foreground: #ffffff;
-  --primary-light: #2a3450;
-  --primary-dark: #0f1a2e;
+  --primary-light: #20807f;
+  --primary-dark: #0a4a4d;
   
-  /* Secondary - Emerald Green */
-  --secondary: #2ad18b;
-  --secondary-foreground: #1a2340;
-  --secondary-light: #4dd89f;
-  --secondary-dark: #1fb070;
+  /* Secondary - Bright Coral */
+  --secondary: #d9808c;
+  --secondary-foreground: #0a1f1c;
+  --secondary-light: #e6a5ae;
+  --secondary-dark: #c2616f;
   
-  /* Accent - Gold */
-  --accent: #ffd166;
-  --accent-foreground: #1a2340;
-  --accent-light: #ffe194;
-  --accent-dark: #f5c842;
+  /* Accent - Warm Peach */
+  --accent: #ffcb9a;
+  --accent-foreground: #0a1f1c;
+  --accent-light: #ffddb8;
+  --accent-dark: #f5b07c;
   
-  /* Slate Gray for neutral elements - Dark optimized */
-  --muted: rgba(42, 52, 80, 0.6);
-  --muted-foreground: #bdc1c9;
-  --neutral-100: #f5f6f8;
-  --neutral-200: #e8eaed;
-  --neutral-300: #dadce1;
-  --neutral-400: #bdc1c9;
-  --neutral-500: #bdc1c9;
-  --neutral-600: #dadce1;
-  --neutral-700: #e8eaed;
-  --neutral-800: #f5f6f8;
+  /* Tertiary - Light Teal */
+  --tertiary: #d1e8e2;
+  --tertiary-foreground: #0a1f1c;
+  --tertiary-light: #e8f4f1;
+  --tertiary-dark: #b4d4cc;
+  
+  /* Neutral elements */
+  --muted: rgba(17, 100, 102, 0.2);
+  --muted-foreground: #d1e8e2;
+  --neutral-100: #0a1f1c;
+  --neutral-200: #116466;
+  --neutral-300: #20807f;
+  --neutral-400: #d9808c;
+  --neutral-500: #ffcb9a;
+  --neutral-600: #d1e8e2;
+  --neutral-700: #e8f4f1;
+  --neutral-800: #f0f9f7;
   --neutral-900: #ffffff;
   
   /* System Colors */
-  --destructive: #dc3545;
+  --destructive: #ff6b6b;
   --destructive-foreground: #ffffff;
-  --border: rgba(26, 35, 64, 0.08);
+  --border: rgba(209, 232, 226, 0.15);
   --input: transparent;
-  --input-background: #f5f6f8;
-  --switch-background: #e8eaed;
-  --ring: #2ad18b;
+  --input-background: rgba(17, 100, 102, 0.1);
+  --switch-background: #d1e8e2;
+  --ring: #d9808c;
   
   /* Typography Weights */
   --font-weight-light: 300;
@@ -159,13 +165,13 @@
   body {
     @apply text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    /* Modern dark gradient background for better contrast */
+    /* Futuristic cyberpunk gradient background */
     background: linear-gradient(135deg, 
-      #0f1a2e 0%,     /* Deep blue dark */
-      #1a2340 25%,    /* Primary dark */
-      #2a3450 50%,    /* Primary light */
-      #1a2340 75%,    /* Back to primary */
-      #0f1a2e 100%    /* Deep blue dark */
+      #0a1f1c 0%,     /* Dark teal */
+      #116466 25%,    /* Primary teal */
+      #0a4a4d 50%,    /* Deep teal */
+      #116466 75%,    /* Back to primary */
+      #0a1f1c 100%    /* Dark teal */
     );
     background-attachment: fixed;
     background-size: 400% 400%;
@@ -358,7 +364,7 @@
   }
 
   .shadow-aggressive {
-    box-shadow: 0 10px 30px rgba(42, 209, 139, 0.15);
+    box-shadow: 0 10px 30px rgba(217, 128, 140, 0.25);
   }
 
   .bg-hero {
@@ -366,7 +372,7 @@
   }
 
   .bg-section-alt {
-    background: linear-gradient(180deg, var(--muted) 0%, rgba(42, 209, 139, 0.03) 100%);
+    background: linear-gradient(180deg, var(--muted) 0%, rgba(217, 128, 140, 0.05) 100%);
   }
 }
 
@@ -378,14 +384,14 @@
 
   .hover-lift:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(42, 209, 139, 0.2);
+    box-shadow: 0 20px 40px rgba(217, 128, 140, 0.3);
   }
 
   .glow-secondary {
-    box-shadow: 0 0 20px rgba(42, 209, 139, 0.3);
+    box-shadow: 0 0 20px rgba(217, 128, 140, 0.4);
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+    box-shadow: 0 0 20px rgba(255, 203, 154, 0.4);
   }
 }

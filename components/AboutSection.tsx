@@ -36,27 +36,38 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="section-padding bg-muted/30">
-      <div className="container-custom">
-        {/* Header */}
+    <section id="about" className="section-padding relative overflow-hidden">
+      {/* Enhanced background with geometric patterns */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      
+      <div className="container-custom relative z-10">
+        {/* Enhanced Header */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center max-w-5xl mx-auto mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-primary/10 border-primary/20 text-primary">
-            About Smart Factory
-          </Badge>
-          <h2 className="mb-6">
-            The Factory Approach to
-            <span className="text-gradient block">Enterprise Transformation</span>
+          <motion.div 
+            className="inline-flex items-center px-6 py-3 mb-8 bg-gradient-to-r from-secondary/20 to-accent/20 border border-secondary/30 rounded-full backdrop-blur-sm"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="w-2 h-2 bg-secondary rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-white">About Smart Factory</span>
+          </motion.div>
+          
+          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+            THE FACTORY APPROACH TO
+            <span className="block text-gradient mt-2">ENTERPRISE TRANSFORMATION</span>
           </h2>
-          <p className="lead text-white">
-            Since 2011, Smart Factory has pioneered a unique approach to enterprise consulting, 
-            combining C-level strategic expertise with AI-driven implementation methodologies. 
-            Our factory approach delivers predictable, scalable results for visionary leaders.
+          
+          <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
+            Since <span className="text-secondary font-bold">2010</span>, Smart Factory has pioneered a unique approach to enterprise consulting, 
+            combining <span className="text-accent font-bold">C-level strategic expertise</span> with AI-driven implementation methodologies. 
+            Our factory approach delivers <span className="text-secondary font-bold">predictable, scalable results</span> for visionary leaders.
           </p>
         </motion.div>
 
@@ -73,36 +84,65 @@ export function AboutSection() {
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold">Our Vision & Differentiation</h3>
               <div className="space-y-4">
-                <div className="p-4 bg-card border border-border rounded-xl">
-                  <h4 className="font-semibold mb-2 text-primary flex items-center">
-                    <Building2 className="w-5 h-5 mr-2" />
+                <motion.div 
+                  className="relative p-6 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-2xl backdrop-blur-sm group hover:border-primary/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    boxShadow: '0 8px 32px rgba(17, 100, 102, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Building2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">
                     The Factory Approach
                   </h4>
-                  <p className="text-sm text-white/80">
+                  <p className="text-white/85 leading-relaxed">
                     Like a modern manufacturing facility, we apply systematic, repeatable processes 
                     to transform human potential into business reality with precision and scale.
                   </p>
-                </div>
-                <div className="p-4 bg-card border border-border rounded-xl">
-                  <h4 className="font-semibold mb-2 text-secondary flex items-center">
-                    <Users className="w-5 h-5 mr-2" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                </motion.div>
+                
+                <motion.div 
+                  className="relative p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/30 rounded-2xl backdrop-blur-sm group hover:border-secondary/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    boxShadow: '0 8px 32px rgba(217, 128, 140, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
+                    <Users className="w-4 h-4 text-secondary" />
+                  </div>
+                  <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">
                     C-Level Expertise
                   </h4>
-                  <p className="text-sm text-white/80">
+                  <p className="text-white/85 leading-relaxed">
                     Our team consists of former C-suite executives who understand the strategic 
                     challenges and opportunities facing enterprise leaders today.
                   </p>
-                </div>
-                <div className="p-4 bg-card border border-border rounded-xl">
-                  <h4 className="font-semibold mb-2 text-accent flex items-center">
-                    <TrendingUp className="w-5 h-5 mr-2" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                </motion.div>
+                
+                <motion.div 
+                  className="relative p-6 bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/30 rounded-2xl backdrop-blur-sm group hover:border-accent/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    boxShadow: '0 8px 32px rgba(255, 203, 154, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
+                    <TrendingUp className="w-4 h-4 text-accent" />
+                  </div>
+                  <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">
                     AI Leadership
                   </h4>
-                  <p className="text-sm text-white/80">
+                  <p className="text-white/85 leading-relaxed">
                     We don't just implement AI - we lead the industry in AI-driven consulting 
                     methodologies that accelerate transformation and guarantee results.
                   </p>
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
@@ -150,14 +190,23 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full text-center hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 hover:border-primary/20">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                <Card className="relative h-full text-center group overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-white/10 hover:border-secondary/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
+                  <CardContent className="p-8 relative z-10">
+                    <div className="relative mx-auto mb-6">
+                      <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg">
+                        <IconComponent className="w-10 h-10 text-white" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <h4 className="font-semibold mb-2">{credential.title}</h4>
-                    <p className="text-sm text-white/80">{credential.description}</p>
+                    <h4 className="font-bold mb-3 text-lg text-white uppercase tracking-wider">{credential.title}</h4>
+                    <p className="text-white/80 leading-relaxed">{credential.description}</p>
                   </CardContent>
+                  
+                  {/* Animated background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  {/* Geometric accent */}
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-secondary rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Card>
               </motion.div>
             );

@@ -38,29 +38,37 @@ export function Header() {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-primary/95 backdrop-blur-md shadow-aggressive border-b border-secondary/20' 
-          : 'bg-transparent'
-      }`}
+          ? 'bg-primary/80 backdrop-blur-xl border-b border-secondary/30' 
+          : 'bg-gradient-to-b from-black/20 to-transparent'
+      } shadow-2xl`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
+      style={{
+        boxShadow: isScrolled 
+          ? '0 8px 32px rgba(217, 128, 140, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)' 
+          : 'none'
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-3"
-            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-4"
+            whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <div className="w-10 h-10 gradient-secondary rounded-lg flex items-center justify-center glow-secondary">
-              <span className="text-secondary-foreground font-black text-lg">SF</span>
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-secondary via-accent to-secondary rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-primary font-black text-xl">SF</span>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 rounded-xl blur-lg -z-10"></div>
             </div>
             <div className="flex flex-col">
-              <span className="font-black text-lg text-white uppercase tracking-wider leading-none">SMART FACTORY</span>
-              <span className="text-xs text-secondary font-bold uppercase tracking-wider leading-none">AI CONSULTING</span>
+              <span className="font-black text-xl text-white uppercase tracking-[0.2em] leading-none drop-shadow-lg">SMART FACTORY</span>
+              <span className="text-sm text-secondary font-bold uppercase tracking-[0.15em] leading-none mt-0.5">AI CONSULTING</span>
             </div>
           </motion.div>
 
@@ -70,14 +78,15 @@ export function Header() {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-bold text-white/80 hover:text-secondary transition-colors uppercase tracking-wider relative group"
-                whileHover={{ scale: 1.05 }}
+                className="relative text-sm font-bold text-white/90 hover:text-white transition-all duration-300 uppercase tracking-[0.1em] py-2 px-1 group"
+                whileHover={{ y: -2 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 {item.label}
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></div>
+                <div className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent transition-all duration-500 group-hover:w-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10"></div>
               </motion.button>
             ))}
           </nav>
@@ -85,12 +94,18 @@ export function Header() {
           {/* Desktop CTA & Dark Mode */}
           <div className="hidden lg:flex items-center space-x-4">
             <DarkModeToggle />
-            <Button 
-              onClick={scrollToContact}
-              className="gradient-accent text-accent-foreground font-bold px-6 py-2 hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-accent/20 uppercase tracking-wider"
-            >
-              GET STARTED
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                onClick={scrollToContact}
+                className="relative bg-gradient-to-r from-secondary to-accent text-primary font-bold px-8 py-3 rounded-xl uppercase tracking-[0.1em] text-sm shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20"
+                style={{
+                  boxShadow: '0 4px 20px rgba(217, 128, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                }}
+              >
+                GET STARTED
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}

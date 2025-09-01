@@ -66,26 +66,37 @@ export function TeamSection() {
   ];
 
   return (
-    <section id="team" className="section-padding bg-muted/30">
-      <div className="container-custom">
-        {/* Header */}
+    <section id="team" className="section-padding relative overflow-hidden">
+      {/* Enhanced background with geometric patterns */}
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-accent/5"></div>
+      <div className="absolute top-0 left-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="container-custom relative z-10">
+        {/* Enhanced Header */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center max-w-5xl mx-auto mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-accent/10 border-accent/20 text-accent-foreground">
-            Leadership Team
-          </Badge>
-          <h2 className="mb-6">
-            C-Level Expertise
-            <span className="text-gradient block">Enterprise Leadership Experience</span>
+          <motion.div 
+            className="inline-flex items-center px-6 py-3 mb-8 bg-gradient-to-r from-accent/20 to-primary/20 border border-accent/30 rounded-full backdrop-blur-sm"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="w-2 h-2 bg-accent rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-white">Leadership Team</span>
+          </motion.div>
+          
+          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+            C-LEVEL EXPERTISE
+            <span className="block text-gradient mt-2">ENTERPRISE LEADERSHIP EXPERIENCE</span>
           </h2>
-          <p className="lead text-white/80">
-            Our leadership team consists of former C-suite executives with proven track records 
-            of driving transformation at Fortune 500 companies. We understand enterprise challenges 
+          
+          <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
+            Our leadership team consists of <span className="text-accent font-bold">former C-suite executives</span> with proven track records 
+            of driving transformation at <span className="text-secondary font-bold">Fortune 500 companies</span>. We understand enterprise challenges 
             because we've lived them.
           </p>
         </motion.div>
@@ -102,14 +113,23 @@ export function TeamSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 mx-auto mb-4 bg-accent/10 rounded-xl flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-accent" />
+                <Card className="relative text-center group overflow-hidden bg-gradient-to-br from-accent/5 to-primary/5 border border-white/10 hover:border-accent/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
+                  <CardContent className="p-8 relative z-10">
+                    <div className="relative mx-auto mb-6">
+                      <div className="w-16 h-16 mx-auto bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/40 to-accent-light/40 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div className="text-2xl font-bold text-accent mb-1">{stat.value}</div>
-                    <div className="text-sm text-white/80">{stat.label}</div>
+                    <div className="text-3xl font-black text-white mb-2">{stat.value}</div>
+                    <div className="text-sm text-white/80 font-semibold uppercase tracking-wider">{stat.label}</div>
                   </CardContent>
+                  
+                  {/* Animated background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  {/* Geometric accent */}
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-accent rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Card>
               </motion.div>
             );
@@ -126,20 +146,25 @@ export function TeamSection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 hover:border-primary/20">
-                <CardContent className="p-8">
-                  {/* Profile Image */}
-                  <div className="text-center mb-6">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
-                      <ImageWithFallback
-                        src={leader.image}
-                        alt={leader.name}
-                        className="w-full h-full object-cover"
-                      />
+              <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-white/10 hover:border-primary/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
+                <CardContent className="p-8 relative z-10">
+                  {/* Enhanced Profile Image */}
+                  <div className="text-center mb-8">
+                    <div className="relative mx-auto mb-6">
+                      <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary to-secondary p-1 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-full h-full rounded-full overflow-hidden">
+                          <ImageWithFallback
+                            src={leader.image}
+                            alt={leader.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-1">{leader.name}</h3>
-                    <p className="text-sm font-medium text-primary mb-2">{leader.title}</p>
-                    <p className="text-xs text-white/80">{leader.background}</p>
+                    <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wider">{leader.name}</h3>
+                    <p className="text-lg font-semibold text-primary mb-2">{leader.title}</p>
+                    <p className="text-sm text-white/80 font-medium">{leader.background}</p>
                   </div>
 
                   {/* Expertise */}

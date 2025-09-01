@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import { DarkModeToggle } from './DarkModeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Header() {
@@ -56,20 +55,11 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-4"
+            className="flex items-center"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-secondary via-accent to-secondary rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-primary font-black text-xl">SF</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 to-accent/40 rounded-xl blur-lg -z-10"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-black text-xl text-white uppercase tracking-[0.2em] leading-none drop-shadow-lg">SMART FACTORY</span>
-              <span className="text-sm text-secondary font-bold uppercase tracking-[0.15em] leading-none mt-0.5">AI CONSULTING</span>
-            </div>
+            <span className="font-black text-2xl text-white uppercase tracking-[0.2em] leading-none drop-shadow-lg">SMART FACTORY</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -92,25 +82,23 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA & Dark Mode */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <DarkModeToggle />
+          <div className="hidden lg:flex items-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
                 onClick={scrollToContact}
-                className="relative bg-gradient-to-r from-secondary to-accent text-primary font-bold px-8 py-3 rounded-xl uppercase tracking-[0.1em] text-sm shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20"
+                className="relative bg-gradient-to-r from-secondary to-accent text-black font-bold px-8 py-3 rounded-xl uppercase tracking-[0.1em] text-sm shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10"
                 style={{
-                  boxShadow: '0 4px 20px rgba(217, 128, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  boxShadow: '0 4px 20px rgba(217, 128, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
                 }}
               >
                 GET STARTED
-                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-2">
-            <DarkModeToggle />
+          <div className="lg:hidden flex items-center">
             <Button
               variant="ghost"
               size="sm"

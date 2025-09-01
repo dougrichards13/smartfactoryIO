@@ -105,26 +105,37 @@ export function ServicesSection() {
   };
 
   return (
-    <section id="services" className="section-padding bg-muted/30">
-      <div className="container-custom">
-        {/* Header */}
+    <section id="services" className="section-padding relative overflow-hidden">
+      {/* Enhanced background with geometric patterns */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5"></div>
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+      
+      <div className="container-custom relative z-10">
+        {/* Enhanced Header */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center max-w-5xl mx-auto mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-accent/10 border-accent/20 text-accent-foreground">
-            Smart Factory Consultant Types
-          </Badge>
-          <h2 className="mb-6">
-            Three Pillars of Enterprise 
-            <span className="text-gradient block">Transformation Excellence</span>
+          <motion.div 
+            className="inline-flex items-center px-6 py-3 mb-8 bg-gradient-to-r from-accent/20 to-secondary/20 border border-accent/30 rounded-full backdrop-blur-sm"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="w-2 h-2 bg-accent rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-white">Smart Factory Consultant Types</span>
+          </motion.div>
+          
+          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+            THREE PILLARS OF ENTERPRISE
+            <span className="block text-gradient mt-2">TRANSFORMATION EXCELLENCE</span>
           </h2>
-          <p className="lead text-white/80">
-            Our specialized consultant types work seamlessly together or independently to deliver 
-            comprehensive enterprise transformation with measurable ROI and strategic impact.
+          
+          <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
+            Our <span className="text-accent font-bold">specialized consultant types</span> work seamlessly together or independently to deliver 
+            comprehensive enterprise transformation with <span className="text-secondary font-bold">measurable ROI</span> and strategic impact.
           </p>
         </motion.div>
 
@@ -142,57 +153,70 @@ export function ServicesSection() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className={`h-full hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 ${colorClasses.border} ${colorClasses.bg} group`}>
-                  <CardContent className="p-8">
-                    {/* Icon & Title */}
-                    <div className="text-center mb-6">
-                      <div className={`w-20 h-20 mx-auto mb-4 rounded-xl ${colorClasses.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className={`w-10 h-10 ${colorClasses.icon}`} />
+                <Card className="relative h-full group overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-white/10 hover:border-secondary/30 backdrop-blur-sm transition-all duration-500 hover:scale-105">
+                  <CardContent className="p-8 relative z-10">
+                    {/* Enhanced Icon & Title */}
+                    <div className="text-center mb-8">
+                      <div className="relative mx-auto mb-6">
+                        <div className={`w-24 h-24 mx-auto bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary to-primary-light' : consultant.color === 'secondary' ? 'from-secondary to-secondary-light' : 'from-accent to-accent-light'} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="w-12 h-12 text-white" />
+                        </div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/40 to-primary-light/40' : consultant.color === 'secondary' ? 'from-secondary/40 to-secondary-light/40' : 'from-accent/40 to-accent-light/40'} rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300`}></div>
                       </div>
-                      <h3 className="text-xl font-semibold mb-1">{consultant.title}</h3>
-                      <p className="text-sm text-white/80 font-medium">{consultant.subtitle}</p>
+                      <h3 className="text-2xl font-bold mb-2 text-white uppercase tracking-wider">{consultant.title}</h3>
+                      <p className="text-lg text-white/80 font-semibold">{consultant.subtitle}</p>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-white/80 leading-relaxed mb-6 text-center">
+                    {/* Enhanced Description */}
+                    <p className="text-white/85 leading-relaxed mb-8 text-center text-lg">
                       {consultant.description}
                     </p>
 
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold mb-3 text-foreground">Core Capabilities:</h4>
-                      <div className="space-y-2">
+                    {/* Enhanced Features */}
+                    <div className="mb-8">
+                      <h4 className="text-lg font-bold mb-4 text-white uppercase tracking-wider text-center">Core Capabilities</h4>
+                      <div className="space-y-3">
                         {consultant.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2">
-                            <div className={`w-1.5 h-1.5 rounded-full ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'}`}></div>
-                            <span className="text-xs text-white/80">{feature}</span>
+                          <div key={featureIndex} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors duration-200">
+                            <div className={`w-2 h-2 rounded-full ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} shadow-lg`}></div>
+                            <span className="text-sm text-white/80 font-medium">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Investment & Duration */}
-                    <div className="space-y-3 mb-6">
+                    {/* Enhanced Investment & Duration */}
+                    <div className="space-y-4 mb-8 p-4 bg-white/5 rounded-xl border border-white/10">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium text-foreground">Investment:</span>
-                        <Badge variant="outline" className={colorClasses.badge}>
+                        <span className="text-sm font-bold text-white uppercase tracking-wider">Investment:</span>
+                        <Badge className={`px-3 py-1 ${consultant.color === 'primary' ? 'bg-primary/20 text-primary border-primary/30' : consultant.color === 'secondary' ? 'bg-secondary/20 text-secondary border-secondary/30' : 'bg-accent/20 text-accent border-accent/30'} border font-bold`}>
                           {consultant.investment}
                         </Badge>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium text-foreground">Timeline:</span>
-                        <span className="text-sm text-white/80">{consultant.duration}</span>
+                        <span className="text-sm font-bold text-white uppercase tracking-wider">Timeline:</span>
+                        <span className="text-sm text-white/90 font-semibold">{consultant.duration}</span>
                       </div>
                     </div>
 
-                    {/* CTA */}
+                    {/* Enhanced CTA */}
                     <Button 
                       onClick={scrollToContact}
-                      className={`w-full ${colorClasses.gradient} text-white hover:shadow-lg transition-all duration-300 group`}
+                      className={`w-full py-4 text-lg font-bold uppercase tracking-wider bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary to-primary-light' : consultant.color === 'secondary' ? 'from-secondary to-secondary-light' : 'from-accent to-accent-light'} text-white hover:shadow-2xl transition-all duration-300 group border border-white/20`}
+                      style={{
+                        boxShadow: consultant.color === 'primary' ? '0 4px 20px rgba(17, 100, 102, 0.4)' : consultant.color === 'secondary' ? '0 4px 20px rgba(217, 128, 140, 0.4)' : '0 4px 20px rgba(255, 203, 154, 0.4)'
+                      }}
                     >
                       {consultant.cta}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                      <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </Button>
+                    
+                    {/* Geometric accent */}
+                    <div className={`absolute top-4 right-4 w-3 h-3 ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                    
+                    {/* Animated background gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${consultant.color === 'primary' ? 'from-primary/10 to-primary-light/10' : consultant.color === 'secondary' ? 'from-secondary/10 to-secondary-light/10' : 'from-accent/10 to-accent-light/10'} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg`}></div>
                   </CardContent>
                 </Card>
               </motion.div>

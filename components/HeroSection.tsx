@@ -5,13 +5,19 @@ import { motion } from 'framer-motion';
 export function HeroSection() {
   const trustIndicators = [
     "$5B+ Project Impact",
-    "14+ Years Enterprise Focus",
+    "15+ Years Enterprise Focus",
     "C-Level Expertise"
   ];
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToResults = () => {
+    // Try to scroll to results section first, fallback to team if results doesn't exist
+    const resultsSection = document.getElementById('results') || document.getElementById('team');
+    resultsSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -59,9 +65,11 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Partner with the premier AI consulting firm that transforms enterprise potential 
-              into measurable business outcomes. Trusted by C-suite executives for strategic 
-              technology leadership and transformational AI implementation.
+              Smart Factory delivers visionary consulting for those who shape industries. 
+              Proven across sectors, our experts unlock millions to billions in growth through 
+              precision strategy, scalable solutions, and transformational leadership.
+              <br /><br />
+              <span className="text-primary font-bold">Technology is our language; transformation is our product.</span>
             </motion.p>
 
             {/* Trust Indicators */}
@@ -79,9 +87,9 @@ export function HeroSection() {
               ))}
             </motion.div>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex justify-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -89,18 +97,10 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 onClick={scrollToContact}
-                className="gradient-secondary text-secondary-foreground px-8 py-4 text-lg font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 group border-2 border-secondary/50"
+                className="gradient-secondary text-secondary-foreground px-10 py-4 text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 group border-2 border-secondary/50"
               >
-                TALK TO A SMART ARCHITECT™
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="px-8 py-4 text-lg font-bold border-2 border-white/40 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300 group"
-              >
-                <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                VIEW OUR IMPACT
+                GET YOUR STRATEGIC ASSESSMENT
+                <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </Button>
             </motion.div>
           </div>

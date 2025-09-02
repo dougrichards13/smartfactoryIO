@@ -1,0 +1,58 @@
+{
+  "metrics": [
+    {
+      "id": "portfolio-growth",
+      "value": "847%",
+      "title": "Proven Impact and Results",
+      "subtitle": "Portfolio growth: Current Fortune 500 client engagement demonstrating sustained value creation over 5-year strategic partnership",
+      "icon": "TrendingUp",
+      "color": "primary",
+      "animationDuration": 2500
+    },
+    {
+      "id": "valuation-multiplier",
+      "value": "4.1x",
+      "title": "Valuation Excellence",
+      "subtitle": "$410M → $1.7B successful acquisition: Documented enterprise transformation driving measurable shareholder value",
+      "icon": "Building2",
+      "color": "secondary",
+      "animationDuration": 2000
+    },
+    {
+      "id": "years-experience",
+      "value": "15+",
+      "title": "Years of Excellence",
+      "subtitle": "Transforming enterprises since 2010: Consistent delivery across multiple industries and market conditions",
+      "icon": "Award",
+      "color": "accent",
+      "animationDuration": 1500
+    },
+    {
+      "id": "total-impact",
+      "value": "$5B+",
+      "title": "Cumulative Value Creation",
+      "subtitle": "Total documented project value delivered: Verifiable through public market data and qualified reference discussions",
+      "icon": "DollarSign",
+      "color": "primary",
+      "animationDuration": 3000
+    }
+  ],
+  "settings": {
+    "animateOnScroll": true,
+    "showSubtitles": true,
+    "enableHover": true
+  },
+  "disclaimer": {
+    "title": "Professional Disclosure and Verification",
+    "content": "Results shown represent actual client engagements and documented outcomes. Specific client identities and proprietary methodologies are protected under confidentiality agreements. Detailed case studies, methodologies, and verification of results are available to qualified prospects through our due diligence process. Public market validation available where applicable.",
+    "verification": {
+      "available": true,
+      "methods": ["Reference calls with qualified prospects", "Public market data validation", "Third-party audit documentation", "Due diligence data room access"]
+    }
+  },
+  "credibility": {
+    "certifications": ["Fortune 500 Partnership History", "Documented M&A Advisory", "Public Company Board Experience", "Industry Recognition Awards"],
+    "validation_sources": ["SEC Filings", "Industry Publications", "Client References", "Market Research Reports"]
+  },
+  "lastUpdated": "2025-09-02"
+}

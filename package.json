@@ -1,6 +1,6 @@
 {
   "name": "smart-factory-wanda",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Smart Factory - AI Consulting Website",
   "type": "module",
   "scripts": {
@@ -17,6 +17,7 @@
     "lucide-react": "^0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "recharts": "^3.1.2",
     "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {

@@ -10,9 +10,9 @@ export function ServicesSection() {
       icon: Users2,
       title: "Smart Architects™",
       subtitle: "C-Suite Fractional Leadership",
-      description: "Strategic technology leaders who integrate seamlessly with your C-suite to drive digital transformation, AI strategy, and operational excellence initiatives.",
+      description: "Strategic technology leaders who integrate seamlessly with your C-suite to drive digital transformation, strategy, and operational excellence initiatives.",
       features: [
-        "Fractional CTO/CIO Services",
+        "Fractional Executives",
         "Technology Strategy & Roadmapping", 
         "Digital Transformation Leadership",
         "Board-Level Technology Advisory",
@@ -120,16 +120,8 @@ export function ServicesSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <motion.div 
-            className="inline-flex items-center px-6 py-3 mb-8 bg-gradient-to-r from-accent/20 to-secondary/20 border border-accent/30 rounded-full backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-2 h-2 bg-accent rounded-full mr-3 animate-pulse"></div>
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-white">Smart Factory Consultant Types</span>
-          </motion.div>
-          
           <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
-            THREE PILLARS OF ENTERPRISE
+            THREE PILLARS OF
             <span className="block text-gradient mt-2">TRANSFORMATION EXCELLENCE</span>
           </h2>
           
@@ -140,7 +132,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Consultant Types Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16">
           {consultantTypes.map((consultant, index) => {
             const colorClasses = getColorClasses(consultant.color);
             const IconComponent = consultant.icon;
@@ -152,9 +144,10 @@ export function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                className="flex"
               >
-                <Card className="relative h-full group overflow-hidden bg-[#232632] border border-primary/25 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105">
-                  <CardContent className="p-10 relative z-10">
+                <Card className="relative w-full group overflow-hidden bg-[#232632] border border-primary/25 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex flex-col">
+                  <CardContent className="p-8 lg:p-10 relative z-10 flex flex-col flex-grow">
                     {/* Premium glass layers */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent rounded-3xl opacity-60"></div>
                     
@@ -198,7 +191,7 @@ export function ServicesSection() {
                     <div className="space-y-5 mb-10 p-6 bg-gradient-to-br from-white/[0.08] to-white/[0.02] rounded-2xl border border-white/[0.1] backdrop-blur-sm">
                       <div className="flex justify-between items-center">
                         <span className="text-base font-black text-white uppercase tracking-[0.1em]">Investment:</span>
-                        <Badge className={`px-4 py-2 text-base font-bold ${consultant.color === 'primary' ? 'bg-gradient-to-r from-primary to-primary-light text-white' : consultant.color === 'secondary' ? 'bg-gradient-to-r from-secondary to-secondary-light text-white' : 'bg-gradient-to-r from-accent to-accent-light text-white'} border-0 shadow-lg`}
+                        <Badge className={`px-3 py-1 text-sm font-bold ${consultant.color === 'primary' ? 'bg-gradient-to-r from-primary to-primary-light text-white' : consultant.color === 'secondary' ? 'bg-gradient-to-r from-secondary to-secondary-light text-white' : 'bg-gradient-to-r from-accent to-accent-light text-white'} border-0 shadow-lg`}
                                style={{
                                  boxShadow: consultant.color === 'primary' ? '0 4px 12px rgba(17, 100, 102, 0.4)' : consultant.color === 'secondary' ? '0 4px 12px rgba(217, 128, 140, 0.4)' : '0 4px 12px rgba(255, 203, 154, 0.4)'
                                }}>
@@ -214,14 +207,14 @@ export function ServicesSection() {
                     {/* Premium CTA */}
                     <Button 
                       onClick={scrollToContact}
-                      className={`relative w-full py-5 text-xl font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-white transition-all duration-500 group border-0 rounded-2xl overflow-hidden`}
+                      className={`relative w-full py-3 text-sm font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-white transition-all duration-500 group border-0 rounded-2xl overflow-hidden`}
                       style={{
                         boxShadow: consultant.color === 'primary' ? '0 8px 32px rgba(17, 100, 102, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : consultant.color === 'secondary' ? '0 8px 32px rgba(217, 128, 140, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : '0 8px 32px rgba(255, 203, 154, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
                       }}
                     >
                       <span className="relative z-10 flex items-center justify-center">
                         {consultant.cta}
-                        <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-3 transition-transform duration-300" />
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                       </span>
                       <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -246,38 +239,6 @@ export function ServicesSection() {
           })}
         </div>
 
-        {/* Assembly Line Concept */}
-        <motion.div
-          className="text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-12 border border-border/50"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold mb-4">The Smart Factory Assembly Line</h3>
-          <p className="text-white/80 mb-6 max-w-3xl mx-auto">
-            Like a precision manufacturing facility, our three consultant types work in orchestrated 
-            harmony to transform your enterprise. Smart Architects™ design the strategy, Smart Engineers™ 
-            build the solutions, and Smart Assurance™ guarantees quality outcomes.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={scrollToContact}
-              className="gradient-primary text-white px-8 py-4 hover:shadow-xl transition-all duration-300"
-            >
-              Design Your Factory Team
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-4 border-2"
-            >
-              View Assembly Process
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

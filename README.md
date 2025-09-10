@@ -1,8 +1,46 @@
-# Smart Factory - AI Consulting Website
+# Smart Factory - AI Consulting Website with WandaVision Editor
 
 **Live Site**: [https://smartfactory.io](https://smartfactory.io)
 
 A modern, high-performance React website showcasing Smart Factory's AI consulting services and enterprise AI transformation capabilities. Built with cutting-edge technologies and a professional tech-forward design aesthetic.
+
+## 🎨 WandaVision Editor - Live Content Management System
+
+**Status**: Phase 1 Complete ✅ | Phase 2 In Progress 🔧
+
+### Live Inline Editing System
+Revolutionary content editing experience that allows non-technical users to edit website content in real-time with immediate visual feedback.
+
+#### ✅ Working Features (Phase 1)
+- **`Ctrl+Shift+E`** - Keyboard shortcut to toggle editor mode
+- **Split-Screen Interface** - Editor panel slides in from right, main site updates live on left
+- **Real-Time Updates** - Changes appear instantly on main website as you type
+- **Multi-Section Support** - Hero, About, Services, Contact, Global settings
+- **User-Friendly Labels** - "Current..." labels instead of technical jargon
+- **Pre-Populated Fields** - Form fields show actual content from JSON files
+- **Character Counters** - Built-in limits and editing guidance
+
+#### 🔧 In Development (Phase 2 - Tomorrow)
+- **Reset Functionality** - Context connected, debugging reset logic
+- **Save Changes** - File persistence implementation needed
+- **Additional Sections** - About, Services, Contact editor integration
+
+#### Technical Architecture
+```
+├── src/contexts/
+│   ├── EditModeContext.tsx    # Editor toggle and keyboard shortcuts
+│   └── ContentContext.tsx     # Shared content state management
+├── components/editors/
+│   ├── HeroEditor.tsx         # Hero section form editor
+│   ├── AboutEditor.tsx        # About section editor
+│   ├── ServicesEditor.tsx     # Services content editor
+│   ├── ContactEditor.tsx      # Contact information editor
+│   └── GlobalEditor.tsx       # Site-wide settings
+└── content/
+    ├── hero.json             # Hero section content
+    ├── about.json            # About section content
+    └── *.json               # Additional content files
+```
 
 ## 🚀 Quick Start
 

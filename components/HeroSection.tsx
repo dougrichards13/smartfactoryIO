@@ -2,13 +2,15 @@ import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useContent } from '../src/contexts/ContentContext';
 
-// Import hero content
+// Import hero content for fallback
 import heroContent from '../content/hero.json';
 
 export function HeroSection() {
-  // Use content from JSON file
-  const { headline, description, tagline, trustIndicators, ctaButton } = heroContent;
+  // Use content from shared context for live updates
+  const { content } = useContent();
+  const { headline, description, tagline, trustIndicators, ctaButton } = content.hero;
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');

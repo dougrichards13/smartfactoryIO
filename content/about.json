@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": {
+      "line1": "THE FACTORY APPROACH TO",
+      "line2": "ENTERPRISE TRANSFORMATION"
+    },
+    "description": "Since {foundingYear}, Smart Factory has redefined enterprise consulting by driving measurable results for owners, leaders, investors, stakeholders, and teams. Our {expertiseTypes} and recently, our AI-driven methods, consistently deliver {keyOutcome} that change the trajectory of organizations and the lives behind them. This is enterprise transformation, engineered for visionaries.",
+    "foundingYear": "2010",
+    "expertiseTypes": "C-level experts, engineers, QA leaders",
+    "keyOutcome": "scalable results"
+  },
+  "clientPortfolioHeader": {
+    "title": "Elite Client Portfolio",
+    "description": "{yearsExperience} years of delivering transformational results for the world's most demanding organizations. From {clientType1} to {clientType2}, our track record speaks for itself.",
+    "yearsExperience": "15",
+    "clientType1": "Fortune 100 enterprises",
+    "clientType2": "federal institutions"
+  },
+  "portfolioSummary": {
+    "totalImpact": {
+      "value": "$5B+",
+      "title": "Total Portfolio Impact",
+      "subtitle": "Documented value creation"
+    },
+    "majorEnterprises": {
+      "value": "25+",
+      "title": "Major Enterprises", 
+      "subtitle": "Fortune 500 & Global Leaders"
+    },
+    "clientRetention": {
+      "value": "100%",
+      "title": "Client Retention",
+      "subtitle": "Long-term partnerships"
+    }
+  },
+  "portfolioFooter": {
+    "publicEngagements": "Public company engagements showcase our proven ability to deliver under the highest scrutiny.",
+    "privateSuccess": "Private client success demonstrates our versatility across all enterprise scales."
+  }
+}

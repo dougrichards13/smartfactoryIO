@@ -1,0 +1,15 @@
+{
+  "brand": "SMART FACTORY",
+  "navItems": [
+    { "label": "ABOUT", "id": "about" },
+    { "label": "SERVICES", "id": "services" },
+    { "label": "AI ACCELERATOR", "id": "ai-accelerator" },
+    { "label": "METHOD", "id": "method" },
+    { "label": "RESULTS", "id": "results" },
+    { "label": "TEAM", "id": "team" }
+  ],
+  "cta": {
+    "desktop": "GET STARTED",
+    "mobile": "GET STARTED"
+  }
+}

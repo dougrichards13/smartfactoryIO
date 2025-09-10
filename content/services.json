@@ -1,0 +1,64 @@
+{
+  "header": {
+    "title": {
+      "line1": "THREE PILLARS OF",
+      "line2": "TRANSFORMATION EXCELLENCE"
+    },
+    "description": "Our {specializedTypes} work seamlessly together or independently to deliver comprehensive enterprise transformation with {keyBenefit} and strategic impact.",
+    "specializedTypes": "specialized consultant types",
+    "keyBenefit": "measurable ROI"
+  },
+  "consultantTypes": [
+    {
+      "title": "Smart Architects™",
+      "subtitle": "C-Suite Fractional Leadership",
+      "description": "Strategic technology leaders who integrate seamlessly with your C-suite to drive digital transformation, strategy, and operational excellence initiatives.",
+      "features": [
+        "Fractional Executives",
+        "Technology Strategy & Roadmapping",
+        "Digital Transformation Leadership",
+        "Board-Level Technology Advisory",
+        "M&A Technology Due Diligence",
+        "Innovation Portfolio Management"
+      ],
+      "investment": "$50K - $200K/quarter",
+      "duration": "3-12 months",
+      "color": "primary",
+      "cta": "Engage a Smart Architect™"
+    },
+    {
+      "title": "Smart Engineers™",
+      "subtitle": "AI-Empowered Technology Experts", 
+      "description": "Multi-disciplinary technology specialists leveraging AI to accelerate integration, implementation, data science, and technical delivery across your enterprise.",
+      "features": [
+        "AI Solution Development",
+        "Enterprise System Integration",
+        "Data Science & Analytics",
+        "Cloud Architecture & Migration",
+        "Automation & Process Optimization",
+        "Technical Team Augmentation"
+      ],
+      "investment": "$100K - $500K/project",
+      "duration": "2-9 months",
+      "color": "secondary",
+      "cta": "Deploy Smart Engineers™"
+    },
+    {
+      "title": "Smart Assurance™",
+      "subtitle": "AI-Driven Quality & Testing",
+      "description": "Quality and testing professionals utilizing AI-driven methodologies to ensure ISO standards compliance, automated testing, and risk-managed implementations.",
+      "features": [
+        "AI-Powered Quality Assurance",
+        "ISO Standards Implementation", 
+        "Automated Testing Frameworks",
+        "Risk Assessment & Mitigation",
+        "Compliance & Governance",
+        "Continuous Quality Monitoring"
+      ],
+      "investment": "$25K - $150K/engagement",
+      "duration": "1-6 months",
+      "color": "accent",
+      "cta": "Secure Smart Assurance™"
+    }
+  ]
+}

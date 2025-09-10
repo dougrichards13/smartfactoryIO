@@ -1,0 +1,34 @@
+{
+  "company": {
+    "name": "Smart Factory",
+    "tagline": "Transforming human potential into business reality through AI-driven consulting since 2011",
+    "foundingYear": 2011,
+    "currentYear": 2025
+  },
+  "contact": {
+    "phone": "+1 (555) 123-4567",
+    "email": "leadership@smartfactory.io",
+    "website": "https://smartfactory.io"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/smartfactory",
+    "twitter": "https://twitter.com/smartfactoryio", 
+    "youtube": "https://youtube.com/@smartfactory"
+  },
+  "footer": {
+    "copyright": "© {currentYear} Smart Factory. All rights reserved.",
+    "description": "Transforming human potential into business reality through AI-driven consulting since {foundingYear}.",
+    "services": [
+      {"label": "Smart Architects™", "id": "services"},
+      {"label": "Smart Engineers™", "id": "services"},
+      {"label": "Smart Assurance™", "id": "services"},
+      {"label": "AI Accelerator™", "id": "ai-accelerator"}
+    ],
+    "company": [
+      {"label": "About", "id": "about"},
+      {"label": "Method", "id": "method"},
+      {"label": "Leadership", "id": "team"},
+      {"label": "Results", "id": "results"}
+    ]
+  }
+}

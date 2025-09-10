@@ -21,6 +21,43 @@
 - **Trust indicators**: The bullet points ($ amounts, years, etc.)
 - **Button text**: The green button text
 
+#### About Section (`about.json`)
+**What you can change:**
+- **Section title**: The main heading
+- **Description**: Company overview text
+- **Portfolio stats**: $5B+, 25+, 100% values
+- **Years of experience**: Founding year and experience count
+
+#### Services Section (`services.json`)
+**What you can change:**
+- **Section title**: The main heading
+- **Service descriptions**: For each Smart service type
+- **Features**: Capability lists for each service
+- **Investment ranges**: Pricing information
+- **Duration**: Project timelines
+- **Button text**: CTA buttons for each service
+
+#### Contact Section (`contact.json`)
+**What you can change:**
+- **Section title**: Main heading
+- **Assistant description**: AI chatbot description
+- **Contact methods**: Phone, email, scheduling text
+- **Qualification criteria**: Client requirements
+- **Response guarantees**: Time commitments
+
+#### Navigation (`navigation.json`)
+**What you can change:**
+- **Brand name**: Company name in header
+- **Menu items**: Navigation labels
+- **CTA buttons**: Header button text
+
+#### Global Content (`global.json`)
+**What you can change:**
+- **Company info**: Name, tagline, founding year
+- **Contact details**: Phone, email, website
+- **Social links**: LinkedIn, Twitter, YouTube
+- **Footer content**: Copyright, descriptions, links
+
 **Example edit:**
 ```json
 {
@@ -60,12 +97,15 @@
 - **Preview changes**: After committing, check https://smartfactory.io in a few minutes
 - **Need help**: Contact the development team
 
-### Future Sections
-More sections will be added to this system:
-- About section content
-- Services descriptions  
-- Team information
-- Contact details
+### All Major Sections Complete!
+✅ **Hero Section** - Main page banner and CTA
+✅ **About Section** - Company overview and portfolio
+✅ **Services Section** - Smart Architects™, Engineers™, Assurance™
+✅ **Contact Section** - All contact methods and qualification
+✅ **Navigation** - Header menu and branding
+✅ **Global Content** - Company info and footer
+
+*Future additions may include Team section, Method section, and AI Accelerator section content.*
 
 ---
 

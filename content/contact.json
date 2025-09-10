@@ -1,0 +1,88 @@
+{
+  "header": {
+    "badge": "Let's Talk",
+    "title": {
+      "line1": "Talk to a Smart Architect™",
+      "line2": "Strategic Consultation Awaits"
+    },
+    "description": "Ready to transform your enterprise with AI? Our Smart Assistant will qualify your needs and connect you with the right Smart Architect™ for a strategic consultation tailored to your organization's goals and budget."
+  },
+  "primaryCTA": {
+    "title": "Smart Factory AI Assistant",
+    "description": "Our AI-powered assistant will qualify your needs, understand your organization's requirements, and connect you with the perfect Smart Architect™ for your transformation journey.",
+    "buttonText": "Start Smart Conversation",
+    "features": "Available 24/7 • Instant qualification • Direct scheduling"
+  },
+  "qualificationCriteria": {
+    "title": "Ideal Client Profile",
+    "description": "Smart Factory works exclusively with qualified enterprise prospects who meet these criteria:",
+    "criteria": [
+      "C-Level or Senior Executive Role",
+      "Organization with $500K+ Annual Innovation Budget",
+      "Enterprise or Upper Mid-Market Company", 
+      "Strategic AI or Digital Transformation Initiative",
+      "Decision-Making Authority for Technology Investments"
+    ]
+  },
+  "contactMethods": [
+    {
+      "title": "AI-Powered Qualification",
+      "description": "Chat with our Smart Assistant to qualify your needs and schedule a consultation",
+      "action": "Start Conversation"
+    },
+    {
+      "title": "Direct Scheduling", 
+      "description": "Book a strategic consultation directly with a Smart Architect™",
+      "action": "View Calendar"
+    },
+    {
+      "title": "Priority Hotline",
+      "description": "For urgent C-suite inquiries requiring immediate attention",
+      "action": "Call Now: +1 (555) 123-4567"
+    },
+    {
+      "title": "Executive Contact",
+      "description": "Direct email access to our leadership team for strategic partnerships", 
+      "action": "leadership@smartfactory.io"
+    }
+  ],
+  "assistantCapabilities": {
+    "title": "Smart Assistant Capabilities",
+    "features": [
+      {
+        "title": "Lead Qualification",
+        "description": "Intelligent questioning to assess fit and budget"
+      },
+      {
+        "title": "Needs Assessment",
+        "description": "Understand your specific AI and transformation goals"
+      },
+      {
+        "title": "Team Matching", 
+        "description": "Connect with the right Smart Architect™ for your industry"
+      },
+      {
+        "title": "Calendar Integration",
+        "description": "Schedule consultations directly through the chat interface"
+      }
+    ]
+  },
+  "responseGuarantee": {
+    "title": "Enterprise-Grade Responsiveness",
+    "description": "We understand that C-level time is valuable. Our commitment to qualified prospects includes guaranteed response times and priority access to our leadership team.",
+    "guarantees": [
+      {
+        "time": "< 2 Hours",
+        "service": "Qualified Lead Response"
+      },
+      {
+        "time": "24/7", 
+        "service": "AI Assistant Availability"
+      },
+      {
+        "time": "Same Day",
+        "service": "C-Suite Emergency Line"
+      }
+    ]
+  }
+}

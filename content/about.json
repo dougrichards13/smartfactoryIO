@@ -11,10 +11,10 @@ y{
   },
   "clientPortfolioHeader": {
     "title": "Elite Client Portfolio",
-    "description": "Over {yearsExperience} years of delivering transformational results for the world's most demanding organizations. From {clientType1} to {clientType2}, our track record speaks for itself.",
+    "description": "Over {yearsExperience} years of delivering transformational results for the world's most demanding organizations - from elite global enterprises to ambitious, scaling mid-size leaders. For {clientType1} that need precision, agility, and {clientType2] that need breakthrough growth, Smart Factory's track record is among the best in the business.",
     "yearsExperience": "15",
-    "clientType1": "Fortune 100 enterprises",
-    "clientType2": "federal institutions"
+    "clientType1": "Fortune 500 enterprises",
+    "clientType2": "Mid-size "
   },
   "portfolioSummary": {
     "totalImpact": {

@@ -81,7 +81,7 @@ export function HeroEditor({ onContentChange, onResetRequested }: HeroEditorProp
       <div className="space-y-4">
         <div>
           <Label htmlFor="headline-1" className="text-white/80 text-sm">
-            Current Main Headline
+            Main Headline
           </Label>
           <Input
             id="headline-1"
@@ -98,7 +98,7 @@ export function HeroEditor({ onContentChange, onResetRequested }: HeroEditorProp
 
         <div>
           <Label htmlFor="headline-2" className="text-white/80 text-sm">
-            Current Sub-Headline (Highlighted)
+            Sub-Headline (Highlighted)
           </Label>
           <Input
             id="headline-2"
@@ -117,7 +117,7 @@ export function HeroEditor({ onContentChange, onResetRequested }: HeroEditorProp
       {/* Description */}
       <div>
         <Label htmlFor="description" className="text-white/80 text-sm">
-          Current Description
+          Description
         </Label>
         <Textarea
           id="description"
@@ -134,7 +134,7 @@ export function HeroEditor({ onContentChange, onResetRequested }: HeroEditorProp
       {/* Tagline */}
       <div>
         <Label htmlFor="tagline" className="text-white/80 text-sm">
-          Current Tagline (Highlighted)
+          Tagline (Highlighted)
         </Label>
         <Input
           id="tagline"
@@ -151,7 +151,7 @@ export function HeroEditor({ onContentChange, onResetRequested }: HeroEditorProp
 
       {/* Trust Indicators */}
       <div>
-        <Label className="text-white/80 text-sm">Current Trust Indicators</Label>
+        <Label className="text-white/80 text-sm">Trust Indicators</Label>
         <div className="space-y-2 mt-2">
           {content.trustIndicators.map((indicator, index) => (
             <div key={index}>
@@ -173,7 +173,7 @@ export function HeroEditor({ onContentChange, onResetRequested }: HeroEditorProp
       {/* CTA Button */}
       <div>
         <Label htmlFor="cta-text" className="text-white/80 text-sm">
-          Current Button Text
+          Button Text
         </Label>
         <Input
           id="cta-text"

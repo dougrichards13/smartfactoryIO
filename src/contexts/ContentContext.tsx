@@ -3,17 +3,20 @@ import React, { createContext, useContext, useState, ReactNode, useEffect } from
 // Import all content files
 import heroContent from '../../content/hero.json';
 import aboutContent from '../../content/about.json';
+import servicesContent from '../../content/services.json';
 
 // Define content structure
 interface ContentState {
   hero: typeof heroContent;
   about: typeof aboutContent;
+  services: typeof servicesContent;
 }
 
 interface ContentContextType {
   content: ContentState;
   updateHeroContent: (updates: Partial<typeof heroContent>) => void;
   updateAboutContent: (updates: Partial<typeof aboutContent>) => void;
+  updateServicesContent: (updates: Partial<typeof servicesContent>) => void;
   resetSection: (section: keyof ContentState) => void;
   resetAll: () => void;
 }
@@ -25,6 +28,7 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 const originalContent: ContentState = {
   hero: heroContent,
   about: aboutContent,
+  services: servicesContent,
 };
 
 // Provider component
@@ -47,6 +51,15 @@ export function ContentProvider({ children }: { children: ReactNode }) {
       about: { ...prev.about, ...updates }
     }));
     console.log('ContentContext - About updated:', updates);
+  };
+
+  // Update services content
+  const updateServicesContent = (updates: Partial<typeof servicesContent>) => {
+    setContent(prev => ({
+      ...prev,
+      services: { ...prev.services, ...updates }
+    }));
+    console.log('ContentContext - Services updated:', updates);
   };
 
   // Reset specific section
@@ -74,6 +87,7 @@ export function ContentProvider({ children }: { children: ReactNode }) {
       content,
       updateHeroContent,
       updateAboutContent,
+      updateServicesContent,
       resetSection,
       resetAll
     }}>

@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Building2, MessageSquare } from 'lucide-react';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Label } from '../ui/label';
-
-// Import current about content
-import aboutContent from '../../content/about.json';
+import { useContent } from '../../src/contexts/ContentContext';
 
 interface AboutEditorProps {
   onContentChange: () => void;
 }
 
 export function AboutEditor({ onContentChange }: AboutEditorProps) {
-  const [content, setContent] = useState(aboutContent);
+  const { content: globalContent, updateAboutContent } = useContent();
+  const content = globalContent.about;
 
   const updateContent = (path: string, value: string) => {
     const keys = path.split('.');
-    const newContent = { ...content };
+    // Deep clone to avoid mutating context directly
+    const newContent: any = JSON.parse(JSON.stringify(content));
     let current: any = newContent;
-    
+
     for (let i = 0; i < keys.length - 1; i++) {
       current = current[keys[i]];
     }
-    
+
     current[keys[keys.length - 1]] = value;
-    setContent(newContent);
+    updateAboutContent(newContent);
     onContentChange();
   };
 
@@ -40,7 +40,7 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
       <div className="space-y-4">
         <div>
           <Label htmlFor="title-1" className="text-white/80 text-sm">
-            Current Section Title
+            Section Title
           </Label>
           <Input
             id="title-1"
@@ -53,7 +53,7 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
 
         <div>
           <Label htmlFor="title-2" className="text-white/80 text-sm">
-            Current Highlighted Title
+            Highlighted Title
           </Label>
           <Input
             id="title-2"
@@ -68,7 +68,7 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
       {/* Main Description */}
       <div>
         <Label htmlFor="description" className="text-white/80 text-sm">
-          Current Description
+          Description
         </Label>
         <Textarea
           id="description"
@@ -86,26 +86,26 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <Label htmlFor="founding-year" className="text-white/80 text-sm">
-            Current Founding Year
+            Founding Year
           </Label>
           <Input
             id="founding-year"
             value={content.header.foundingYear}
             onChange={(e) => updateContent('header.foundingYear', e.target.value)}
-            className="bg-slate-800 border-slate-600 text-white mt-1"
+            className="bg-white border-slate-300 text-black mt-1"
             placeholder="2010"
           />
         </div>
 
         <div>
           <Label htmlFor="expertise-types" className="text-white/80 text-sm">
-            Current Expertise Types
+            Expertise Types
           </Label>
           <Input
             id="expertise-types"
             value={content.header.expertiseTypes}
             onChange={(e) => updateContent('header.expertiseTypes', e.target.value)}
-            className="bg-slate-800 border-slate-600 text-white mt-1"
+            className="bg-white border-slate-300 text-black mt-1"
             placeholder="C-level experts, engineers, QA leaders"
           />
         </div>
@@ -113,13 +113,13 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
 
       <div>
         <Label htmlFor="key-outcome" className="text-white/80 text-sm">
-          Current Key Outcome
+          Key Outcome
         </Label>
         <Input
           id="key-outcome"
           value={content.header.keyOutcome}
           onChange={(e) => updateContent('header.keyOutcome', e.target.value)}
-          className="bg-slate-800 border-slate-600 text-white mt-1"
+          className="bg-white border-slate-300 text-black mt-1"
           placeholder="scalable results"
         />
       </div>
@@ -135,13 +135,13 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
               <Input
                 value={content.portfolioSummary.totalImpact.value}
                 onChange={(e) => updateContent('portfolioSummary.totalImpact.value', e.target.value)}
-                className="bg-slate-700 border-slate-500 text-white"
+                className="bg-white border-slate-300 text-black"
                 placeholder="$5B+"
               />
               <Input
                 value={content.portfolioSummary.totalImpact.title}
                 onChange={(e) => updateContent('portfolioSummary.totalImpact.title', e.target.value)}
-                className="bg-slate-700 border-slate-500 text-white"
+                className="bg-white border-slate-300 text-black"
                 placeholder="Total Portfolio Impact"
               />
             </div>
@@ -153,13 +153,13 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
               <Input
                 value={content.portfolioSummary.majorEnterprises.value}
                 onChange={(e) => updateContent('portfolioSummary.majorEnterprises.value', e.target.value)}
-                className="bg-slate-700 border-slate-500 text-white"
+                className="bg-white border-slate-300 text-black"
                 placeholder="25+"
               />
               <Input
                 value={content.portfolioSummary.majorEnterprises.title}
                 onChange={(e) => updateContent('portfolioSummary.majorEnterprises.title', e.target.value)}
-                className="bg-slate-700 border-slate-500 text-white"
+                className="bg-white border-slate-300 text-black"
                 placeholder="Major Enterprises"
               />
             </div>
@@ -171,13 +171,13 @@ export function AboutEditor({ onContentChange }: AboutEditorProps) {
               <Input
                 value={content.portfolioSummary.clientRetention.value}
                 onChange={(e) => updateContent('portfolioSummary.clientRetention.value', e.target.value)}
-                className="bg-slate-700 border-slate-500 text-white"
+                className="bg-white border-slate-300 text-black"
                 placeholder="98%"
               />
               <Input
                 value={content.portfolioSummary.clientRetention.title}
                 onChange={(e) => updateContent('portfolioSummary.clientRetention.title', e.target.value)}
-                className="bg-slate-700 border-slate-500 text-white"
+                className="bg-white border-slate-300 text-black"
                 placeholder="Client Success"
               />
             </div>

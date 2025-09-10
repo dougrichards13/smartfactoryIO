@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import { MetricsDashboard } from './MetricsDashboard';
 import { InteractiveResultsChart } from './InteractiveResultsChart';
 
-// Import about content
+// Import about content (fallback)
 import aboutContent from '../content/about.json';
+import { useContent } from '../src/contexts/ContentContext';
 
 export function AboutSection() {
-  // Use content from JSON file
-  const { header, clientPortfolioHeader, portfolioSummary, portfolioFooter } = aboutContent;
+  // Use shared content for live updates
+  const { content } = useContent();
+  const { header, clientPortfolioHeader, portfolioSummary, portfolioFooter } = content.about;
   
   // Helper function to replace placeholders in text
   const replacePlaceholders = (text: string, variables: Record<string, string>) => {

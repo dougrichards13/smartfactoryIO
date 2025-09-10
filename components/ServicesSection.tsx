@@ -3,9 +3,18 @@ import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
+import { useContent } from '../src/contexts/ContentContext';
 
 export function ServicesSection() {
-  const consultantTypes = [
+  const { content } = useContent();
+  
+  // Map icons to consultant types
+  const iconMap = [Users2, Settings, ShieldCheck];
+  
+  const consultantTypes = content.services.consultantTypes?.map((consultant, index) => ({
+    ...consultant,
+    icon: iconMap[index] || Users2
+  })) || [
     {
       icon: Users2,
       title: "Smart Architects™",
@@ -121,13 +130,17 @@ export function ServicesSection() {
           viewport={{ once: true }}
         >
           <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
-            THREE PILLARS OF
-            <span className="block text-gradient mt-2">TRANSFORMATION EXCELLENCE</span>
+            {content.services.header?.title?.line1}
+            <span className="block text-gradient mt-2">{content.services.header?.title?.line2}</span>
           </h2>
           
           <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
-            Our <span className="text-accent font-bold">specialized consultant types</span> work seamlessly together or independently to deliver 
-            comprehensive enterprise transformation with <span className="text-secondary font-bold">measurable ROI</span> and strategic impact.
+            {content.services.header?.description?.replace('{specializedTypes}', `<span class="text-accent font-bold">${content.services.header?.specializedTypes}</span>`)?.replace('{keyBenefit}', `<span class="text-secondary font-bold">${content.services.header?.keyBenefit}</span>`) && (
+              <span dangerouslySetInnerHTML={{ __html: content.services.header.description.replace('{specializedTypes}', `<span class="text-accent font-bold">${content.services.header.specializedTypes}</span>`).replace('{keyBenefit}', `<span class="text-secondary font-bold">${content.services.header.keyBenefit}</span>`) }} />
+            ) || (
+              <>Our <span className="text-accent font-bold">specialized consultant types</span> work seamlessly together or independently to deliver 
+              comprehensive enterprise transformation with <span className="text-secondary font-bold">measurable ROI</span> and strategic impact.</>
+            )}
           </p>
         </motion.div>
 

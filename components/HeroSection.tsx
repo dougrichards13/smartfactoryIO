@@ -1,13 +1,14 @@
 import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+// Import hero content
+import heroContent from '../content/hero.json';
 
 export function HeroSection() {
-  const trustIndicators = [
-    "$5B+ Project Impact",
-    "15+ Years Enterprise Focus",
-    "C-Level Expertise"
-  ];
+  // Use content from JSON file
+  const { headline, description, tagline, trustIndicators, ctaButton } = heroContent;
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -21,7 +22,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20">
+    <section className="relative h-[60vh] flex items-center justify-center overflow-hidden py-8">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -54,8 +55,8 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              VISIONARY CONSULTING FOR
-              <span className="block text-gradient-simple">VISIONARY LEADERS</span>
+              {headline.line1}
+              <span className="block text-gradient-simple">{headline.line2}</span>
             </motion.h1>
 
             {/* Body Text */}
@@ -65,11 +66,9 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Smart Factory delivers visionary consulting for those who shape industries. 
-              Proven across sectors, our experts unlock millions to billions in growth through 
-              precision strategy, scalable solutions, and transformational leadership.
+              {description}
               <br /><br />
-              <span className="text-primary font-bold">Technology is our language; transformation is our product.</span>
+              <span className="text-primary font-bold">{tagline}</span>
             </motion.p>
 
             {/* Trust Indicators */}
@@ -99,7 +98,7 @@ export function HeroSection() {
                 onClick={scrollToContact}
                 className="gradient-secondary text-secondary-foreground px-10 py-4 text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 group border-2 border-secondary/50"
               >
-                GET YOUR STRATEGIC ASSESSMENT
+                {ctaButton.text}
                 <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </Button>
             </motion.div>

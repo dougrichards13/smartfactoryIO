@@ -2,7 +2,19 @@ import { motion } from 'framer-motion';
 import { MetricsDashboard } from './MetricsDashboard';
 import { InteractiveResultsChart } from './InteractiveResultsChart';
 
+// Import about content
+import aboutContent from '../content/about.json';
+
 export function AboutSection() {
+  // Use content from JSON file
+  const { header, clientPortfolioHeader, portfolioSummary, portfolioFooter } = aboutContent;
+  
+  // Helper function to replace placeholders in text
+  const replacePlaceholders = (text: string, variables: Record<string, string>) => {
+    return Object.entries(variables).reduce((acc, [key, value]) => {
+      return acc.replace(new RegExp(`{${key}}`, 'g'), value);
+    }, text);
+  };
 
   const clientPortfolio = [
     {
@@ -89,12 +101,43 @@ export function AboutSection() {
         >
           
           <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
-            THE FACTORY APPROACH TO
-            <span className="block text-gradient mt-2">ENTERPRISE TRANSFORMATION</span>
+            {header.title.line1}
+            <span className="block text-gradient mt-2">{header.title.line2}</span>
           </h2>
           
           <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
-            Since <span className="text-secondary font-bold">2010</span>, Smart Factory has redefined enterprise consulting by driving measurable results for owners, leaders, investors, stakeholders, and teams. Our <span className="text-accent font-bold">C-level experts, engineers, QA leaders</span> and recently, our AI-driven methods, consistently deliver <span className="text-secondary font-bold">scalable results</span> that change the trajectory of organizations and the lives behind them. This is enterprise transformation, engineered for visionaries.
+            {replacePlaceholders(header.description, {
+              foundingYear: header.foundingYear,
+              expertiseTypes: header.expertiseTypes, 
+              keyOutcome: header.keyOutcome
+            }).split(header.foundingYear).map((part, index) => 
+              index === 0 ? (
+                part
+              ) : (
+                <>
+                  <span className="text-secondary font-bold">{header.foundingYear}</span>
+                  {part.split(header.expertiseTypes).map((subPart, subIndex) => 
+                    subIndex === 0 ? (
+                      subPart
+                    ) : (
+                      <>
+                        <span className="text-accent font-bold">{header.expertiseTypes}</span>
+                        {subPart.split(header.keyOutcome).map((finalPart, finalIndex) => 
+                          finalIndex === 0 ? (
+                            finalPart
+                          ) : (
+                            <>
+                              <span className="text-secondary font-bold">{header.keyOutcome}</span>
+                              {finalPart}
+                            </>
+                          )
+                        )}
+                      </>
+                    )
+                  )}
+                </>
+              )
+            )}
           </p>
         </motion.div>
 
@@ -134,10 +177,10 @@ export function AboutSection() {
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-6">Elite Client Portfolio</h3>
+            <h3 className="text-3xl font-bold mb-6">{clientPortfolioHeader.title}</h3>
             <p className="text-white/90 max-w-3xl mx-auto leading-relaxed text-lg">
-              <span className="text-secondary font-bold">15 years</span> of delivering transformational results for the world's most demanding organizations. 
-              From <span className="text-accent font-bold">Fortune 100 enterprises</span> to <span className="text-primary font-bold">federal institutions</span>, 
+              <span className="text-secondary font-bold">{clientPortfolioHeader.yearsExperience} years</span> of delivering transformational results for the world's most demanding organizations. 
+              From <span className="text-accent font-bold">{clientPortfolioHeader.clientType1}</span> to <span className="text-primary font-bold">{clientPortfolioHeader.clientType2}</span>, 
               our track record speaks for itself.
             </p>
           </div>
@@ -226,19 +269,19 @@ export function AboutSection() {
           <div className="text-center space-y-6">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="p-6 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl border border-secondary/30">
-                <div className="text-3xl font-black text-secondary mb-2">$5B+</div>
-                <div className="text-sm font-semibold text-white">Total Portfolio Impact</div>
-                <div className="text-xs text-white/70 mt-1">Documented value creation</div>
+                <div className="text-3xl font-black text-secondary mb-2">{portfolioSummary.totalImpact.value}</div>
+                <div className="text-sm font-semibold text-white">{portfolioSummary.totalImpact.title}</div>
+                <div className="text-xs text-white/70 mt-1">{portfolioSummary.totalImpact.subtitle}</div>
               </div>
               <div className="p-6 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border border-primary/30">
-                <div className="text-3xl font-black text-primary mb-2">25+</div>
-                <div className="text-sm font-semibold text-white">Major Enterprises</div>
-                <div className="text-xs text-white/70 mt-1">Fortune 500 & Global Leaders</div>
+                <div className="text-3xl font-black text-primary mb-2">{portfolioSummary.majorEnterprises.value}</div>
+                <div className="text-sm font-semibold text-white">{portfolioSummary.majorEnterprises.title}</div>
+                <div className="text-xs text-white/70 mt-1">{portfolioSummary.majorEnterprises.subtitle}</div>
               </div>
               <div className="p-6 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-2xl border border-accent/30">
-                <div className="text-3xl font-black text-accent mb-2">100%</div>
-                <div className="text-sm font-semibold text-white">Client Retention</div>
-                <div className="text-xs text-white/70 mt-1">Long-term partnerships</div>
+                <div className="text-3xl font-black text-accent mb-2">{portfolioSummary.clientRetention.value}</div>
+                <div className="text-sm font-semibold text-white">{portfolioSummary.clientRetention.title}</div>
+                <div className="text-xs text-white/70 mt-1">{portfolioSummary.clientRetention.subtitle}</div>
               </div>
             </div>
             

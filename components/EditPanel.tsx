@@ -11,11 +11,11 @@ import { GlobalEditor } from './editors/GlobalEditor';
 import { useContent } from '../src/contexts/ContentContext';
 
 const sectionOptions = [
-  { id: 'hero', label: 'Hero Section', icon: '🎯' },
-  { id: 'about', label: 'About Section', icon: '🏢' },
-  { id: 'services', label: 'Services Section', icon: '⚡' },
-  { id: 'contact', label: 'Contact Section', icon: '📞' },
-  { id: 'global', label: 'Global Settings', icon: '🌐' },
+  { id: 'hero', label: 'Hero Section' },
+  { id: 'about', label: 'About Section' },
+  { id: 'services', label: 'Services Section' },
+  { id: 'contact', label: 'Contact Section' },
+  { id: 'global', label: 'Global Settings' },
 ];
 
 export function EditPanel() {
@@ -51,6 +51,7 @@ export function EditPanel() {
   };
 
   const renderEditor = () => {
+    console.log('renderEditor called with currentSection:', currentSection);
     switch (currentSection) {
       case 'hero':
         return <HeroEditor onContentChange={() => setHasUnsavedChanges(true)} onResetRequested={handleReset} />;
@@ -81,10 +82,10 @@ export function EditPanel() {
         animate={{ x: 0 }}
         exit={{ x: '100%' }}
         transition={{ type: 'tween', duration: 0.3 }}
-        className="fixed top-0 right-0 h-full w-96 bg-slate-900 border-l border-slate-700 z-50 flex flex-col shadow-2xl"
+        className="fixed top-0 right-0 h-full w-96 bg-slate-900/100 border-l border-slate-700 z-50 flex flex-col shadow-2xl backdrop-blur-xl"
       >
         {/* Header */}
-        <div className="p-4 border-b border-slate-700 bg-slate-800">
+        <div className="p-4 border-b border-slate-700 bg-slate-800/100">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
@@ -117,16 +118,19 @@ export function EditPanel() {
             {sectionOptions.map((section) => (
               <button
                 key={section.id}
-                onClick={() => setCurrentSection(section.id)}
-                className={`p-2 rounded-lg text-xs font-medium transition-colors ${
+                onClick={() => {
+                  console.log('Navigation clicked:', section.id, '-> Current:', currentSection);
+                  setCurrentSection(section.id);
+                  console.log('Navigation set to:', section.id);
+                }}
+                className={`p-1 rounded-lg text-xs font-medium transition-colors whitespace-nowrap ${
                   currentSection === section.id
                     ? 'bg-primary text-white'
                     : 'bg-slate-700 text-white/70 hover:bg-slate-600 hover:text-white'
                 }`}
               >
-                <div className="flex items-center space-x-2">
-                  <span>{section.icon}</span>
-                  <span>{section.label}</span>
+                <div className="flex items-center justify-start min-h-[32px] px-2">
+                  <span className="text-xs">{section.label}</span>
                 </div>
               </button>
             ))}
@@ -134,12 +138,14 @@ export function EditPanel() {
         </div>
 
         {/* Editor Content */}
-        <div className="flex-1 overflow-y-auto p-4">
-          {renderEditor()}
+        <div className="flex-1 overflow-y-auto p-4 bg-slate-900/100 backdrop-blur-sm">
+          <div className="bg-slate-900/100 rounded-lg p-4 min-h-full">
+            {renderEditor()}
+          </div>
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 border-t border-slate-700 bg-slate-800">
+        <div className="p-4 border-t border-slate-700 bg-slate-800/100">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center space-x-2 text-xs text-white/60">
               {hasUnsavedChanges && (

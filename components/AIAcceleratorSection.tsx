@@ -26,7 +26,7 @@ export function AIAcceleratorSection() {
     {
       icon: Lock,
       title: "Enterprise Security",
-      description: "Bank-grade security with compliance for SOC2, HIPAA, and international standards"
+      description: "Bank-grade security with compliance for SOC2, HIPAA, ISO, and international standards"
     }
   ];
 
@@ -55,15 +55,23 @@ export function AIAcceleratorSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-accent/10 border-accent/20 text-accent-foreground">
-            Flagship AI Platform
-          </Badge>
-          <h2 className="mb-6">
-            Smart Factory AI Accelerator™
-            <span className="text-gradient block">Secure, Private, Enterprise-Grade</span>
+          <div className="mb-8">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=200&fit=crop&crop=center"
+              alt="AI Technology Innovation"
+              className="w-full max-w-6xl mx-auto h-20 object-cover rounded-2xl shadow-2xl opacity-90 border border-primary/30"
+            />
+          </div>
+          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+            Smart&nbsp;Factory&nbsp;AI&nbsp;Accelerator™
+            <span className="block text-gradient mt-2">Secure. Private. Enterprise-Grade.</span>
           </h2>
-          <p className="lead text-white/80">
-            The industry's most comprehensive AI platform designed for rapid, risk-managed AI implementation 
+          <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
+            "AI is like a faster you, not a smarter you. If you can't do something yourself, you won't know if AI is doing it right."</p>
+             
+             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto"> - Doug Richards, Smart Factory Founder</p>
+    
+            <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">The industry's most comprehensive AI platform designed for rapid, risk-managed AI implementation 
             with complete data sovereignty and seamless enterprise integration.
           </p>
         </motion.div>

@@ -3,61 +3,25 @@ import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useContent } from '../src/contexts/ContentContext';
+
+// Icon mapping for dynamic icons
+const iconMap = {
+  DollarSign,
+  TrendingUp, 
+  Calendar,
+  Globe
+};
 
 export function ResultsSection() {
-  const impactMetrics = [
-    {
-      icon: DollarSign,
-      value: "$5B+",
-      label: "Project Impact",
-      description: "Total value delivered across all client engagements"
-    },
-    {
-      icon: TrendingUp,
-      value: "$2B+",
-      label: "M&A Value",
-      description: "Merger & acquisition value facilitated through our strategic guidance"
-    },
-    {
-      icon: Calendar,
-      value: "13+",
-      label: "Years Excellence",
-      description: "Continuous innovation and client success since 2011"
-    },
-    {
-      icon: Globe,
-      value: "Global",
-      label: "Reach",
-      description: "Serving enterprise clients across North America, Europe, and Asia-Pacific"
-    }
-  ];
-
-  const testimonials = [
-    {
-      quote: "Smart Factory's AI Accelerator transformed our entire operations in just 90 days. The ROI exceeded our most optimistic projections, and their team became true strategic partners.",
-      author: "Sarah Chen",
-      title: "Chief Technology Officer",
-      company: "Fortune 500 Manufacturing",
-      rating: 5,
-      impact: "$50M cost savings in first year"
-    },
-    {
-      quote: "The Smart Architects didn't just consult - they embedded with our leadership team and drove transformation from within. Their 'Act as If' principle is the real differentiator.",
-      author: "Michael Rodriguez",
-      title: "Chief Executive Officer", 
-      company: "Mid-Market Technology",
-      rating: 5,
-      impact: "40% faster time-to-market"
-    },
-    {
-      quote: "Working with Smart Factory's Engineers was like adding a world-class internal team overnight. Their AI-driven approach accelerated our digital transformation by years.",
-      author: "Dr. Amanda Foster",
-      title: "Chief Innovation Officer",
-      company: "Healthcare Enterprise",
-      rating: 5,
-      impact: "300% improvement in patient outcomes"
-    }
-  ];
+  const { content } = useContent();
+  const resultsData = content.results;
+  
+  // Map icon strings to actual icon components
+  const impactMetrics = resultsData.impactMetrics?.map(metric => ({
+    ...metric,
+    icon: iconMap[metric.icon as keyof typeof iconMap] || DollarSign
+  })) || [];
 
   return (
     <section id="results" className="section-padding">
@@ -71,15 +35,14 @@ export function ResultsSection() {
           viewport={{ once: true }}
         >
           <Badge variant="outline" className="mb-4 px-4 py-2 bg-primary/10 border-primary/20 text-primary">
-            Proven Results & Impact
+            {resultsData.header?.badge || 'Proven Results & Impact'}
           </Badge>
           <h2 className="mb-6">
-            Measurable Transformation
-            <span className="text-gradient block">Real Results, Real Impact</span>
+            {resultsData.header?.title?.line1 || 'Measurable Transformation'}
+            <span className="text-gradient block">{resultsData.header?.title?.line2 || 'Real Results, Real Impact'}</span>
           </h2>
           <p className="lead text-white/80">
-            Since 2011, Smart Factory has delivered transformational results for enterprise clients worldwide. 
-            Our data-driven approach ensures every engagement produces measurable business outcomes and sustained competitive advantage.
+            {resultsData.header?.description || 'Since 2011, Smart Factory has delivered transformational results for enterprise clients worldwide. Our data-driven approach ensures every engagement produces measurable business outcomes and sustained competitive advantage.'}
           </p>
         </motion.div>
 
@@ -121,29 +84,36 @@ export function ResultsSection() {
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-border/50">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-semibold mb-4">Impact Across Industries</h3>
+                <h3 className="text-2xl font-semibold mb-4">{resultsData.industryImpact?.title || 'Impact Across Industries'}</h3>
                 <p className="text-white/80 mb-6">
-                  Our transformational impact spans across multiple industries, with consistently 
-                  high ROI and client satisfaction rates that demonstrate the effectiveness of 
-                  the Smart Factory Method™.
+                  {resultsData.industryImpact?.description || 'Our transformational impact spans across multiple industries, with consistently high ROI and client satisfaction rates that demonstrate the effectiveness of the Smart Factory Method™.'}
                 </p>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Manufacturing & Industrial</span>
-                    <span className="text-sm text-accent font-semibold">$2.1B impact</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Healthcare & Life Sciences</span>
-                    <span className="text-sm text-accent font-semibold">$1.8B impact</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Financial Services</span>
-                    <span className="text-sm text-accent font-semibold">$900M impact</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Technology & Software</span>
-                    <span className="text-sm text-accent font-semibold">$200M impact</span>
-                  </div>
+                  {resultsData.industryImpact?.industries?.map((industry, index) => (
+                    <div key={index} className="flex justify-between items-center">
+                      <span className="text-sm font-medium">{industry.name}</span>
+                      <span className="text-sm text-accent font-semibold">{industry.impact}</span>
+                    </div>
+                  )) || (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Manufacturing & Industrial</span>
+                        <span className="text-sm text-accent font-semibold">$2.1B impact</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Healthcare & Life Sciences</span>
+                        <span className="text-sm text-accent font-semibold">$1.8B impact</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Financial Services</span>
+                        <span className="text-sm text-accent font-semibold">$900M impact</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Technology & Software</span>
+                        <span className="text-sm text-accent font-semibold">$200M impact</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
               <div className="relative">
@@ -168,9 +138,9 @@ export function ResultsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-semibold text-center mb-12">What Enterprise Leaders Say</h3>
+          <h3 className="text-2xl font-semibold text-center mb-12">{resultsData.testimonials?.title || 'What Enterprise Leaders Say'}</h3>
           <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+            {(resultsData.testimonials?.items || []).map((testimonial, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}

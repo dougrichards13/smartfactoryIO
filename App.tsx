@@ -10,7 +10,8 @@ import { SocialSection } from './components/SocialSection';
 import { ContactSection } from './components/ContactSection';
 import { EditModeProvider } from './src/contexts/EditModeContext';
 import { ContentProvider } from './src/contexts/ContentContext';
-import { EditPanel } from './components/EditPanel';
+import { WandaVisionProvider } from './src/contexts/WandaVisionProvider';
+import { EditPanelEnhanced } from './components/EditPanelEnhanced';
 import { useEffect } from 'react';
 
 export default function App() {
@@ -150,20 +151,20 @@ export default function App() {
   return (
     <ContentProvider>
       <EditModeProvider>
-        <div className="min-h-screen bg-background">
-        {/* SEO-friendly page structure with semantic HTML */}
-        <Header />
-        <main role="main">
-          <HeroSection />
-          <AboutSection />
-          <ServicesSection />
-          <AIAcceleratorSection />
-          <MethodSection />
-          <ResultsSection />
-          <TeamSection />
-          <SocialSection />
-          <ContactSection />
-        </main>
+        <WandaVisionProvider>
+          <div className="min-h-screen bg-background">
+          {/* SEO-friendly page structure with semantic HTML */}
+          <Header />
+          <main role="main">
+            <HeroSection />
+            <AboutSection />
+            <ServicesSection />
+            <AIAcceleratorSection />
+            <MethodSection />
+            <TeamSection />
+            <SocialSection />
+            <ContactSection />
+          </main>
       
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12">
@@ -220,9 +221,10 @@ export default function App() {
         </div>
       </footer>
         
-        {/* Edit Panel for content management */}
-        <EditPanel />
-        </div>
+          {/* Edit Panel for content management */}
+          <EditPanelEnhanced />
+          </div>
+        </WandaVisionProvider>
       </EditModeProvider>
     </ContentProvider>
   );

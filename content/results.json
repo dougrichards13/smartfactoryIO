@@ -1,0 +1,107 @@
+{
+  "header": {
+    "badge": "Proven Results & Impact",
+    "title": {
+      "line1": "Measurable Transformation",
+      "line2": "Real Results, Real Impact"
+    },
+    "description": "Since 2011, Smart Factory has delivered transformational results for enterprise clients worldwide. Our data-driven approach ensures every engagement produces measurable business outcomes and sustained competitive advantage."
+  },
+  "impactMetrics": [
+    {
+      "icon": "DollarSign",
+      "value": "$5B+",
+      "label": "Project Impact",
+      "description": "Total value delivered across all client engagements"
+    },
+    {
+      "icon": "TrendingUp",
+      "value": "$2B+",
+      "label": "M&A Value",
+      "description": "Merger & acquisition value facilitated through our strategic guidance"
+    },
+    {
+      "icon": "Calendar",
+      "value": "13+",
+      "label": "Years Excellence",
+      "description": "Continuous innovation and client success since 2011"
+    },
+    {
+      "icon": "Globe",
+      "value": "Global",
+      "label": "Reach",
+      "description": "Serving enterprise clients across North America, Europe, and Asia-Pacific"
+    }
+  ],
+  "industryImpact": {
+    "title": "Impact Across Industries",
+    "description": "Our transformational impact spans across multiple industries, with consistently high ROI and client satisfaction rates that demonstrate the effectiveness of the Smart Factory Method™.",
+    "industries": [
+      {
+        "name": "Manufacturing & Industrial",
+        "impact": "$2.1B impact"
+      },
+      {
+        "name": "Healthcare & Life Sciences",
+        "impact": "$1.8B impact"
+      },
+      {
+        "name": "Financial Services",
+        "impact": "$900M impact"
+      },
+      {
+        "name": "Technology & Software",
+        "impact": "$200M impact"
+      }
+    ],
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop&crop=center",
+    "imageAlt": "Business Impact Data Visualization"
+  },
+  "testimonials": {
+    "title": "What Enterprise Leaders Say",
+    "items": [
+      {
+        "quote": "Smart Factory's AI Accelerator transformed our entire operations in just 90 days. The ROI exceeded our most optimistic projections, and their team became true strategic partners.",
+        "author": "Sarah Chen",
+        "title": "Chief Technology Officer",
+        "company": "Fortune 500 Manufacturing",
+        "rating": 5,
+        "impact": "$50M cost savings in first year"
+      },
+      {
+        "quote": "The Smart Architects didn't just consult - they embedded with our leadership team and drove transformation from within. Their 'Act as If' principle is the real differentiator.",
+        "author": "Michael Rodriguez",
+        "title": "Chief Executive Officer",
+        "company": "Mid-Market Technology",
+        "rating": 5,
+        "impact": "40% faster time-to-market"
+      },
+      {
+        "quote": "Working with Smart Factory's Engineers was like adding a world-class internal team overnight. Their AI-driven approach accelerated our digital transformation by years.",
+        "author": "Dr. Amanda Foster",
+        "title": "Chief Innovation Officer",
+        "company": "Healthcare Enterprise",
+        "rating": 5,
+        "impact": "300% improvement in patient outcomes"
+      }
+    ]
+  },
+  "successStory": {
+    "title": "Ready to Join Our Success Stories?",
+    "description": "Every enterprise transformation begins with a conversation. Discover how Smart Factory can deliver measurable results for your organization with our proven methodology and world-class expertise.",
+    "stats": [
+      {
+        "value": "98%",
+        "label": "Client Satisfaction"
+      },
+      {
+        "value": "340%",
+        "label": "Average ROI"
+      },
+      {
+        "value": "90 Days",
+        "label": "Avg. Implementation"
+      }
+    ]
+  }
+}

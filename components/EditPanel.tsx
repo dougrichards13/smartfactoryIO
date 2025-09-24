@@ -11,11 +11,11 @@ import { GlobalEditor } from './editors/GlobalEditor';
 import { useContent } from '../src/contexts/ContentContext';
 
 const sectionOptions = [
-  { id: 'hero', label: 'Hero Section' },
-  { id: 'about', label: 'About Section' },
-  { id: 'services', label: 'Services Section' },
-  { id: 'contact', label: 'Contact Section' },
-  { id: 'global', label: 'Global Settings' },
+  { id: 'hero', label: 'Hero Section', scrollTarget: 'top' },
+  { id: 'about', label: 'About Section', scrollTarget: 'about' },
+  { id: 'services', label: 'Services Section', scrollTarget: 'services' },
+  { id: 'contact', label: 'Contact Section', scrollTarget: 'contact' },
+  { id: 'global', label: 'Global Settings', scrollTarget: null },
 ];
 
 export function EditPanel() {
@@ -23,6 +23,20 @@ export function EditPanel() {
   const { resetSection } = useContent();
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [isPreviewMode, setIsPreviewMode] = useState(false);
+
+  // Helper function to scroll to sections on the main page
+  const scrollToSection = (scrollTarget: string | null) => {
+    if (!scrollTarget) return;
+    
+    if (scrollTarget === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(scrollTarget);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   if (!isEditMode) return null;
 
@@ -122,6 +136,10 @@ export function EditPanel() {
                   console.log('Navigation clicked:', section.id, '-> Current:', currentSection);
                   setCurrentSection(section.id);
                   console.log('Navigation set to:', section.id);
+                  
+                  // Auto-scroll to the corresponding section on the main page
+                  scrollToSection(section.scrollTarget);
+                  console.log('Scrolling to:', section.scrollTarget);
                 }}
                 className={`p-1 rounded-lg text-xs font-medium transition-colors whitespace-nowrap ${
                   currentSection === section.id

@@ -1,8 +1,9 @@
 {
   "name": "smart-factory-wanda",
   "version": "2.5.0",
-  "description": "Smart Factory - AI Consulting Website",
+  "description": "Smart Factory - AI Consulting Website with WandaVision Universal Intelligence",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Youtube, Globe, Heart, Users } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Globe, Heart, Users, Calendar, Zap, Building } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -168,35 +168,52 @@ export function SocialSection() {
           </div>
         </motion.div>
 
-        {/* Diversity Statement */}
+        {/* About Smart Factory Statement */}
         <motion.div
-          className="text-center bg-gradient-to-br from-secondary/5 to-accent/5 rounded-2xl p-12 border border-border/50"
+          id="about-company"
+          className="text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-12 border border-border/50"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Heart className="w-12 h-12 text-accent mx-auto mb-6" />
-          <h3 className="text-2xl font-semibold mb-4">Diversity, Inclusion & Social Impact</h3>
-          <p className="text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Smart Factory is committed to building diverse, inclusive teams that reflect the global 
-            communities we serve. We believe that diverse perspectives drive innovation, and we're 
-            dedicated to using AI and technology as forces for positive social and environmental change. 
-            Our hiring practices, partnership strategies, and community initiatives all reflect our 
-            commitment to creating a more equitable and sustainable future.
+          <h3 className="text-3xl font-bold mb-6">We Transform Enterprises, Not Just Technology</h3>
+          <p className="text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed text-lg font-medium">
+            <span className="text-primary font-bold">Smart Factory doesn't just implement solutions—we architect transformation.</span> 
+            Since 2010, we've partnered with C-suite leaders to deliver measurable business outcomes that 
+            directly impact your bottom line, market position, and competitive advantage.
           </p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-            <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
-              <div className="text-lg font-bold text-secondary mb-1">40%</div>
-              <div className="text-sm text-white/80">Women in Leadership</div>
+          <p className="text-white/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Our systematic approach combines <span className="text-secondary font-semibold">proven methodologies</span> 
+            with <span className="text-accent font-semibold">cutting-edge technology</span> (including AI) to create 
+            sustainable competitive advantages. We don't just change your technology—we transform your entire 
+            operational paradigm. When we leave, your company is smarter through our framework: 
+            <span className="text-primary font-bold">Clarity, Communication, Control</span>.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="p-6 bg-background/80 backdrop-blur-sm rounded-lg border-2 border-primary/30 hover:border-primary/50 transition-all duration-300">
+              <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-primary" />
+              </div>
+              <div className="text-2xl font-bold text-primary mb-2">2010</div>
+              <div className="text-sm text-white/90 font-semibold">Founded</div>
+              <div className="text-xs text-white/70 mt-1">Disrupting traditional consulting since day one</div>
             </div>
-            <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
-              <div className="text-lg font-bold text-primary mb-1">60%</div>
-              <div className="text-sm text-white/80">Diverse Team Members</div>
+            <div className="p-6 bg-background/80 backdrop-blur-sm rounded-lg border-2 border-secondary/30 hover:border-secondary/50 transition-all duration-300">
+              <div className="w-12 h-12 mx-auto mb-4 bg-secondary/10 rounded-lg flex items-center justify-center">
+                <Zap className="w-6 h-6 text-secondary" />
+              </div>
+              <div className="text-2xl font-bold text-secondary mb-2">Smart</div>
+              <div className="text-sm text-white/90 font-semibold">We Work Smart</div>
+              <div className="text-xs text-white/70 mt-1">Modern solutions, not playbooks</div>
             </div>
-            <div className="p-4 bg-white/60 dark:bg-card/60 backdrop-blur-sm rounded-lg border border-border/30">
-              <div className="text-lg font-bold text-accent mb-1">$1M+</div>
-              <div className="text-sm text-white/80">Social Impact Investment</div>
+            <div className="p-6 bg-background/80 backdrop-blur-sm rounded-lg border-2 border-accent/30 hover:border-accent/50 transition-all duration-300">
+              <div className="w-12 h-12 mx-auto mb-4 bg-accent/10 rounded-lg flex items-center justify-center">
+                <Building className="w-6 h-6 text-accent" />
+              </div>
+              <div className="text-2xl font-bold text-accent mb-2">All Sizes</div>
+              <div className="text-sm text-white/90 font-semibold">Every Company</div>
+              <div className="text-xs text-white/70 mt-1">From startups to enterprise</div>
             </div>
           </div>
         </motion.div>

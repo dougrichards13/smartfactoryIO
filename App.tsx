@@ -8,10 +8,7 @@ import { ResultsSection } from './components/ResultsSection';
 import { TeamSection } from './components/TeamSection';
 import { SocialSection } from './components/SocialSection';
 import { ContactSection } from './components/ContactSection';
-import { EditModeProvider } from './src/contexts/EditModeContext';
 import { ContentProvider } from './src/contexts/ContentContext';
-import { WandaVisionProvider } from './src/contexts/WandaVisionProvider';
-import { EditPanelEnhanced } from './components/EditPanelEnhanced';
 import { useEffect } from 'react';
 
 export default function App() {
@@ -150,9 +147,7 @@ export default function App() {
 
   return (
     <ContentProvider>
-      <EditModeProvider>
-        <WandaVisionProvider>
-          <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
           {/* SEO-friendly page structure with semantic HTML */}
           <Header />
           <main role="main">
@@ -221,12 +216,7 @@ export default function App() {
           </div>
         </div>
       </footer>
-        
-          {/* Edit Panel for content management */}
-          <EditPanelEnhanced />
-          </div>
-        </WandaVisionProvider>
-      </EditModeProvider>
+      </div>
     </ContentProvider>
   );
 }

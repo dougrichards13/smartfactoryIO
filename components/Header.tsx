@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +28,17 @@ export function Header() {
   };
 
   const navItems = [
-    { label: 'ABOUT', id: 'about' },
+    { 
+      label: 'OVERVIEW',
+      id: 'about',
+      hasDropdown: true,
+      submenu: [
+        { label: 'About Smart Factory', id: 'about-company', description: 'Our company overview' },
+        { label: 'Three Pillars', id: 'services', description: 'Smart Architects, Engineers & Assurance' },
+        { label: 'Our Method', id: 'method', description: 'How we deliver transformation' },
+        { label: 'Leadership Team', id: 'team', description: 'Meet our experts' }
+      ]
+    },
     { label: 'SERVICES', id: 'services' },
     { label: 'AI ACCELERATOR', id: 'ai-accelerator' },
     { label: 'METHOD', id: 'method' },
@@ -79,6 +90,63 @@ export function Header() {
               };
               
               const hoverColors = getHoverColors(index);
+              
+              if (item.hasDropdown) {
+                return (
+                  <div 
+                    key={item.id}
+                    className="relative group"
+                    onMouseEnter={() => setAboutDropdownOpen(true)}
+                    onMouseLeave={() => setAboutDropdownOpen(false)}
+                  >
+                    <motion.button
+                      onClick={() => scrollToSection(item.id)}
+                      className={`relative text-sm font-bold text-white/90 hover:text-white ${hoverColors.text} transition-all duration-300 uppercase tracking-[0.1em] py-2 px-3 group flex items-center space-x-1`}
+                      whileHover={{ y: -2 }}
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+                      <div className={`absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r ${hoverColors.underline} transition-all duration-500 group-hover:w-full rounded-full`}></div>
+                      <div className={`absolute inset-0 bg-gradient-to-r ${hoverColors.bg} rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10`}></div>
+                      <div className={`absolute inset-0 bg-gradient-to-r ${hoverColors.bg} rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10 blur-sm`}></div>
+                    </motion.button>
+                    
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {aboutDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 w-80 mt-2 bg-background border-2 border-primary/30 rounded-xl shadow-2xl overflow-hidden"
+                          style={{
+                            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+                          }}
+                        >
+                          {item.submenu?.map((subItem, subIndex) => (
+                            <motion.button
+                              key={subItem.id}
+                              onClick={() => scrollToSection(subItem.id)}
+                              className="block w-full text-left px-6 py-4 text-white hover:text-white hover:bg-slate-800/90 transition-all duration-200 border-b border-border last:border-b-0"
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.2, delay: subIndex * 0.05 }}
+                              whileHover={{ x: 4 }}
+                            >
+                              <div className="font-semibold text-sm uppercase tracking-wide">{subItem.label}</div>
+                              <div className="text-xs text-white/70 mt-1">{subItem.description}</div>
+                            </motion.button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
               
               return (
                 <motion.button
@@ -154,6 +222,42 @@ export function Header() {
                   };
                   
                   const mobileHoverColors = getMobileHoverColors(index);
+                  
+                  if (item.hasDropdown) {
+                    return (
+                      <div key={item.id} className="space-y-2">
+                        <motion.button
+                          onClick={() => scrollToSection(item.id)}
+                          className={`flex w-full items-center justify-between text-white/80 ${mobileHoverColors.text} ${mobileHoverColors.bg} transition-all duration-300 font-bold uppercase tracking-wider px-4 py-2 rounded-lg border border-transparent hover:border-white/10`}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          whileHover={{ x: 10 }}
+                        >
+                          <span>{item.label}</span>
+                          <ChevronDown className="h-4 w-4" />
+                        </motion.button>
+                        
+                        {/* Mobile Submenu */}
+                        <div className="ml-4 space-y-1">
+                          {item.submenu?.map((subItem, subIndex) => (
+                            <motion.button
+                              key={subItem.id}
+                              onClick={() => scrollToSection(subItem.id)}
+                              className="block w-full text-left text-white/80 hover:text-white/95 hover:bg-slate-800/50 transition-all duration-200 font-medium text-sm px-3 py-2 rounded-md border border-transparent hover:border-slate-600/30"
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.3, delay: (index * 0.1) + (subIndex * 0.05) }}
+                              whileHover={{ x: 6 }}
+                            >
+                              <div>{subItem.label}</div>
+                              <div className="text-xs text-white/40 mt-0.5">{subItem.description}</div>
+                            </motion.button>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }
                   
                   return (
                     <motion.button

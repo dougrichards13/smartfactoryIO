@@ -1,11 +1,9 @@
-import { ArrowRight, Play, CheckCircle } from 'lucide-react';
-import { Button } from './ui/button';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
+import { Card, CardContent } from './ui/card';
 import { useContent } from '../src/contexts/ContentContext';
-
-// Import hero content for fallback
-import heroContent from '../content/hero.json';
 
 export function HeroSection() {
   // Use content from shared context for live updates

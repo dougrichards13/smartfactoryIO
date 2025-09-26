@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src",
+    "components",
+    "App.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

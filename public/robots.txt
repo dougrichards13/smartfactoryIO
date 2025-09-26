@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Priority sitemap location
+Sitemap: https://smartfactory.io/sitemap.xml
+
+# Allow indexing of all content for enterprise AI consulting
+# Smart Factory provides strategic AI consulting for C-level executives
+# and enterprise decision makers
+
+# Block any development or staging URLs if they exist
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /test/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

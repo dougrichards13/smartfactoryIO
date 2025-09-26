@@ -162,6 +162,7 @@ export default function App() {
             <AIAcceleratorSection />
             <MethodSection />
             <TeamSection />
+            <ResultsSection />
             <SocialSection />
             <ContactSection />
           </main>

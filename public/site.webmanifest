@@ -1,0 +1,26 @@
+{
+  "name": "Smart Factory - AI Consulting",
+  "short_name": "Smart Factory",
+  "description": "Enterprise AI Consulting for Visionary Leaders",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#181C25",
+  "theme_color": "#181C25",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "consulting"],
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary"
+}

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { SmartAssistant } from './SmartAssistant';
 import { BusinessReadinessAssessment } from './BusinessReadinessAssessment';
+import { AIAdvisorVisual } from './AIAdvisorVisual';
 
 export function ContactSection() {
   const [assistantOpen, setAssistantOpen] = useState(false);
@@ -18,15 +19,8 @@ export function ContactSection() {
     "Decision-Making Authority for Technology Investments"
   ];
 
+  // Order adjusted so AI Assessment appears where Executive Contact used to be (last in the list)
   const contactMethods = [
-    {
-      icon: Brain,
-      title: "AI Business Readiness Assessment",
-      description: "Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap",
-      action: "Start Assessment",
-      primary: true,
-      onClick: () => setAssessmentOpen(true)
-    },
     {
       icon: Calendar,
       title: "Direct Scheduling",
@@ -47,6 +41,14 @@ export function ContactSection() {
       description: "Direct email access to our leadership team for strategic partnerships",
       action: "leadership@smartfactory.io",
       primary: false
+    },
+    {
+      icon: Brain,
+      title: "AI Business Readiness Assessment",
+      description: "Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap",
+      action: "Start Assessment",
+      primary: true,
+      onClick: () => setAssessmentOpen(true)
     }
   ];
 
@@ -142,29 +144,88 @@ export function ContactSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'} ${method.onClick ? 'cursor-pointer' : ''}`}>
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <IconComponent className="w-6 h-6 text-accent" />
+                  {method.title === 'AI Business Readiness Assessment' ? (
+                    <div className="space-y-4">
+                      {/* Visual above the AI assessment card */}
+                      <AIAdvisorVisual />
+
+                      <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'} ${method.onClick ? 'cursor-pointer' : ''}`}>
+                        <CardContent className="p-6">
+                          <div className="flex items-start space-x-4">
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                <IconComponent className="w-6 h-6 text-accent" />
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-semibold mb-2">{method.title}</h4>
+                              <p className="text-sm text-white/80 mb-4">{method.description}</p>
+                              <div className="flex flex-wrap gap-2 mb-4">
+                                <Button 
+                                  onClick={method.onClick}
+                                  size="sm"
+                                  className="gradient-primary text-white"
+                                >
+                                  {method.action}
+                                </Button>
+                                {/* Quick actions inside the assessment card */}
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => window.open('#schedule', '_self')}
+                                >
+                                  <Calendar className="w-4 h-4 mr-1" /> Calendar
+                                </Button>
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  asChild
+                                >
+                                  <a href="tel:+15551234567">
+                                    <Phone className="w-4 h-4 mr-1" /> Hotline
+                                  </a>
+                                </Button>
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  asChild
+                                >
+                                  <a href="mailto:leadership@smartfactory.io">
+                                    <Mail className="w-4 h-4 mr-1" /> Email
+                                  </a>
+                                </Button>
+                              </div>
+                              <p className="text-xs text-white/60">Instant assessment • Personalized roadmap • Enterprise-grade</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ) : (
+                    <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'} ${method.onClick ? 'cursor-pointer' : ''}`}>
+                      <CardContent className="p-6">
+                        <div className="flex items-start space-x-4">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                              <IconComponent className="w-6 h-6 text-accent" />
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold mb-2">{method.title}</h4>
+                            <p className="text-sm text-white/80 mb-4">{method.description}</p>
+                            <Button 
+                              variant={method.primary ? "default" : "outline"} 
+                              size="sm"
+                              className={method.primary ? "gradient-primary text-white" : ""}
+                              onClick={method.onClick || (() => {})}
+                            >
+                              {method.action}
+                            </Button>
                           </div>
                         </div>
-                        <div className="flex-1">
-                          <h4 className="font-semibold mb-2">{method.title}</h4>
-                          <p className="text-sm text-white/80 mb-4">{method.description}</p>
-                          <Button 
-                            variant={method.primary ? "default" : "outline"} 
-                            size="sm"
-                            className={method.primary ? "gradient-primary text-white" : ""}
-                            onClick={method.onClick || (() => {})}
-                          >
-                            {method.action}
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  )}
                 </motion.div>
               );
             })}

@@ -4,7 +4,6 @@ import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { AIAcceleratorSection } from './components/AIAcceleratorSection';
 import { MethodSection } from './components/MethodSection';
-import { ResultsSection } from './components/ResultsSection';
 import { TeamSection } from './components/TeamSection';
 import { SocialSection } from './components/SocialSection';
 import { ContactSection } from './components/ContactSection';
@@ -157,7 +156,6 @@ export default function App() {
             <AIAcceleratorSection />
             <MethodSection />
             <TeamSection />
-            <ResultsSection />
             <SocialSection />
             <ContactSection />
           </main>
@@ -200,7 +198,7 @@ export default function App() {
                 <a href="#about" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
                 <a href="#method" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Method</a>
                 <a href="#team" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Leadership</a>
-                <a href="#results" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Results</a>
+                <a href="#social" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</a>
               </nav>
             </div>
 

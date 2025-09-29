@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Youtube, Globe, Heart, Users, Calendar, Zap, Building } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Globe, Calendar, Zap, Building } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -44,6 +44,7 @@ export function SocialSection() {
     }
   ];
 
+  /*
   const communityInitiatives = [
     {
       icon: Users,
@@ -61,30 +62,11 @@ export function SocialSection() {
       description: "Making AI transformation accessible to organizations worldwide"
     }
   ];
+  */
 
   return (
     <section id="social" className="section-padding">
       <div className="container-custom">
-        {/* Header */}
-        <motion.div 
-          className="text-center max-w-4xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-secondary/10 border-secondary/20 text-secondary">
-            Community & Social Impact
-          </Badge>
-          <h2 className="mb-6">
-            Join Our Global Community
-            <span className="text-gradient block">Connect, Learn, Transform</span>
-          </h2>
-          <p className="lead text-white/80">
-            Follow Smart Factory across social channels for the latest insights in enterprise AI, 
-            digital transformation strategies, and exclusive content for C-level executives driving innovation.
-          </p>
-        </motion.div>
 
         {/* Social Channels */}
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
@@ -133,40 +115,6 @@ export function SocialSection() {
           })}
         </div>
 
-        {/* Community Values */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold text-center mb-12">Our Commitment to Community</h3>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {communityInitiatives.map((initiative, index) => {
-              const IconComponent = initiative.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full text-center hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 hover:border-secondary/20">
-                    <CardContent className="p-8">
-                      <div className="w-16 h-16 mx-auto mb-6 bg-secondary/10 rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-8 h-8 text-secondary" />
-                      </div>
-                      <h4 className="text-xl font-semibold mb-4">{initiative.title}</h4>
-                      <p className="text-white/80 leading-relaxed">{initiative.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
 
         {/* About Smart Factory Statement */}
         <motion.div

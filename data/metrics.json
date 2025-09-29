@@ -1,19 +1,19 @@
 {
   "metrics": [
     {
-      "id": "portfolio-growth",
-      "value": "847%",
-      "title": "Proven Impact and Results",
-      "subtitle": "Portfolio growth: Current Fortune 500 client engagement demonstrating sustained value creation over 5-year strategic partnership",
+      "id": "typical-roi",
+      "value": "300%+",
+      "title": "Typical Client ROI",
+      "subtitle": "Average return on investment across engagements: Most clients see 3-5x ROI within 18 months of implementation",
       "icon": "TrendingUp",
       "color": "primary",
       "animationDuration": 2500
     },
     {
-      "id": "valuation-multiplier",
-      "value": "4.1x",
-      "title": "Valuation Excellence",
-      "subtitle": "$410M → $1.7B successful acquisition: Documented enterprise transformation driving measurable shareholder value",
+      "id": "efficiency-gains",
+      "value": "40%",
+      "title": "Average Efficiency Improvement",
+      "subtitle": "Typical operational efficiency gains: Documented improvements in process speed, cost reduction, and resource optimization",
       "icon": "Building2",
       "color": "secondary",
       "animationDuration": 2000
@@ -28,10 +28,10 @@
       "animationDuration": 1500
     },
     {
-      "id": "total-impact",
-      "value": "$5B+",
-      "title": "Cumulative Value Creation",
-      "subtitle": "Total documented project value delivered: Verifiable through public market data and qualified reference discussions",
+      "id": "client-satisfaction",
+      "value": "98%",
+      "title": "Client Satisfaction Rate",
+      "subtitle": "Long-term client success metric: High retention and referral rates demonstrate consistent value delivery across all company sizes",
       "icon": "DollarSign",
       "color": "primary",
       "animationDuration": 3000

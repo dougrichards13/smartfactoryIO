@@ -10,43 +10,43 @@
   },
   "consultantTypes": [
     {
-      "title": "Smart Architects™",
-      "subtitle": "C-Suite Fractional Leadership",
-      "description": "Strategic technology leaders who integrate seamlessly with your C-suite to drive digital transformation, strategy, and operational excellence initiatives.",
+      "title": "Smart Suite™",
+      "subtitle": "C-Suite Transformation Teams",
+      "description": "Elite consulting teams of strategic technology executives who integrate seamlessly with your C-suite. They work flexibly as part-time advisors, full-time consulting partners, or even as corporate officers while maintaining their consulting excellence and Smart Factory methodologies.",
       "features": [
-        "Fractional Executives",
-        "Technology Strategy & Roadmapping",
-        "Digital Transformation Leadership",
-        "Board-Level Technology Advisory",
-        "M&A Technology Due Diligence",
-        "Innovation Portfolio Management"
+        "Flexible Engagement Models (Part-Time to Officer-Level)",
+        "Technology Strategy & Enterprise Roadmapping",
+        "Digital Transformation Leadership Teams",
+        "Board-Level Technology Advisory Services",
+        "M&A Technology Due Diligence Excellence",
+        "Corporate Officer Consulting Integration"
       ],
-      "investment": "$50K - $200K/quarter",
-      "duration": "3-12 months",
+      "investment": "$25K - $150K/engagement",
+      "duration": "1-5 years",
       "color": "primary",
-      "cta": "Engage a Smart Architect™"
+      "cta": "Engage Smart Suite™"
     },
     {
-      "title": "Smart Engineers™",
-      "subtitle": "AI-Empowered Technology Experts", 
-      "description": "Multi-disciplinary technology specialists leveraging AI to accelerate integration, implementation, data science, and technical delivery across your enterprise.",
+      "title": "AI Synthesizer™",
+      "subtitle": "AI Accelerator Implementation Teams", 
+      "description": "Revolutionary consulting teams who are the human intelligence behind our AI Accelerator platform. These specialists combine AI, creativity, engineering, and business processes in ways that don't exist elsewhere - synthesizing human ingenuity with machine intelligence to deliver transformational outcomes through our proprietary AI Accelerator methodology.",
       "features": [
-        "AI Solution Development",
-        "Enterprise System Integration",
-        "Data Science & Analytics",
-        "Cloud Architecture & Migration",
-        "Automation & Process Optimization",
-        "Technical Team Augmentation"
+        "AI Accelerator Platform Implementation & Optimization",
+        "Context-Aware AI System Design & Integration",
+        "Human-Machine Collaboration Architecture",
+        "Creative Engineering & Advanced Process Innovation",
+        "Advanced NLP & LLM Implementation Excellence",
+        "Strategic Data Synthesis & Intelligent Visualization"
       ],
       "investment": "$100K - $500K/project",
-      "duration": "2-9 months",
+      "duration": "12-36 months",
       "color": "secondary",
-      "cta": "Deploy Smart Engineers™"
+      "cta": "Deploy AI Synthesizer™"
     },
     {
       "title": "Smart Assurance™",
-      "subtitle": "AI-Driven Quality & Testing",
-      "description": "Quality and testing professionals utilizing AI-driven methodologies to ensure ISO standards compliance, automated testing, and risk-managed implementations.",
+      "subtitle": "AI-Driven Quality & Testing Teams",
+      "description": "Specialized consulting teams of quality and testing professionals who utilize cutting-edge AI-driven methodologies to ensure ISO standards compliance, comprehensive automated testing frameworks, and enterprise-level risk-managed implementations. These teams work collaboratively to deliver bulletproof quality assurance across all transformation initiatives.",
       "features": [
         "AI-Powered Quality Assurance",
         "ISO Standards Implementation", 
@@ -56,7 +56,7 @@
         "Continuous Quality Monitoring"
       ],
       "investment": "$25K - $150K/engagement",
-      "duration": "1-6 months",
+      "duration": "3-18 months",
       "color": "accent",
       "cta": "Secure Smart Assurance™"
     }

@@ -1,0 +1,29 @@
+{
+  "name": "smart-factory-ai-assistant",
+  "version": "1.0.0",
+  "description": "Custom AI Assistant for Smart Factory consulting services - built with open source models",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Testing AI Assistant API...\" && curl -f http://localhost:3001/api/health || exit 1"
+  },
+  "keywords": [
+    "ai",
+    "assistant",
+    "consulting",
+    "ollama",
+    "mistral",
+    "smart-factory"
+  ],
+  "author": "Smart Factory",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

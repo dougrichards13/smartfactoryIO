@@ -15,28 +15,28 @@ import {
   ReferenceLine
 } from 'recharts';
 
-// Portfolio growth data showing 847% increase over 5 years
+// Client ROI progression showing typical 300%+ return
 const portfolioGrowthData = [
-  { year: 'Year 1', value: 100, label: 'Baseline' },
-  { year: 'Year 2', value: 185, label: '85% Growth' },
-  { year: 'Year 3', value: 340, label: '240% Growth' },
-  { year: 'Year 4', value: 620, label: '520% Growth' },
-  { year: 'Year 5', value: 947, label: '847% Growth' }
+  { year: 'Baseline', value: 100, label: 'Initial Investment' },
+  { year: 'Q2', value: 180, label: '80% ROI' },
+  { year: 'Q4', value: 250, label: '150% ROI' },
+  { year: 'Year 2', value: 320, label: '220% ROI' },
+  { year: 'Year 3', value: 400, label: '300% ROI' }
 ];
 
-// Valuation comparison data
+// Efficiency improvement data
 const valuationData = [
-  { phase: 'Initial', value: 410, label: '$410M' },
-  { phase: 'Exit', value: 1700, label: '$1.7B' }
+  { phase: 'Before', value: 100, label: 'Baseline' },
+  { phase: 'After', value: 140, label: '40% Improved' }
 ];
 
-// Revenue impact timeline
+// Implementation and satisfaction timeline
 const impactTimelineData = [
-  { quarter: 'Q1', revenue: 2.1, efficiency: 15 },
-  { quarter: 'Q2', revenue: 3.8, efficiency: 28 },
-  { quarter: 'Q3', revenue: 6.2, efficiency: 45 },
-  { quarter: 'Q4', revenue: 8.7, efficiency: 67 },
-  { quarter: 'Q5', revenue: 12.4, efficiency: 85 }
+  { quarter: 'Month 1', satisfaction: 75, efficiency: 15 },
+  { quarter: 'Month 2', satisfaction: 82, efficiency: 28 },
+  { quarter: 'Month 3', satisfaction: 89, efficiency: 45 },
+  { quarter: 'Month 6', satisfaction: 94, efficiency: 67 },
+  { quarter: 'Year 1', satisfaction: 98, efficiency: 85 }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -46,9 +46,9 @@ const CustomTooltip = ({ active, payload, label }: any) => {
         <p className="text-white font-semibold text-sm mb-2">{label}</p>
         {payload.map((entry: any, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
-            {entry.name}: {typeof entry.value === 'number' && entry.value > 100 
-              ? `${entry.value.toLocaleString()}${entry.dataKey === 'value' && entry.payload.phase ? 'M' : '%'}` 
-              : `${entry.value}${entry.dataKey.includes('revenue') ? 'B' : '%'}`}
+            {entry.name}: {typeof entry.value === 'number' 
+              ? `${entry.value}${entry.dataKey.includes('satisfaction') ? '%' : entry.dataKey === 'efficiency' ? '%' : entry.dataKey === 'value' ? '%' : '%'}` 
+              : entry.value}
           </p>
         ))}
       </div>
@@ -123,7 +123,7 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}M`}
+          tickFormatter={(value) => `${value}%`}
         />
         <Tooltip content={<CustomTooltip />} />
         <Bar 
@@ -153,12 +153,12 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}B`}
+          tickFormatter={(value) => `${value}%`}
         />
         <Tooltip content={<CustomTooltip />} />
         <Line
           type="monotone"
-          dataKey="revenue"
+          dataKey="satisfaction"
           stroke="#3EB7FF"
           strokeWidth={3}
           dot={{ fill: '#3EB7FF', strokeWidth: 2, r: 6 }}
@@ -181,11 +181,11 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
   const getChartTitle = () => {
     switch (activeChart) {
       case 'portfolio':
-        return { title: 'Portfolio Growth Trajectory', subtitle: '847% growth over 5-year engagement' };
+        return { title: 'Client ROI Trajectory', subtitle: 'Typical client return progression over time' };
       case 'valuation':
-        return { title: 'Valuation Transformation', subtitle: '4.1x increase: $410M → $1.7B exit' };
+        return { title: 'Efficiency Improvement', subtitle: 'Average operational efficiency gains' };
       case 'impact':
-        return { title: 'Revenue & Efficiency Impact', subtitle: 'Dual-metric transformation timeline' };
+        return { title: 'Implementation Success', subtitle: 'Client satisfaction and efficiency timeline' };
       default:
         return { title: 'Results Overview', subtitle: 'Choose a metric to explore' };
     }
@@ -245,12 +245,12 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
         {activeChart === 'portfolio' && (
           <>
             <div className="text-center p-3 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="text-2xl font-black text-primary">847%</div>
-              <div className="text-xs text-white/70">Total Growth</div>
+              <div className="text-2xl font-black text-primary">300%+</div>
+              <div className="text-xs text-white/70">Typical ROI</div>
             </div>
             <div className="text-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
-              <div className="text-2xl font-black text-secondary">5 Years</div>
-              <div className="text-xs text-white/70">Partnership</div>
+              <div className="text-2xl font-black text-secondary">18 Months</div>
+              <div className="text-xs text-white/70">Average Timeline</div>
             </div>
           </>
         )}
@@ -258,12 +258,12 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
         {activeChart === 'valuation' && (
           <>
             <div className="text-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
-              <div className="text-2xl font-black text-secondary">4.1x</div>
-              <div className="text-xs text-white/70">Multiplier</div>
+              <div className="text-2xl font-black text-secondary">40%</div>
+              <div className="text-xs text-white/70">Avg Improvement</div>
             </div>
             <div className="text-center p-3 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="text-2xl font-black text-primary">$1.3B</div>
-              <div className="text-xs text-white/70">Value Created</div>
+              <div className="text-2xl font-black text-primary">90 Days</div>
+              <div className="text-xs text-white/70">Implementation</div>
             </div>
           </>
         )}
@@ -271,8 +271,8 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
         {activeChart === 'impact' && (
           <>
             <div className="text-center p-3 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="text-2xl font-black text-primary">12.4B</div>
-              <div className="text-xs text-white/70">Revenue Peak</div>
+              <div className="text-2xl font-black text-primary">98%</div>
+              <div className="text-xs text-white/70">Client Satisfaction</div>
             </div>
             <div className="text-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
               <div className="text-2xl font-black text-secondary">85%</div>

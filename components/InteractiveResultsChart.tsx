@@ -6,22 +6,22 @@ import { ResultsVisualization } from './ResultsVisualization';
 const chartOptions = [
   {
     id: 'portfolio' as const,
-    label: 'Portfolio Growth',
-    description: '847% increase',
+    label: 'Client ROI Growth',
+    description: '300%+ typical return',
     icon: TrendingUp,
     color: 'primary'
   },
   {
     id: 'valuation' as const,
-    label: 'Valuation Impact',
-    description: '$410M → $1.7B',
+    label: 'Efficiency Gains',
+    description: '40% improvement',
     icon: Building2,
     color: 'secondary'
   },
   {
     id: 'impact' as const,
-    label: 'Revenue Timeline',
-    description: 'Multi-metric view',
+    label: 'Implementation',
+    description: 'Client satisfaction',
     icon: BarChart3,
     color: 'accent'
   }

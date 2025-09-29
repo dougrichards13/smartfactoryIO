@@ -19,8 +19,8 @@
     "copyright": "© {currentYear} Smart Factory. All rights reserved.",
     "description": "Transforming human potential into business reality through AI-driven consulting since {foundingYear}.",
     "services": [
-      {"label": "Smart Architects™", "id": "services"},
-      {"label": "Smart Engineers™", "id": "services"},
+      {"label": "Smart Suite™", "id": "services"},
+      {"label": "AI Synthesizer™", "id": "services"},
       {"label": "Smart Assurance™", "id": "services"},
       {"label": "AI Accelerator™", "id": "ai-accelerator"}
     ],

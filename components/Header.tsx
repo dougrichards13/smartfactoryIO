@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -27,6 +27,15 @@ export function Header() {
     scrollToSection('contact');
   };
 
+  const handleNavClick = (item: any) => {
+    if (item.isExternal) {
+      window.open(item.url, '_blank', 'noopener,noreferrer');
+    } else {
+      scrollToSection(item.id);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   const navItems = [
     { 
       label: 'OVERVIEW',
@@ -39,10 +48,9 @@ export function Header() {
         { label: 'Leadership Team', id: 'team', description: 'Meet our experts' }
       ]
     },
-    { label: 'SERVICES', id: 'services' },
     { label: 'AI ACCELERATOR', id: 'ai-accelerator' },
     { label: 'METHOD', id: 'method' },
-    { label: 'RESULTS', id: 'results' },
+    { label: 'INSIGHTS', id: 'insights', isExternal: true, url: 'https://www.linkedin.com/company/smartfactoryio' },
     { label: 'TEAM', id: 'team' }
   ];
 
@@ -79,12 +87,11 @@ export function Header() {
               // Define unique hover colors for each nav item
               const getHoverColors = (itemIndex: number) => {
                 const colors = [
-                  { text: 'group-hover:text-primary', bg: 'from-primary/10 to-primary/20', underline: 'from-primary to-primary-light' }, // About - Electric Blue
-                  { text: 'group-hover:text-secondary', bg: 'from-secondary/10 to-secondary/20', underline: 'from-secondary to-secondary-light' }, // Services - Neon Green
-                  { text: 'group-hover:text-tertiary', bg: 'from-tertiary/10 to-tertiary/20', underline: 'from-tertiary to-tertiary-light' }, // AI Accelerator - Pale Sky
-                  { text: 'group-hover:text-primary', bg: 'from-primary/10 to-primary/20', underline: 'from-primary to-primary-light' }, // Method - Electric Blue
-                  { text: 'group-hover:text-secondary', bg: 'from-secondary/10 to-secondary/20', underline: 'from-secondary to-secondary-light' }, // Results - Neon Green
-                  { text: 'group-hover:text-tertiary', bg: 'from-tertiary/10 to-tertiary/20', underline: 'from-tertiary to-tertiary-light' }, // Team - Pale Sky
+                  { text: 'group-hover:text-primary', bg: 'from-primary/10 to-primary/20', underline: 'from-primary to-primary-light' }, // Overview - Electric Blue
+                  { text: 'group-hover:text-accent', bg: 'from-accent/10 to-accent/20', underline: 'from-accent to-accent-light' }, // AI Accelerator - Accent
+                  { text: 'group-hover:text-secondary', bg: 'from-secondary/10 to-secondary/20', underline: 'from-secondary to-secondary-light' }, // Method - Neon Green
+                  { text: 'group-hover:text-accent', bg: 'from-accent/10 to-accent/20', underline: 'from-accent to-accent-light' }, // Insights - Accent
+                  { text: 'group-hover:text-primary', bg: 'from-primary/10 to-primary/20', underline: 'from-primary to-primary-light' }, // Team - Electric Blue
                 ];
                 return colors[itemIndex % colors.length];
               };
@@ -149,20 +156,21 @@ export function Header() {
               }
               
               return (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative text-sm font-bold text-white/90 hover:text-white ${hoverColors.text} transition-all duration-300 uppercase tracking-[0.1em] py-2 px-3 group`}
-                  whileHover={{ y: -2 }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  {item.label}
-                  <div className={`absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r ${hoverColors.underline} transition-all duration-500 group-hover:w-full rounded-full`}></div>
-                  <div className={`absolute inset-0 bg-gradient-to-r ${hoverColors.bg} rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10`}></div>
-                  <div className={`absolute inset-0 bg-gradient-to-r ${hoverColors.bg} rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10 blur-sm`}></div>
-                </motion.button>
+                  <motion.button
+                    key={item.id}
+                    onClick={() => handleNavClick(item)}
+                    className={`relative text-sm font-bold text-white/90 hover:text-white ${hoverColors.text} transition-all duration-300 uppercase tracking-[0.1em] py-2 px-3 group flex items-center space-x-1`}
+                    whileHover={{ y: -2 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <span>{item.label}</span>
+                    {item.isExternal && <ExternalLink className="h-3 w-3" />}
+                    <div className={`absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r ${hoverColors.underline} transition-all duration-500 group-hover:w-full rounded-full`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${hoverColors.bg} rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${hoverColors.bg} rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10 blur-sm`}></div>
+                  </motion.button>
               );
             })}
           </nav>
@@ -211,12 +219,11 @@ export function Header() {
                   // Define unique hover colors for mobile menu
                   const getMobileHoverColors = (itemIndex: number) => {
                     const colors = [
-                      { text: 'hover:text-primary', bg: 'hover:bg-primary/10' }, // About - Electric Blue
-                      { text: 'hover:text-secondary', bg: 'hover:bg-secondary/10' }, // Services - Neon Green
-                      { text: 'hover:text-tertiary', bg: 'hover:bg-tertiary/10' }, // AI Accelerator - Pale Sky
-                      { text: 'hover:text-primary', bg: 'hover:bg-primary/10' }, // Method - Electric Blue
-                      { text: 'hover:text-secondary', bg: 'hover:bg-secondary/10' }, // Results - Neon Green
-                      { text: 'hover:text-tertiary', bg: 'hover:bg-tertiary/10' }, // Team - Pale Sky
+                      { text: 'hover:text-primary', bg: 'hover:bg-primary/10' }, // Overview - Electric Blue
+                      { text: 'hover:text-accent', bg: 'hover:bg-accent/10' }, // AI Accelerator - Accent
+                      { text: 'hover:text-secondary', bg: 'hover:bg-secondary/10' }, // Method - Neon Green
+                      { text: 'hover:text-accent', bg: 'hover:bg-accent/10' }, // Insights - Accent
+                      { text: 'hover:text-primary', bg: 'hover:bg-primary/10' }, // Team - Electric Blue
                     ];
                     return colors[itemIndex % colors.length];
                   };
@@ -262,14 +269,15 @@ export function Header() {
                   return (
                     <motion.button
                       key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className={`block w-full text-left text-white/80 ${mobileHoverColors.text} ${mobileHoverColors.bg} transition-all duration-300 font-bold uppercase tracking-wider px-4 py-2 rounded-lg border border-transparent hover:border-white/10`}
+                      onClick={() => handleNavClick(item)}
+                      className={`flex w-full items-center justify-between text-white/80 ${mobileHoverColors.text} ${mobileHoverColors.bg} transition-all duration-300 font-bold uppercase tracking-wider px-4 py-2 rounded-lg border border-transparent hover:border-white/10`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       whileHover={{ x: 10 }}
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      {item.isExternal && <ExternalLink className="h-4 w-4" />}
                     </motion.button>
                   );
                 })}

@@ -80,7 +80,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
         <div className="text-center mb-8">
           <h3 className="text-2xl font-semibold mb-2">Strategic Consultation Request</h3>
           <p className="text-white/80">
-            Complete this form to connect with a Smart Architect™ for your AI transformation journey.
+            Complete this form to connect with Smart Suite™ teams for your AI transformation journey.
           </p>
         </div>
 
@@ -236,7 +236,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
           {submitStatus === 'success' && (
             <div className="flex items-center justify-center space-x-2 text-secondary bg-secondary/10 p-4 rounded-lg">
               <CheckCircle className="w-5 h-5" />
-              <span>Thank you! A Smart Architect™ will contact you within 2 hours.</span>
+              <span>Thank you! Smart Suite™ teams will contact you within 2 hours.</span>
             </div>
           )}
 

@@ -1,0 +1,115 @@
+{
+  "company": {
+    "name": "Smart Factory",
+    "founded": "2010",
+    "experience": "15+ years",
+    "focus": "Enterprise consulting with human-centered approach"
+  },
+  "services": {
+    "smart_suite": {
+      "name": "Smart Suite™",
+      "subtitle": "C-Suite Transformation Teams",
+      "description": "Elite consulting teams of strategic technology executives who integrate seamlessly with your C-suite. They work flexibly as part-time advisors, full-time consulting partners, or even as corporate officers while maintaining their consulting excellence and Smart Factory methodologies.",
+      "investment": "$25K - $150K/engagement",
+      "timeline": "1-5 years",
+      "capabilities": [
+        "Flexible Engagement Models (Part-Time to Officer-Level)",
+        "Technology Strategy & Enterprise Roadmapping",
+        "Digital Transformation Leadership Teams",
+        "Board-Level Technology Advisory Services",
+        "M&A Technology Due Diligence Excellence",
+        "Corporate Officer Consulting Integration"
+      ]
+    },
+    "ai_synthesizer": {
+      "name": "AI Synthesizer™",
+      "subtitle": "AI Accelerator Implementation Teams",
+      "description": "Revolutionary consulting teams who are the human intelligence behind our AI Accelerator platform. These specialists combine AI, creativity, engineering, and business processes in ways that don't exist elsewhere - synthesizing human ingenuity with machine intelligence to deliver transformational outcomes through our proprietary AI Accelerator methodology.",
+      "investment": "$100K - $500K/project",
+      "timeline": "12-36 months",
+      "capabilities": [
+        "AI Accelerator Platform Implementation & Optimization",
+        "Context-Aware AI System Design & Integration",
+        "Human-Machine Collaboration Architecture",
+        "Creative Engineering & Advanced Process Innovation",
+        "Advanced NLP & LLM Implementation Excellence",
+        "Strategic Data Synthesis & Intelligent Visualization"
+      ],
+      "unique_positioning": "A job from five years in the future that exists nowhere else in the world"
+    },
+    "smart_assurance": {
+      "name": "Smart Assurance™",
+      "subtitle": "AI-Driven Quality & Testing Teams",
+      "description": "Specialized consulting teams of quality and testing professionals who utilize cutting-edge AI-driven methodologies to ensure ISO standards compliance, comprehensive automated testing frameworks, and enterprise-level risk-managed implementations. These teams work collaboratively to deliver bulletproof quality assurance across all transformation initiatives.",
+      "investment": "$25K - $150K/engagement",
+      "timeline": "3-18 months",
+      "capabilities": [
+        "AI-Powered Quality Assurance",
+        "ISO Standards Implementation",
+        "Automated Testing Frameworks",
+        "Risk Assessment & Mitigation",
+        "Compliance & Governance",
+        "Continuous Quality Monitoring"
+      ]
+    }
+  },
+  "metrics": {
+    "typical_roi": "300%+ average client ROI within 18 months",
+    "efficiency_improvement": "40% average operational efficiency gains",
+    "years_experience": "15+ years of consistent enterprise delivery",
+    "client_satisfaction": "98% client satisfaction rate with high retention"
+  },
+  "approach": {
+    "philosophy": "Humans first. Results proven. Technology amplified.",
+    "core_strengths": [
+      "Expert strategic planning",
+      "World-class execution",
+      "The right people for the job",
+      "15 years of proven track record",
+      "Complex problem solving"
+    ],
+    "differentiators": [
+      "Team-based consulting model vs individual consultants",
+      "Flexible engagement from part-time to corporate officer level",
+      "AI Synthesizer role exists nowhere else in the world",
+      "Human intelligence behind AI Accelerator platform",
+      "Build and train our own AI models for maximum security"
+    ]
+  },
+  "target_clients": {
+    "ideal_profile": [
+      "C-Level or Senior Executive Role",
+      "Organization with $500K+ Annual Innovation Budget",
+      "Enterprise or Upper Mid-Market Company",
+      "Strategic AI or Digital Transformation Initiative",
+      "Decision-Making Authority for Technology Investments"
+    ],
+    "industries": [
+      "Agriculture & Cooperative Finance",
+      "Federal Banking Systems",
+      "Global Healthcare & Life Sciences",
+      "Professional Sports & Entertainment",
+      "International Airlines & Transportation",
+      "Higher Education & Research",
+      "Financial Services & Insurance",
+      "Technology & Innovation"
+    ]
+  },
+  "guardrails": {
+    "cannot_do": [
+      "Generate images, videos, or other media content",
+      "Pretend to be human or claim to have human experiences",
+      "Access external systems or browse the internet",
+      "Provide specific legal, financial, or medical advice",
+      "Share confidential client information",
+      "Make commitments on behalf of Smart Factory",
+      "Provide pricing outside of published ranges"
+    ],
+    "appropriate_responses": {
+      "image_request": "I can't generate images, but I'd be happy to discuss how our visual design and brand strategy teams can help with your creative needs.",
+      "inappropriate_request": "I'm designed to help with questions about Smart Factory's consulting services and capabilities. How can I assist you with your business transformation needs?",
+      "outside_expertise": "That's outside my area of expertise. Let me connect you with one of our Smart Suite™ teams who can provide the specific guidance you need.",
+      "confidential_info": "I maintain strict confidentiality about client projects. I can share general information about our capabilities and approach instead."
+    }
+  }
+}

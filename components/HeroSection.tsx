@@ -4,11 +4,51 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Card, CardContent } from './ui/card';
 import { useContent } from '../src/contexts/ContentContext';
+import { useEffect, useRef, useState } from 'react';
 
 export function HeroSection() {
   // Use content from shared context for live updates
   const { content } = useContent();
   const { headline, description, tagline, trustIndicators, ctaButton } = content.hero;
+
+  // Video optimization states
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    // Listen for changes in motion preference
+    const handleMotionPreferenceChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+    mediaQuery.addEventListener('change', handleMotionPreferenceChange);
+
+    // Intersection Observer for lazy video loading
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !prefersReducedMotion) {
+            setShouldPlayVideo(true);
+          }
+        });
+      },
+      { rootMargin: '100px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMotionPreferenceChange);
+      observer.disconnect();
+    };
+  }, [prefersReducedMotion]);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -22,18 +62,36 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative h-[60vh] flex items-center justify-center overflow-hidden py-8">
+    <section ref={sectionRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden py-8">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/assets/videos/hero-video.mov" type="video/mp4" />
-        </video>
+        {shouldPlayVideo && !prefersReducedMotion ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/assets/videos/hero-poster.jpg"
+            className="w-full h-full object-cover"
+            aria-hidden="true"
+          >
+            {/* WebM first for modern browsers (smallest file) */}
+            <source src="/assets/videos/hero-video-1080.webm" type="video/webm" />
+            {/* MP4 fallback */}
+            <source src="/assets/videos/hero-video-1080.mp4" type="video/mp4" />
+            {/* 720p fallback for slower connections */}
+            <source src="/assets/videos/hero-video-720.mp4" type="video/mp4" media="(max-width: 768px) or (connection: slow)" />
+          </video>
+        ) : (
+          // Poster image fallback for reduced motion or before video loads
+          <img
+            src="/assets/videos/hero-poster.jpg"
+            alt="Smart Factory Hero Background"
+            className="w-full h-full object-cover"
+          />
+        )}
         {/* Video Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>

@@ -24,7 +24,7 @@ export function AboutSection() {
       description: "Agricultural lending transformation and cooperative growth",
       publicClients: ["Cooperative Finance Association"],
       privateClients: ["Agricultural cooperatives", "Rural financial institutions", "Farm credit systems"],
-      impact: "847% portfolio growth achievement",
+      impact: "300%+ average client ROI achievement",
       engagement: "COO/CTO leadership - transformational growth"
     },
     {
@@ -40,7 +40,7 @@ export function AboutSection() {
       description: "Pharmaceutical innovation and biotechnology advancement",
       publicClients: ["Johnson & Johnson", "Bayer AG"],
       privateClients: ["Biotech startups", "Medical device manufacturers"],
-      impact: "$1.8B+ R&D optimization",
+      impact: "40%+ efficiency improvement",
       engagement: "Enterprise-scale digital transformation"
     },
     {
@@ -72,7 +72,7 @@ export function AboutSection() {
       description: "Banking innovation and insurance technology",
       publicClients: ["Armed Forces Insurance", "Bank of Oklahoma"],
       privateClients: ["Regional banks", "Insurance providers"],
-      impact: "$900M+ platform modernization",
+      impact: "Platform modernization excellence",
       engagement: "Regulatory compliance excellence"
     },
     {
@@ -80,7 +80,7 @@ export function AboutSection() {
       description: "Enterprise software development and platform scaling",
       publicClients: ["Altare (Public Markets)", "Evergy Inc."],
       privateClients: ["SaaS platforms", "Enterprise software companies"],
-      impact: "$200M+ valuation growth",
+      impact: "98% client satisfaction rate",
       engagement: "IPO preparation and scaling"
     }
   ];

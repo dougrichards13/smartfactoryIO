@@ -1,12 +1,14 @@
-import { MessageCircle, Calendar, Phone, Mail, CheckCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, Calendar, Phone, Mail, CheckCircle, ArrowRight, Brain } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { SmartAssistant } from './SmartAssistant';
+import { BusinessReadinessAssessment } from './BusinessReadinessAssessment';
 
 export function ContactSection() {
-  const [chatbotOpen, setChatbotOpen] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
+  const [assessmentOpen, setAssessmentOpen] = useState(false);
 
   const qualificationCriteria = [
     "C-Level or Senior Executive Role",
@@ -18,16 +20,17 @@ export function ContactSection() {
 
   const contactMethods = [
     {
-      icon: MessageCircle,
-      title: "AI-Powered Qualification",
-      description: "Chat with our Smart Assistant to qualify your needs and schedule a consultation",
-      action: "Start Conversation",
-      primary: true
+      icon: Brain,
+      title: "AI Business Readiness Assessment",
+      description: "Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap",
+      action: "Start Assessment",
+      primary: true,
+      onClick: () => setAssessmentOpen(true)
     },
     {
       icon: Calendar,
       title: "Direct Scheduling",
-      description: "Book a strategic consultation directly with a Smart Architect™",
+      description: "Book a strategic consultation directly with Smart Suite™ teams",
       action: "View Calendar",
       primary: false
     },
@@ -47,10 +50,9 @@ export function ContactSection() {
     }
   ];
 
-  const openChatbot = () => {
-    setChatbotOpen(true);
-    // In a real implementation, this would initialize the chatbot
-    console.log("Opening Smart Factory AI Chatbot...");
+  const openAssistant = () => {
+    setAssistantOpen(true);
+    console.log("Opening Smart Factory AI Assistant...");
   };
 
   return (
@@ -58,24 +60,15 @@ export function ContactSection() {
       <div className="container-custom">
         {/* Header */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center max-w-5xl mx-auto mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-primary/10 border-primary/20 text-primary">
-            Let's Talk
-          </Badge>
-          <h2 className="mb-6">
-            Talk to a Smart Architect™
-            <span className="text-gradient block">Strategic Consultation Awaits</span>
+          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+            Ready to Start?
           </h2>
-          <p className="lead text-white/80">
-            Ready to transform your enterprise with AI? Our Smart Assistant will qualify your needs 
-            and connect you with the right Smart Architect™ for a strategic consultation tailored 
-            to your organization's goals and budget.
-          </p>
         </motion.div>
 
         {/* Main Contact Grid */}
@@ -96,12 +89,12 @@ export function ContactSection() {
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Smart Factory AI Assistant</h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Our AI-powered assistant will qualify your needs, understand your organization's 
-                  requirements, and connect you with the perfect Smart Architect™ for your transformation journey.
+                  Our Smart Assistant helps match you with the right consulting experts. We'll understand your business challenges, 
+                  assess your needs, and connect you with the Smart Suite™ team that has the proven track record to deliver results in your industry.
                 </p>
                 <Button 
                   size="lg" 
-                  onClick={openChatbot}
+                  onClick={openAssistant}
                   className="w-full gradient-primary text-white hover:shadow-xl transition-all duration-300 group mb-4"
                 >
                   Start Smart Conversation
@@ -149,7 +142,7 @@ export function ContactSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'}`}>
+                  <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'} ${method.onClick ? 'cursor-pointer' : ''}`}>
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="flex-shrink-0">
@@ -164,6 +157,7 @@ export function ContactSection() {
                             variant={method.primary ? "default" : "outline"} 
                             size="sm"
                             className={method.primary ? "gradient-primary text-white" : ""}
+                            onClick={method.onClick || (() => {})}
                           >
                             {method.action}
                           </Button>
@@ -198,7 +192,7 @@ export function ContactSection() {
               },
               {
                 title: "Team Matching",
-                description: "Connect with the right Smart Architect™ for your industry"
+                description: "Connect with the right Smart Suite™ team for your industry"
               },
               {
                 title: "Calendar Integration",
@@ -245,43 +239,18 @@ export function ContactSection() {
           </div>
         </motion.div>
 
-        {/* Chatbot Placeholder */}
-        {chatbotOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="fixed bottom-6 right-6 w-96 h-96 bg-card border-2 border-primary/20 rounded-xl shadow-2xl z-50"
-          >
-            <div className="p-4 border-b border-border bg-primary/5 rounded-t-xl">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="font-semibold">Smart Factory Assistant</span>
-                </div>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={() => setChatbotOpen(false)}
-                  className="h-6 w-6 p-0"
-                >
-                  ×
-                </Button>
-              </div>
-            </div>
-            <div className="p-4 h-full flex items-center justify-center text-center">
-              <div>
-                <p className="text-white/80 mb-4">
-                  Smart Factory AI Assistant would be integrated here using a chatbot service like Elfsight or similar.
-                </p>
-                <p className="text-sm text-white/80">
-                  The chatbot would qualify leads, collect contact info, and schedule consultations.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        )}
+        {/* Smart Factory AI Assistant */}
+        <SmartAssistant 
+          isOpen={assistantOpen} 
+          onToggle={() => setAssistantOpen(!assistantOpen)}
+          apiEndpoint="http://localhost:3001/api/chat"
+        />
+
+        {/* Business Readiness Assessment */}
+        <BusinessReadinessAssessment 
+          isOpen={assessmentOpen}
+          onClose={() => setAssessmentOpen(false)}
+        />
       </div>
     </section>
   );

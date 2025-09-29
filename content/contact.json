@@ -2,14 +2,14 @@
   "header": {
     "badge": "Let's Talk",
     "title": {
-      "line1": "Talk to a Smart Architect™",
+      "line1": "Talk to Smart Suite™",
       "line2": "Strategic Consultation Awaits"
     },
-    "description": "Ready to transform your enterprise with AI? Our Smart Assistant will qualify your needs and connect you with the right Smart Architect™ for a strategic consultation tailored to your organization's goals and budget."
+    "description": "Ready to solve complex problems and drive real results? For 15 years, Smart Factory has delivered proven solutions through expert strategic planning, world-class execution, and the right people. Our Smart Assistant will connect you with the Smart Suite™ team that matches your industry and challenges."
   },
   "primaryCTA": {
     "title": "Smart Factory AI Assistant",
-    "description": "Our AI-powered assistant will qualify your needs, understand your organization's requirements, and connect you with the perfect Smart Architect™ for your transformation journey.",
+    "description": "Our Smart Assistant helps match you with the right consulting experts. We'll understand your business challenges, assess your needs, and connect you with the Smart Suite™ team that has the proven track record to deliver results in your industry.",
     "buttonText": "Start Smart Conversation",
     "features": "Available 24/7 • Instant qualification • Direct scheduling"
   },
@@ -32,7 +32,7 @@
     },
     {
       "title": "Direct Scheduling", 
-      "description": "Book a strategic consultation directly with a Smart Architect™",
+      "description": "Book a strategic consultation directly with Smart Suite™ teams",
       "action": "View Calendar"
     },
     {
@@ -59,7 +59,7 @@
       },
       {
         "title": "Team Matching", 
-        "description": "Connect with the right Smart Architect™ for your industry"
+        "description": "Connect with the right Smart Suite™ team for your industry"
       },
       {
         "title": "Calendar Integration",

@@ -10,33 +10,33 @@ export function AIAcceleratorSection() {
   const keyFeatures = [
     {
       icon: Shield,
-      title: "Data Sovereignty",
-      description: "Complete control over your data with on-premise or private cloud deployment options"
+      title: "Fortress-Like Data Security",
+      description: "Proprietary isolation technology creates a sovereign environment protecting your IP while enabling powerful AI capabilities"
     },
     {
       icon: Zap,
-      title: "Agentic AI",
-      description: "Advanced AI agents that learn, adapt, and execute complex business processes autonomously"
+      title: "No Training Required",
+      description: "Battle-tested frameworks enable rapid AI implementation and scaling without training your sensitive data"
     },
     {
       icon: Database,
       title: "Seamless Integration", 
-      description: "Plug-and-play architecture that integrates with existing enterprise systems"
+      description: "Transform legacy systems into modern powerhouses with plug-and-play innovation that works with existing architecture"
     },
     {
       icon: Lock,
-      title: "Enterprise Security",
-      description: "Bank-grade security with compliance for SOC2, HIPAA, ISO, and international standards"
+      title: "Quality Assurance by Design",
+      description: "ISO standards and AI-enhanced testing methodologies ensure enterprise-grade reliability and compliance"
     }
   ];
 
   const acceleratorComponents = [
-    "AI Strategy Assessment Engine",
-    "Pre-Built Industry AI Models",
-    "Enterprise Integration Framework", 
-    "Compliance & Governance Dashboard",
-    "Real-Time Performance Analytics",
-    "24/7 AI Operations Center"
+    "Affordable Advanced Computing Architecture",
+    "Process Optimization On-Demand",
+    "Strategic Technology Integration", 
+    "Expandable Infrastructure Design",
+    "Regulatory Framework Compliance",
+    "Physical & Digital Security Safeguards"
   ];
 
   const scrollToContact = () => {
@@ -55,24 +55,40 @@ export function AIAcceleratorSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="mb-8">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=200&fit=crop&crop=center"
-              alt="AI Technology Innovation"
-              className="w-full max-w-6xl mx-auto h-20 object-cover rounded-2xl shadow-2xl opacity-90 border border-primary/30"
-            />
+          {/* Hero Quote - Executive Focus */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <motion.div 
+              className="relative bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-3xl p-12 border-2 border-primary/20 backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              {/* Decorative quote marks */}
+              <div className="absolute top-6 left-6 text-6xl text-primary/30 font-serif leading-none">"</div>
+              <div className="absolute bottom-6 right-6 text-6xl text-primary/30 font-serif leading-none transform rotate-180">"</div>
+              
+              <blockquote className="text-center relative z-10">
+                <p className="text-2xl lg:text-4xl xl:text-5xl text-white font-bold leading-tight mb-8">
+                  AI is like a <span className="text-gradient">faster you</span>, not a <span className="text-gradient">smarter you</span>. 
+                  If you can't do something yourself, you won't know if AI is doing it right.
+                </p>
+                <footer className="text-xl lg:text-2xl text-white/90 font-semibold">
+                  <span className="block mb-2">— Doug Richards</span>
+                  <span className="text-lg text-accent font-medium">Smart Factory Founder</span>
+                </footer>
+              </blockquote>
+            </motion.div>
           </div>
-          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+
+          <h2 className="mb-6 text-3xl lg:text-5xl font-black leading-tight">
             Smart&nbsp;Factory&nbsp;AI&nbsp;Accelerator™
-            <span className="block text-gradient mt-2">Secure. Private. Enterprise-Grade.</span>
+            <span className="block text-gradient text-2xl lg:text-3xl mt-2 font-semibold">Making AI Safe for Any Size Business</span>
           </h2>
-          <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
-            "AI is like a faster you, not a smarter you. If you can't do something yourself, you won't know if AI is doing it right."</p>
-             
-             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto"> - Doug Richards, Smart Factory Founder</p>
-    
-            <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">The industry's most comprehensive AI platform designed for rapid, risk-managed AI implementation 
-            with complete data sovereignty and seamless enterprise integration.
+          
+          <p className="text-lg lg:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto">
+            Transform your business potential into measurable reality with our revolutionary AI transformation ecosystem, 
+            built on this foundational principle of human-guided intelligence.
           </p>
         </motion.div>
 
@@ -88,17 +104,23 @@ export function AIAcceleratorSection() {
           >
             {/* Platform Overview */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">Enterprise AI Without Compromise</h3>
+              <h3 className="text-2xl font-semibold">Purpose-Built Intelligence That Works</h3>
               <p className="text-white/80 leading-relaxed">
-                The Smart Factory AI Accelerator™ is a secure, private, enterprise-grade AI platform 
-                that enables rapid AI implementation while maintaining complete control over your data, 
-                ensuring compliance, and delivering measurable business outcomes.
+                Your employees are already using AI—unmanaged AI creates data loss and IP exposure risks. 
+                Our proprietary ecosystem creates a sovereign environment combining expert consultants, proven methodologies, 
+                and secure technology controlled by your authorized users, enabling you to have conversations with your data safely.
               </p>
+              <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
+                <p className="text-sm text-accent font-semibold mb-2">⚡ Limited Availability</p>
+                <p className="text-sm text-white/90">
+                  The AI Accelerator™ initiative is limited to just 6 clients in 2025. Currently 4 spots remain.
+                </p>
+              </div>
             </div>
 
             {/* Key Features */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Core Platform Features</h4>
+              <h4 className="text-lg font-semibold">Core Ecosystem Components</h4>
               {keyFeatures.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
@@ -171,7 +193,7 @@ export function AIAcceleratorSection() {
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                 >
-                  <div className="text-xs font-semibold text-primary">Implementation</div>
+                  <div className="text-xs font-semibold text-primary">Ecosystem Deployment</div>
                   <div className="text-lg font-bold text-accent">90 Days</div>
                 </motion.div>
                 
@@ -190,10 +212,10 @@ export function AIAcceleratorSection() {
             <Card className="border-2 border-accent/20 bg-accent/5">
               <CardContent className="p-8 text-center">
                 <Rocket className="w-12 h-12 text-accent mx-auto mb-4" />
-                <h4 className="text-xl font-semibold mb-3">Experience the AI Accelerator™</h4>
+                <h4 className="text-xl font-semibold mb-3">Experience the AI Accelerator™ Ecosystem</h4>
                 <p className="text-white/80 mb-6">
-                  See how the Smart Factory AI Accelerator™ can transform your enterprise 
-                  with a personalized demo tailored to your industry and use cases.
+                  See how our AI transformation ecosystem can transform your enterprise 
+                  with expert consultation and personalized solutions tailored to your industry and use cases.
                 </p>
                 <div className="space-y-4">
                   <Button 
@@ -214,8 +236,8 @@ export function AIAcceleratorSection() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-card border border-border rounded-xl">
-                <div className="text-2xl font-bold text-primary mb-1">99.9%</div>
-                <div className="text-xs text-white/80">Platform Uptime</div>
+                  <div className="text-2xl font-bold text-primary mb-1">99.9%</div>
+                  <div className="text-xs text-white/80">Ecosystem Availability</div>
               </div>
               <div className="text-center p-4 bg-card border border-border rounded-xl">
                 <div className="text-2xl font-bold text-secondary mb-1">SOC2</div>
@@ -225,37 +247,6 @@ export function AIAcceleratorSection() {
           </motion.div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-12 border border-border/50"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold mb-4">Ready to Accelerate Your AI Journey?</h3>
-          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Join leading enterprises who have transformed their operations with the Smart Factory AI Accelerator™. 
-            Schedule a personalized demonstration and strategy session.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={scrollToContact}
-              className="gradient-primary text-white px-8 py-4 hover:shadow-xl transition-all duration-300"
-            >
-              Schedule AI Accelerator Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-4 border-2"
-            >
-              Download Platform Overview
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

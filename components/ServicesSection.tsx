@@ -17,45 +17,45 @@ export function ServicesSection() {
   })) || [
     {
       icon: Users2,
-      title: "Smart Architects™",
-      subtitle: "C-Suite Fractional Leadership",
-      description: "Strategic technology leaders who integrate seamlessly with your C-suite to drive digital transformation, strategy, and operational excellence initiatives.",
+      title: "Smart Suite™",
+      subtitle: "C-Suite Transformation Teams",
+      description: "Elite consulting teams of strategic technology executives who integrate seamlessly with your C-suite. They work flexibly as part-time advisors, full-time consulting partners, or even as corporate officers while maintaining their consulting excellence and Smart Factory methodologies.",
       features: [
-        "Fractional Executives",
-        "Technology Strategy & Roadmapping", 
-        "Digital Transformation Leadership",
-        "Board-Level Technology Advisory",
-        "M&A Technology Due Diligence",
-        "Innovation Portfolio Management"
+        "Flexible Engagement Models (Part-Time to Officer-Level)",
+        "Technology Strategy & Enterprise Roadmapping", 
+        "Digital Transformation Leadership Teams",
+        "Board-Level Technology Advisory Services",
+        "M&A Technology Due Diligence Excellence",
+        "Corporate Officer Consulting Integration"
       ],
-      investment: "$50K - $200K/quarter",
-      duration: "3-12 months",
+      investment: "$25K - $150K/engagement",
+      duration: "1-5 years",
       color: "primary",
-      cta: "Engage a Smart Architect™"
+      cta: "Engage Smart Suite™"
     },
     {
       icon: Settings,
-      title: "Smart Engineers™", 
-      subtitle: "AI-Empowered Technology Experts",
-      description: "Multi-disciplinary technology specialists leveraging AI to accelerate integration, implementation, data science, and technical delivery across your enterprise.",
+      title: "AI Synthesizer™",
+      subtitle: "AI Accelerator Implementation Teams",
+      description: "Revolutionary consulting teams who are the human intelligence behind our AI Accelerator platform. These specialists combine AI, creativity, engineering, and business processes in ways that don't exist elsewhere - synthesizing human ingenuity with machine intelligence to deliver transformational outcomes through our proprietary AI Accelerator methodology.",
       features: [
-        "AI Solution Development",
-        "Enterprise System Integration", 
-        "Data Science & Analytics",
-        "Cloud Architecture & Migration",
-        "Automation & Process Optimization",
-        "Technical Team Augmentation"
+        "AI Accelerator Platform Implementation & Optimization",
+        "Context-Aware AI System Design & Integration", 
+        "Human-Machine Collaboration Architecture",
+        "Creative Engineering & Advanced Process Innovation",
+        "Advanced NLP & LLM Implementation Excellence",
+        "Strategic Data Synthesis & Intelligent Visualization"
       ],
       investment: "$100K - $500K/project",
-      duration: "2-9 months",
+      duration: "12-36 months",
       color: "secondary", 
-      cta: "Deploy Smart Engineers™"
+      cta: "Deploy AI Synthesizer™"
     },
     {
       icon: ShieldCheck,
       title: "Smart Assurance™",
-      subtitle: "AI-Driven Quality & Testing",
-      description: "Quality and testing professionals utilizing AI-driven methodologies to ensure ISO standards compliance, automated testing, and risk-managed implementations.",
+      subtitle: "AI-Driven Quality & Testing Teams",
+      description: "Specialized consulting teams of quality and testing professionals who utilize cutting-edge AI-driven methodologies to ensure ISO standards compliance, comprehensive automated testing frameworks, and enterprise-level risk-managed implementations. These teams work collaboratively to deliver bulletproof quality assurance across all transformation initiatives.",
       features: [
         "AI-Powered Quality Assurance",
         "ISO Standards Implementation",
@@ -65,7 +65,7 @@ export function ServicesSection() {
         "Continuous Quality Monitoring"
       ],
       investment: "$25K - $150K/engagement",
-      duration: "1-6 months",
+      duration: "3-18 months",
       color: "accent",
       cta: "Secure Smart Assurance™"
     }
@@ -145,7 +145,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Consultant Types Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 items-stretch">
           {consultantTypes.map((consultant, index) => {
             const colorClasses = getColorClasses(consultant.color);
             const IconComponent = consultant.icon;
@@ -159,7 +159,62 @@ export function ServicesSection() {
                 viewport={{ once: true }}
                 className="flex"
               >
-                <Card className="relative w-full group overflow-hidden bg-[#232632] border border-primary/25 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex flex-col">
+                <Card className="relative w-full group overflow-hidden bg-[#232632] border border-primary/25 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full min-h-[800px]">
+                  {/* Futuristic Background Motion Effects */}
+                  <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                    {/* Animated shimmer gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br opacity-20 animate-pulse ${
+                      consultant.color === 'primary' ? 'from-primary/30 via-primary-light/10 to-transparent' :
+                      consultant.color === 'secondary' ? 'from-secondary/30 via-secondary-light/10 to-transparent' :
+                      'from-accent/30 via-accent-light/10 to-transparent'
+                    }`}></div>
+                    
+                    {/* Moving light ray effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-30 transition-opacity duration-1000 ${
+                      consultant.color === 'primary' ? 'from-transparent via-primary/40 to-transparent' :
+                      consultant.color === 'secondary' ? 'from-transparent via-secondary/40 to-transparent' :
+                      'from-transparent via-accent/40 to-transparent'
+                    }`} 
+                    style={{
+                      transform: 'translateX(-100%)',
+                      animation: 'shimmer 3s ease-in-out infinite'
+                    }}></div>
+                    
+                    {/* Floating particles */}
+                    <div className="absolute inset-0">
+                      <div className={`absolute w-1 h-1 rounded-full opacity-60 ${
+                        consultant.color === 'primary' ? 'bg-primary' :
+                        consultant.color === 'secondary' ? 'bg-secondary' :
+                        'bg-accent'
+                      }`}
+                      style={{
+                        top: '20%',
+                        left: '15%',
+                        animation: 'float 6s ease-in-out infinite'
+                      }}></div>
+                      <div className={`absolute w-1.5 h-1.5 rounded-full opacity-40 ${
+                        consultant.color === 'primary' ? 'bg-primary' :
+                        consultant.color === 'secondary' ? 'bg-secondary' :
+                        'bg-accent'
+                      }`}
+                      style={{
+                        top: '70%',
+                        right: '20%',
+                        animation: 'float 8s ease-in-out infinite reverse'
+                      }}></div>
+                      <div className={`absolute w-0.5 h-0.5 rounded-full opacity-80 ${
+                        consultant.color === 'primary' ? 'bg-primary-light' :
+                        consultant.color === 'secondary' ? 'bg-secondary-light' :
+                        'bg-accent-light'
+                      }`}
+                      style={{
+                        top: '40%',
+                        right: '10%',
+                        animation: 'float 4s ease-in-out infinite'
+                      }}></div>
+                    </div>
+                  </div>
+                  
                   <CardContent className="p-8 lg:p-10 relative z-10 flex flex-col flex-grow">
                     {/* Premium glass layers */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent rounded-3xl opacity-60"></div>
@@ -200,27 +255,32 @@ export function ServicesSection() {
                       </div>
                     </div>
 
-                    {/* Premium Investment & Duration */}
-                    <div className="space-y-5 mb-10 p-6 bg-gradient-to-br from-white/[0.08] to-white/[0.02] rounded-2xl border border-white/[0.1] backdrop-blur-sm">
-                      <div className="flex justify-between items-center">
-                        <span className="text-base font-black text-white uppercase tracking-[0.1em]">Investment:</span>
-                        <Badge className={`px-3 py-1 text-sm font-bold ${consultant.color === 'primary' ? 'bg-gradient-to-r from-primary to-primary-light text-white' : consultant.color === 'secondary' ? 'bg-gradient-to-r from-secondary to-secondary-light text-white' : 'bg-gradient-to-r from-accent to-accent-light text-white'} border-0 shadow-lg`}
-                               style={{
-                                 boxShadow: consultant.color === 'primary' ? '0 4px 12px rgba(17, 100, 102, 0.4)' : consultant.color === 'secondary' ? '0 4px 12px rgba(217, 128, 140, 0.4)' : '0 4px 12px rgba(255, 203, 154, 0.4)'
-                               }}>
-                          {consultant.investment}
-                        </Badge>
+                    {/* Premium Investment & Duration - Bottom Aligned */}
+                    <div className="mt-auto space-y-6 mb-0 p-8 bg-gradient-to-br from-white/[0.12] to-white/[0.04] rounded-2xl border border-white/[0.15] backdrop-blur-sm">
+                      <div className="space-y-3">
+                        <div className="text-center">
+                          <div className="text-sm font-black text-white/70 uppercase tracking-[0.15em] mb-3">Investment Range</div>
+                          <Badge className={`px-6 py-3 text-base font-black ${consultant.color === 'primary' ? 'bg-gradient-to-r from-primary via-primary-light to-primary text-black' : consultant.color === 'secondary' ? 'bg-gradient-to-r from-secondary via-secondary-light to-secondary text-black' : 'bg-gradient-to-r from-accent via-accent-light to-accent text-black'} border-0 shadow-xl whitespace-nowrap min-w-fit rounded-xl`}
+                                 style={{
+                                   boxShadow: consultant.color === 'primary' ? '0 8px 24px rgba(62, 183, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)' : consultant.color === 'secondary' ? '0 8px 24px rgba(54, 249, 151, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)' : '0 8px 24px rgba(197, 201, 214, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                                 }}>
+                            {consultant.investment}
+                          </Badge>
+                        </div>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-base font-black text-white uppercase tracking-[0.1em]">Timeline:</span>
-                        <span className="text-base text-white/95 font-bold">{consultant.duration}</span>
+                      
+                      <div className="pt-4 border-t border-white/[0.1]">
+                        <div className="flex justify-between items-center">
+                          <span className="text-base font-bold text-white/80 uppercase tracking-[0.1em]">Typical Timeline:</span>
+                          <span className="text-lg text-white font-black">{consultant.duration}</span>
+                        </div>
                       </div>
                     </div>
 
                     {/* Premium CTA */}
                     <Button 
                       onClick={scrollToContact}
-                      className={`relative w-full py-3 text-sm font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-white transition-all duration-500 group border-0 rounded-2xl overflow-hidden`}
+                      className={`relative w-full py-3 text-sm font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-black transition-all duration-500 group border-0 rounded-2xl overflow-hidden`}
                       style={{
                         boxShadow: consultant.color === 'primary' ? '0 8px 32px rgba(17, 100, 102, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : consultant.color === 'secondary' ? '0 8px 32px rgba(217, 128, 140, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : '0 8px 32px rgba(255, 203, 154, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
                       }}

@@ -60,24 +60,15 @@ export function MethodSection() {
       <div className="container-custom">
         {/* Header */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center max-w-5xl mx-auto mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2 bg-secondary/10 border-secondary/20 text-secondary">
-            Our Methodology
-          </Badge>
-          <h2 className="mb-6">
-            The Smart Factory Method™
-            <span className="text-gradient block">Precision-Engineered Transformation</span>
+          <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
+            Act as If
           </h2>
-          <p className="lead text-white/80">
-            Like a modern manufacturing facility, our proprietary methodology applies systematic, 
-            repeatable processes to transform human potential into measurable business reality with 
-            precision, scale, and guaranteed outcomes.
-          </p>
         </motion.div>
 
         {/* Main Content Grid */}
@@ -135,25 +126,90 @@ export function MethodSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-gradient-to-br from-secondary/10 to-primary/10 rounded-2xl p-8 backdrop-blur-sm border border-border/50">
-              <div className="aspect-[4/3] relative overflow-hidden rounded-xl">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&h=600&fit=crop&crop=center"
-                  alt="Modern Manufacturing Assembly Line"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-transparent to-primary/20"></div>
-                
-                {/* Overlay Elements */}
-                <div className="absolute inset-6 flex flex-col justify-between">
-                  <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-lg p-3 shadow-lg self-start">
-                    <div className="text-sm font-semibold text-secondary">Systematic Process</div>
-                    <div className="text-xs text-white/80">Repeatable • Scalable • Predictable</div>
+            <div className="relative bg-gradient-to-br from-secondary/10 to-primary/10 rounded-2xl p-6 backdrop-blur-sm border border-border/50">
+              <div className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/15 via-secondary/8 to-accent/15" style={{ height: '280px' }}>
+                {/* Assembly Line Visualization */}
+                <div className="absolute inset-0">
+                  {/* Main conveyor belt line */}
+                  <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-secondary/30 via-primary/40 to-accent/30 transform -translate-y-1/2"></div>
+                  
+                  {/* Processing stations */}
+                  <div className="absolute top-1/2 left-[15%] w-8 h-12 bg-secondary/20 rounded-lg transform -translate-y-1/2 -translate-x-1/2 border border-secondary/30"></div>
+                  <div className="absolute top-1/2 left-1/2 w-8 h-12 bg-primary/20 rounded-lg transform -translate-y-1/2 -translate-x-1/2 border border-primary/30"></div>
+                  <div className="absolute top-1/2 right-[15%] w-8 h-12 bg-accent/20 rounded-lg transform -translate-y-1/2 translate-x-1/2 border border-accent/30"></div>
+                  
+                  {/* Moving elements on the assembly line */}
+                  {[0, 1, 2, 3, 4].map((index) => (
+                    <motion.div
+                      key={index}
+                      className="absolute top-1/2 w-3 h-3 bg-gradient-to-br from-secondary to-primary rounded-sm transform -translate-y-1/2 shadow-md"
+                      style={{ left: '-20px' }}
+                      animate={{
+                        x: [0, 400]
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: index * 1.2
+                      }}
+                    />
+                  ))}
+                  
+                  {/* Quality checkpoints with pulsing indicators */}
+                  <motion.div
+                    className="absolute top-[30%] left-[15%] w-3 h-3 bg-secondary rounded-full transform -translate-x-1/2"
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.6, 1, 0.6]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="absolute top-[30%] left-1/2 w-3 h-3 bg-primary rounded-full transform -translate-x-1/2"
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.6, 1, 0.6]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.7
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="absolute top-[30%] right-[15%] w-3 h-3 bg-accent rounded-full transform translate-x-1/2"
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.6, 1, 0.6]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1.4
+                    }}
+                  />
+                  
+                  {/* Process arrows - simplified */}
+                  <div className="absolute top-1/2 left-[25%] w-8 h-0.5 bg-secondary/40 transform -translate-y-1/2">
+                    <div className="absolute right-0 top-1/2 w-0 h-0 border-l-4 border-l-secondary/40 border-t-2 border-t-transparent border-b-2 border-b-transparent transform -translate-y-1/2"></div>
                   </div>
                   
-                  <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-lg p-3 shadow-lg self-end">
-                    <div className="text-sm font-semibold text-primary">Quality Assured</div>
-                    <div className="text-xs text-white/80">Every step validated and optimized</div>
+                  <div className="absolute top-1/2 right-[25%] w-8 h-0.5 bg-primary/40 transform -translate-y-1/2">
+                    <div className="absolute right-0 top-1/2 w-0 h-0 border-l-4 border-l-primary/40 border-t-2 border-t-transparent border-b-2 border-b-transparent transform -translate-y-1/2"></div>
+                  </div>
+                  
+                  {/* Subtle background flow */}
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-secondary/10 to-transparent animate-pulse"></div>
                   </div>
                 </div>
               </div>

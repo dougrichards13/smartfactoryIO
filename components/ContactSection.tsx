@@ -19,29 +19,8 @@ export function ContactSection() {
     "Decision-Making Authority for Technology Investments"
   ];
 
-  // Order adjusted so AI Assessment appears where Executive Contact used to be (last in the list)
+  // Only AI Assessment card - other contact methods are now integrated as quick actions
   const contactMethods = [
-    {
-      icon: Calendar,
-      title: "Direct Scheduling",
-      description: "Book a strategic consultation directly with Smart Suite™ teams",
-      action: "View Calendar",
-      primary: false
-    },
-    {
-      icon: Phone,
-      title: "Priority Hotline",
-      description: "For urgent C-suite inquiries requiring immediate attention",
-      action: "Call Now: +1 (555) 123-4567",
-      primary: false
-    },
-    {
-      icon: Mail,
-      title: "Executive Contact",
-      description: "Direct email access to our leadership team for strategic partnerships",
-      action: "leadership@smartfactory.io",
-      primary: false
-    },
     {
       icon: Brain,
       title: "AI Business Readiness Assessment",
@@ -134,101 +113,69 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-semibold mb-6">Alternative Contact Methods</h3>
-            {contactMethods.map((method, index) => {
-              const IconComponent = method.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {method.title === 'AI Business Readiness Assessment' ? (
-                    <div className="space-y-4">
-                      {/* Visual above the AI assessment card */}
-                      <AIAdvisorVisual />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-4">
+                {/* Visual above the AI assessment card */}
+                <AIAdvisorVisual />
 
-                      <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'} ${method.onClick ? 'cursor-pointer' : ''}`}>
-                        <CardContent className="p-6">
-                          <div className="flex items-start space-x-4">
-                            <div className="flex-shrink-0">
-                              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                                <IconComponent className="w-6 h-6 text-accent" />
-                              </div>
-                            </div>
-                            <div className="flex-1">
-                              <h4 className="font-semibold mb-2">{method.title}</h4>
-                              <p className="text-sm text-white/80 mb-4">{method.description}</p>
-                              <div className="flex flex-wrap gap-2 mb-4">
-                                <Button 
-                                  onClick={method.onClick}
-                                  size="sm"
-                                  className="gradient-primary text-white"
-                                >
-                                  {method.action}
-                                </Button>
-                                {/* Quick actions inside the assessment card */}
-                                <Button 
-                                  variant="outline" 
-                                  size="sm"
-                                  onClick={() => window.open('#schedule', '_self')}
-                                >
-                                  <Calendar className="w-4 h-4 mr-1" /> Calendar
-                                </Button>
-                                <Button 
-                                  variant="outline" 
-                                  size="sm"
-                                  asChild
-                                >
-                                  <a href="tel:+15551234567">
-                                    <Phone className="w-4 h-4 mr-1" /> Hotline
-                                  </a>
-                                </Button>
-                                <Button 
-                                  variant="outline" 
-                                  size="sm"
-                                  asChild
-                                >
-                                  <a href="mailto:leadership@smartfactory.io">
-                                    <Mail className="w-4 h-4 mr-1" /> Email
-                                  </a>
-                                </Button>
-                              </div>
-                              <p className="text-xs text-white/60">Secure • Private • Built by Smart Factory</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  ) : (
-                    <Card className={`hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 ${method.primary ? 'border-primary/20 bg-primary/5' : 'hover:border-primary/20'} ${method.onClick ? 'cursor-pointer' : ''}`}>
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="flex-shrink-0">
-                            <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                              <IconComponent className="w-6 h-6 text-accent" />
-                            </div>
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold mb-2">{method.title}</h4>
-                            <p className="text-sm text-white/80 mb-4">{method.description}</p>
-                            <Button 
-                              variant={method.primary ? "default" : "outline"} 
-                              size="sm"
-                              className={method.primary ? "gradient-primary text-white" : ""}
-                              onClick={method.onClick || (() => {})}
-                            >
-                              {method.action}
-                            </Button>
-                          </div>
+                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-primary/20 bg-primary/5">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                          <Brain className="w-6 h-6 text-accent" />
                         </div>
-                      </CardContent>
-                    </Card>
-                  )}
-                </motion.div>
-              );
-            })}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold mb-2">AI Business Readiness Assessment</h4>
+                        <p className="text-sm text-white/80 mb-4">Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <Button 
+                            onClick={() => setAssessmentOpen(true)}
+                            size="sm"
+                            className="gradient-primary text-white"
+                          >
+                            Start Assessment
+                          </Button>
+                          {/* Quick actions inside the assessment card */}
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => window.open('#schedule', '_self')}
+                          >
+                            <Calendar className="w-4 h-4 mr-1" /> Calendar
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            asChild
+                          >
+                            <a href="tel:+15551234567">
+                              <Phone className="w-4 h-4 mr-1" /> Hotline
+                            </a>
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            asChild
+                          >
+                            <a href="mailto:leadership@smartfactory.io">
+                              <Mail className="w-4 h-4 mr-1" /> Email
+                            </a>
+                          </Button>
+                        </div>
+                        <p className="text-xs text-white/60">Secure • Private • Built by Smart Factory</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function AIAdvisorVisual() {
   return (
-    <div className="relative w-full h-48 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl overflow-hidden border border-border/30">
+    <div className="relative w-full bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl overflow-hidden border border-border/30">
       {/* Background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
@@ -19,8 +19,8 @@ export function AIAdvisorVisual() {
         </div>
       </div>
 
-      {/* AI Assistant Image */}
-      <div className="relative h-full flex items-center justify-center p-4">
+      {/* AI Ecosystem Image */}
+      <div className="relative flex items-center justify-center">
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -30,9 +30,10 @@ export function AIAdvisorVisual() {
           {/* Image container with border */}
           <div className="relative">
             <img
-              src="/assets/images/ai-assistant.jpg"
-              alt="AI Business Advisor"
-              className="w-32 h-32 object-cover rounded-xl border-2 border-primary/30 shadow-lg"
+              src="/assets/images/ai-ecosystem.jpg"
+              alt="AI Data Ecosystem"
+              className="w-full max-w-full h-auto object-cover rounded-xl border-2 border-primary/30 shadow-lg"
+              style={{ aspectRatio: '675/575', maxHeight: '575px' }}
             />
             
             {/* Glowing border effect */}

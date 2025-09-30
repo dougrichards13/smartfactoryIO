@@ -143,42 +143,42 @@ export function AIAdvisorVisual() {
         </motion.div>
 
         {/* Floating data particles */}
-        {[...Array(6)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full"
+            className="absolute w-1 h-1 bg-accent rounded-full opacity-60"
             style={{
-              left: `${20 + Math.random() * 60}%`,
-              top: `${20 + Math.random() * 60}%`,
+              left: `${15 + i * 20}%`,
+              top: `${30 + (i % 2) * 30}%`,
             }}
             animate={{
-              y: [0, -20, 0],
-              opacity: [0, 1, 0],
-              scale: [0.5, 1, 0.5],
+              y: [0, -8, 0],
+              opacity: [0.3, 0.8, 0.3],
+              scale: [0.8, 1.2, 0.8],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 2 + i * 0.5,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: i * 0.5,
             }}
           />
         ))}
 
-        {/* Speech/thought bubble */}
+          {/* Speech/thought bubble */}
         <motion.div
-          className="absolute top-4 right-8 bg-white/90 text-gray-800 text-xs px-3 py-2 rounded-lg shadow-lg max-w-32"
+          className="absolute top-2 right-4 bg-white/95 text-gray-800 text-xs px-3 py-2 rounded-lg shadow-lg max-w-36"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2, duration: 0.5 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
         >
           <motion.div
-            animate={{ opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ opacity: [0.8, 1, 0.8] }}
+            transition={{ duration: 3, repeat: Infinity }}
           >
             Ready to assess your transformation potential?
           </motion.div>
           {/* Speech bubble tail */}
-          <div className="absolute bottom-[-6px] left-6 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white/90" />
+          <div className="absolute bottom-[-6px] left-6 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white/95" />
         </motion.div>
 
         {/* Holographic effect overlay */}

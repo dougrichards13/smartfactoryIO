@@ -350,7 +350,7 @@ export function BusinessReadinessAssessment({
               </div>
               <div>
                 <h2 className="text-xl font-semibold">AI Business Readiness Assessment</h2>
-                <p className="text-sm text-muted-foreground">Advanced transformation diagnostic</p>
+                <p className="text-sm text-muted-foreground">Secure • Private • Built by Smart Factory</p>
               </div>
             </div>
             <Button variant="ghost" size="sm" onClick={onClose}>

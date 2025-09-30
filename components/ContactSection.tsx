@@ -195,7 +195,7 @@ export function ContactSection() {
                                   </a>
                                 </Button>
                               </div>
-                              <p className="text-xs text-white/60">Instant assessment • Personalized roadmap • Enterprise-grade</p>
+                              <p className="text-xs text-white/60">Secure • Private • Built by Smart Factory</p>
                             </div>
                           </div>
                         </CardContent>

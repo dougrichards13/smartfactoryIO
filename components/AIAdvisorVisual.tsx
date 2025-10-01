@@ -92,22 +92,6 @@ export function AIAdvisorVisual() {
           }}
         />
 
-        {/* Speech/thought bubble */}
-        <motion.div
-          className="absolute top-2 right-4 bg-white/95 text-gray-800 text-xs px-3 py-2 rounded-lg shadow-lg max-w-36"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
-        >
-          <motion.div
-            animate={{ opacity: [0.8, 1, 0.8] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            Ready to assess your transformation potential?
-          </motion.div>
-          {/* Speech bubble tail */}
-          <div className="absolute bottom-[-6px] left-6 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white/95" />
-        </motion.div>
 
         {/* Holographic effect overlay */}
         <motion.div
@@ -122,15 +106,6 @@ export function AIAdvisorVisual() {
         />
       </div>
 
-      {/* Bottom label */}
-      <motion.div
-        className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-muted-foreground text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-      >
-        AI Business Advisor
-      </motion.div>
     </div>
   );
 }

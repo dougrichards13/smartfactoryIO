@@ -13,10 +13,11 @@ export function ContactSection() {
 
   const qualificationCriteria = [
     "C-Level or Senior Executive Role",
-    "Organization with $500K+ Annual Innovation Budget", 
+    "Organization with average $250K Annual Innovation Budget", 
     "Enterprise or Upper Mid-Market Company",
     "Strategic AI or Digital Transformation Initiative",
-    "Decision-Making Authority for Technology Investments"
+    "Decision-Making Authority for Technology Investments",
+    "Or, early stage funded startup needing rapid scale"
   ];
 
   // Only AI Assessment card - other contact methods are now integrated as quick actions
@@ -48,8 +49,14 @@ export function ContactSection() {
           viewport={{ once: true }}
         >
           <h2 className="mb-8 text-4xl lg:text-6xl font-black leading-tight">
-            Ready to Start?
+            LET'S TRANSFORM
+            <span className="block text-gradient mt-2">YOUR BUSINESS TOGETHER</span>
           </h2>
+          
+          <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-medium max-w-4xl mx-auto">
+            Connect with our <span className="text-accent font-bold">Smart Suite™ experts</span> through our intelligent 
+            qualification system or direct <span className="text-secondary font-bold">executive access</span> for enterprise transformation.
+          </p>
         </motion.div>
 
         {/* Main Contact Grid */}
@@ -104,7 +111,7 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - Alternative Contact Methods */}
+          {/* Right Column - AI Business Assessment */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: 30 }}
@@ -112,7 +119,6 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-semibold mb-6">Alternative Contact Methods</h3>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

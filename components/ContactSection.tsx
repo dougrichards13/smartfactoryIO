@@ -163,7 +163,7 @@ export function ContactSection() {
                             size="sm"
                             asChild
                           >
-                            <a href="tel:+15551234567">
+                            <a href="tel:+18166867092">
                               <Phone className="w-4 h-4 mr-1" /> Hotline
                             </a>
                           </Button>
@@ -172,7 +172,7 @@ export function ContactSection() {
                             size="sm"
                             asChild
                           >
-                            <a href="mailto:leadership@smartfactory.io">
+                            <a href="mailto:contact@smartfactory.io">
                               <Mail className="w-4 h-4 mr-1" /> Email
                             </a>
                           </Button>

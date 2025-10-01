@@ -152,9 +152,11 @@ export function ContactSection() {
                           <Button 
                             variant="outline" 
                             size="sm"
-                            onClick={() => window.open('#schedule', '_self')}
+                            asChild
                           >
-                            <Calendar className="w-4 h-4 mr-1" /> Calendar
+                            <a href="https://outlook.office365.com/owa/calendar/SmartFactoryBusinessReadinessAssessment@smartfactory.io/bookings/" target="_blank" rel="noopener noreferrer">
+                              <Calendar className="w-4 h-4 mr-1" /> Calendar
+                            </a>
                           </Button>
                           <Button 
                             variant="outline" 

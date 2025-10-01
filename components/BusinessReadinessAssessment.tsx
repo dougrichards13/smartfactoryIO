@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Brain, Target, AlertCircle, CheckCircle, TrendingUp, Clock } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Brain, Target, AlertCircle, CheckCircle, TrendingUp, Clock, Download, Calendar, MessageSquare } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
+import { Textarea } from './ui/textarea';
+import { Label } from './ui/label';
 
 interface AssessmentQuestion {
   id: string;
@@ -131,11 +133,140 @@ export function BusinessReadinessAssessment({
 }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [comments, setComments] = useState('');
+  const [showComments, setShowComments] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [results, setResults] = useState<AssessmentResult | null>(null);
   const [isCalculating, setIsCalculating] = useState(false);
 
-  const progress = (Object.keys(answers).length / assessmentQuestions.length) * 100;
+  const totalSteps = assessmentQuestions.length + 1; // +1 for comments section
+  const currentProgress = showComments ? assessmentQuestions.length : Math.min(Object.keys(answers).length, currentStep + 1);
+  const progress = (currentProgress / totalSteps) * 100;
+
+  const generatePDF = () => {
+    const doc = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Factory - AI Business Readiness Assessment Results</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 40px; color: #333; }
+        .header { text-align: center; margin-bottom: 40px; border-bottom: 3px solid #3B82F6; padding-bottom: 20px; }
+        .logo { font-size: 24px; font-weight: bold; color: #3B82F6; margin-bottom: 10px; }
+        .score-section { background: linear-gradient(135deg, #3B82F6 0%, #F59E0B 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0; }
+        .score { font-size: 48px; font-weight: bold; margin-bottom: 10px; }
+        .category { background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; display: inline-block; }
+        .section { margin: 30px 0; padding: 20px; border-left: 4px solid #3B82F6; background: #f8fafc; }
+        .section h3 { color: #3B82F6; margin-top: 0; }
+        .recommendations li, .next-steps li, .risks li, .opportunities li { margin: 8px 0; }
+        .contact-section { background: #1e293b; color: white; padding: 30px; border-radius: 15px; margin-top: 40px; }
+        .contact-section h3 { color: #60A5FA; margin-top: 0; }
+        .about-section { background: #f1f5f9; padding: 25px; border-radius: 10px; margin: 30px 0; }
+        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; }
+        ul { padding-left: 20px; }
+        ${comments ? '.comments { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; } .comments h4 { color: #92400e; margin-top: 0; }' : ''}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Smart Factory</div>
+        <h1>AI Business Readiness Assessment Results</h1>
+        <p>Generated on ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+    </div>
+
+    <div class="score-section">
+        <div class="score">${results?.score}/100</div>
+        <div class="category">${results?.category}</div>
+        <p style="margin-top: 15px; opacity: 0.9;">Your organization's AI transformation readiness score</p>
+    </div>
+
+    <div class="section">
+        <h3>📋 Recommendations</h3>
+        <ul class="recommendations">
+            ${results?.recommendations.map(rec => `<li>${rec}</li>`).join('') || ''}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>⏱️ Next Steps</h3>
+        <ol class="next-steps">
+            ${results?.nextSteps.map(step => `<li>${step}</li>`).join('') || ''}
+        </ol>
+    </div>
+
+    <div class="section">
+        <h3>⚠️ Risk Factors</h3>
+        <ul class="risks">
+            ${results?.riskFactors.map(risk => `<li>${risk}</li>`).join('') || ''}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>🚀 Opportunities</h3>
+        <ul class="opportunities">
+            ${results?.opportunities.map(opp => `<li>${opp}</li>`).join('') || ''}
+        </ul>
+    </div>
+
+    ${comments ? `
+    <div class="comments">
+        <h4>💬 Additional Comments</h4>
+        <p>${comments.replace(/\n/g, '<br>')}</p>
+    </div>
+    ` : ''}
+
+    <div class="about-section">
+        <h3>About Smart Factory</h3>
+        <p>Smart Factory is a leading consulting firm specializing in AI-driven business transformation. With over <strong>15 years of excellence</strong>, we've helped organizations across industries achieve measurable results through our proven methodologies and expert teams.</p>
+        <p><strong>Our Smart Suite™ consulting teams</strong> work seamlessly together to deliver comprehensive enterprise transformation with measurable ROI and strategic impact. We combine human expertise with cutting-edge AI technology to accelerate your transformation journey.</p>
+    </div>
+
+    <div class="contact-section">
+        <h3>Ready to Transform Your Business?</h3>
+        <p>Based on your assessment results, Smart Factory can help you accelerate your transformation journey. Our team of experts is ready to work with you.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
+            <div>
+                <h4 style="color: #60A5FA; margin-bottom: 10px;">📅 Schedule a Consultation</h4>
+                <p style="margin: 0; font-size: 14px;">Book directly through our calendar system:<br>
+                <a href="https://outlook.office365.com/owa/calendar/SmartFactoryBusinessReadinessAssessment@smartfactory.io/bookings/" style="color: #93C5FD;">outlook.office365.com/owa/calendar/SmartFactoryBusinessReadinessAssessment@smartfactory.io/bookings/</a></p>
+            </div>
+            <div>
+                <h4 style="color: #60A5FA; margin-bottom: 10px;">📧 Email Us</h4>
+                <p style="margin: 0; font-size: 14px;">contact@smartfactory.io</p>
+            </div>
+            <div>
+                <h4 style="color: #60A5FA; margin-bottom: 10px;">📞 Call Us</h4>
+                <p style="margin: 0; font-size: 14px;">816-686-7092</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© ${new Date().getFullYear()} Smart Factory. All rights reserved.</p>
+        <p>This assessment was generated using Smart Factory's proprietary AI Business Readiness Assessment tool.</p>
+    </div>
+</body>
+</html>`;
+
+    const blob = new Blob([doc], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    
+    // Create a temporary link to download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Smart-Factory-Assessment-Results-${new Date().toISOString().split('T')[0]}.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    // Note: The downloaded HTML can be opened in browser and printed/saved as PDF
+    setTimeout(() => {
+      alert('Results downloaded! Open the HTML file in your browser and use Print > Save as PDF to create a PDF version.');
+    }, 500);
+  };
 
   const handleAnswer = (questionId: string, answerIndex: number) => {
     setAnswers(prev => ({ ...prev, [questionId]: answerIndex }));
@@ -144,13 +275,17 @@ export function BusinessReadinessAssessment({
   const nextQuestion = () => {
     if (currentStep < assessmentQuestions.length - 1) {
       setCurrentStep(prev => prev + 1);
+    } else if (!showComments) {
+      setShowComments(true);
     } else {
       calculateResults();
     }
   };
 
   const prevQuestion = () => {
-    if (currentStep > 0) {
+    if (showComments) {
+      setShowComments(false);
+    } else if (currentStep > 0) {
       setCurrentStep(prev => prev - 1);
     }
   };
@@ -320,6 +455,8 @@ export function BusinessReadinessAssessment({
   const resetAssessment = () => {
     setCurrentStep(0);
     setAnswers({});
+    setComments('');
+    setShowComments(false);
     setIsComplete(false);
     setResults(null);
     setIsCalculating(false);
@@ -365,7 +502,9 @@ export function BusinessReadinessAssessment({
                 {/* Progress Bar */}
                 <div className="mb-8">
                   <div className="flex justify-between text-sm text-muted-foreground mb-2">
-                    <span>Question {currentStep + 1} of {assessmentQuestions.length}</span>
+                    <span>
+                      {showComments ? 'Comments (Optional)' : `Question ${currentStep + 1} of ${assessmentQuestions.length}`}
+                    </span>
                     <span>{Math.round(progress)}% Complete</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-2">
@@ -376,61 +515,106 @@ export function BusinessReadinessAssessment({
                   </div>
                 </div>
 
-                {/* Question */}
+                {/* Question or Comments */}
                 {!isCalculating ? (
                   <motion.div
-                    key={currentStep}
+                    key={showComments ? 'comments' : currentStep}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-lg">
-                          {assessmentQuestions[currentStep]?.question}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-3">
-                          {assessmentQuestions[currentStep]?.options.map((option, index) => (
-                            <motion.button
-                              key={index}
-                              className={`w-full p-4 text-left rounded-lg border-2 transition-all ${
-                                answers[assessmentQuestions[currentStep].id] === index
-                                  ? 'border-primary bg-primary/5'
-                                  : 'border-border hover:border-primary/50'
-                              }`}
-                              onClick={() => handleAnswer(assessmentQuestions[currentStep].id, index)}
-                              whileHover={{ scale: 1.01 }}
-                              whileTap={{ scale: 0.99 }}
-                            >
-                              {option}
-                            </motion.button>
-                          ))}
-                        </div>
+                    {!showComments ? (
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg">
+                            {assessmentQuestions[currentStep]?.question}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3">
+                            {assessmentQuestions[currentStep]?.options.map((option, index) => (
+                              <motion.button
+                                key={index}
+                                className={`w-full p-4 text-left rounded-lg border-2 transition-all ${
+                                  answers[assessmentQuestions[currentStep].id] === index
+                                    ? 'border-primary bg-primary/5'
+                                    : 'border-border hover:border-primary/50'
+                                }`}
+                                onClick={() => handleAnswer(assessmentQuestions[currentStep].id, index)}
+                                whileHover={{ scale: 1.01 }}
+                                whileTap={{ scale: 0.99 }}
+                              >
+                                {option}
+                              </motion.button>
+                            ))}
+                          </div>
 
-                        {/* Navigation */}
-                        <div className="flex justify-between mt-8">
-                          <Button
-                            variant="outline"
-                            onClick={prevQuestion}
-                            disabled={currentStep === 0}
-                          >
-                            <ChevronLeft className="w-4 h-4 mr-2" />
-                            Previous
-                          </Button>
-                          
-                          <Button
-                            onClick={nextQuestion}
-                            disabled={answers[assessmentQuestions[currentStep]?.id] === undefined}
-                            className="gradient-primary text-white"
-                          >
-                            {currentStep === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next'}
-                            <ChevronRight className="w-4 h-4 ml-2" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
+                          {/* Navigation */}
+                          <div className="flex justify-between mt-8">
+                            <Button
+                              variant="outline"
+                              onClick={prevQuestion}
+                              disabled={currentStep === 0}
+                            >
+                              <ChevronLeft className="w-4 h-4 mr-2" />
+                              Previous
+                            </Button>
+                            
+                            <Button
+                              onClick={nextQuestion}
+                              disabled={answers[assessmentQuestions[currentStep]?.id] === undefined}
+                              className="gradient-primary text-white"
+                            >
+                              {currentStep === assessmentQuestions.length - 1 ? 'Continue to Comments' : 'Next'}
+                              <ChevronRight className="w-4 h-4 ml-2" />
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ) : (
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="flex items-center text-lg">
+                            <MessageSquare className="w-5 h-5 mr-2" />
+                            Additional Comments (Optional)
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-4">
+                            <Label htmlFor="comments" className="text-sm text-muted-foreground">
+                              Share any additional context about your organization's transformation goals, 
+                              specific challenges, or priorities that would help us provide more tailored recommendations.
+                            </Label>
+                            <Textarea
+                              id="comments"
+                              placeholder="Enter any additional comments or context here..."
+                              value={comments}
+                              onChange={(e) => setComments(e.target.value)}
+                              className="min-h-[120px] resize-none"
+                            />
+                          </div>
+
+                          {/* Navigation */}
+                          <div className="flex justify-between mt-8">
+                            <Button
+                              variant="outline"
+                              onClick={prevQuestion}
+                            >
+                              <ChevronLeft className="w-4 h-4 mr-2" />
+                              Back to Questions
+                            </Button>
+                            
+                            <Button
+                              onClick={nextQuestion}
+                              className="gradient-primary text-white"
+                            >
+                              Complete Assessment
+                              <ChevronRight className="w-4 h-4 ml-2" />
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    )}
                   </motion.div>
                 ) : (
                   <div className="text-center py-16">
@@ -564,13 +748,24 @@ export function BusinessReadinessAssessment({
                       Based on your assessment, Smart Factory can help you accelerate your transformation journey.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
-                      <Button className="gradient-primary text-white">
-                        Schedule Strategic Consultation
+                      <Button 
+                        className="gradient-primary text-white" 
+                        asChild
+                      >
+                        <a 
+                          href="https://outlook.office365.com/owa/calendar/SmartFactoryBusinessReadinessAssessment@smartfactory.io/bookings/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <Calendar className="w-4 h-4 mr-2" />
+                          Schedule Strategic Consultation
+                        </a>
                       </Button>
                       <Button variant="outline" onClick={resetAssessment}>
                         Retake Assessment
                       </Button>
-                      <Button variant="ghost" onClick={onClose}>
+                      <Button variant="ghost" onClick={generatePDF}>
+                        <Download className="w-4 h-4 mr-2" />
                         Download Results
                       </Button>
                     </div>

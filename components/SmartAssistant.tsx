@@ -54,8 +54,8 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
       foundation: `Founded in 2010, we've been disrupting traditional consulting since day one. We Work Smart with modern solutions, not outdated playbooks. We serve companies of All Sizes - from funded startups to Fortune 500 enterprises, delivering transformation that fits your scale and ambition.`
     },
     nextSteps: {
-      assessment: `Start with our free AI Business Readiness Assessment - it takes 10 minutes and provides a personalized roadmap for your transformation. You'll get actionable recommendations and can schedule a strategic consultation directly from your results.`,
-      contact: `Ready to transform your business? Three ways to connect: 1) Take our AI Business Readiness Assessment (10 minutes), 2) Schedule directly at our calendar link, or 3) Call 816-686-7092. Our team responds within 2 hours for qualified prospects.`,
+      assessment: `Start with our free Strategic Assessment - it takes 10 minutes and provides a personalized roadmap for your transformation. You'll get actionable recommendations and can schedule a strategic consultation directly from your results.`,
+      contact: `Ready to transform your business? Three ways to connect: 1) Take our Strategic Assessment (10 minutes), 2) Schedule directly at our calendar link, or 3) Call 816-686-7092. Our team responds within 2 hours for qualified prospects.`,
       calendar: `Schedule your strategic consultation directly through our calendar system. We'll assess your readiness, understand your goals, and create a customized approach that delivers measurable ROI. Book now - transformation starts with a conversation.`
     }
   };
@@ -111,7 +111,7 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     
     // Contact/Next steps questions
     if (input.includes('contact') || input.includes('start') || input.includes('begin') || input.includes('next') || input.includes('schedule')) {
-      return `${smartFactoryKnowledge.nextSteps.contact}\n\nOur AI Business Readiness Assessment is the perfect starting point - it analyzes your organization's transformation readiness and provides a custom roadmap in just 10 minutes.`;
+      return `${smartFactoryKnowledge.nextSteps.contact}\n\nOur Strategic Assessment is the perfect starting point - it analyzes your organization's transformation readiness and provides a custom roadmap in just 10 minutes.`;
     }
     
     // Default comprehensive response
@@ -164,7 +164,7 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
       const fallbackMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `I apologize for the technical difficulty. Let me connect you directly with our team:\n\n• Take our AI Business Readiness Assessment (10 minutes)\n• Call our direct line: 816-686-7092\n• Email: contact@smartfactory.io\n• Schedule directly through our calendar system\n\nOur Smart Suite™ team responds within 2 hours for qualified prospects.`,
+        content: `I apologize for the technical difficulty. Let me connect you directly with our team:\n\n• Take our Strategic Assessment (10 minutes)\n• Call our direct line: 816-686-7092\n• Email: contact@smartfactory.io\n• Schedule directly through our calendar system\n\nOur Smart Suite™ team responds within 2 hours for qualified prospects.`,
         timestamp: new Date()
       };
       

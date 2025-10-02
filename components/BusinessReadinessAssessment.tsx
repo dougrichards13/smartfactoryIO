@@ -149,7 +149,7 @@ export function BusinessReadinessAssessment({
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Smart Factory - AI Business Readiness Assessment Results</title>
+    <title>Smart Factory - Strategic Assessment Results</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 40px; color: #333; }
         .header { text-align: center; margin-bottom: 40px; border-bottom: 3px solid #3B82F6; padding-bottom: 20px; }
@@ -171,7 +171,7 @@ export function BusinessReadinessAssessment({
 <body>
     <div class="header">
         <div class="logo">Smart Factory</div>
-        <h1>AI Business Readiness Assessment Results</h1>
+        <h1>Strategic Assessment Results</h1>
         <p>Generated on ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
     </div>
 
@@ -245,7 +245,7 @@ export function BusinessReadinessAssessment({
 
     <div class="footer">
         <p>© ${new Date().getFullYear()} Smart Factory. All rights reserved.</p>
-        <p>This assessment was generated using Smart Factory's proprietary AI Business Readiness Assessment tool.</p>
+        <p>This assessment was generated using Smart Factory's proprietary Strategic Assessment tool.</p>
     </div>
 </body>
 </html>`;
@@ -486,7 +486,7 @@ export function BusinessReadinessAssessment({
                 <Brain className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-semibold">AI Business Readiness Assessment</h2>
+                <h2 className="text-xl font-semibold">Strategic Assessment</h2>
                 <p className="text-sm text-muted-foreground">Secure • Private • Built by Smart Factory</p>
               </div>
             </div>

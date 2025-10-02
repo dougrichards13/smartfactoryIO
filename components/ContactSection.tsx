@@ -24,7 +24,7 @@ export function ContactSection() {
   const contactMethods = [
     {
       icon: Brain,
-      title: "AI Business Readiness Assessment",
+      title: "Strategic Assessment",
       description: "Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap",
       action: "Start Assessment",
       primary: true,
@@ -138,7 +138,7 @@ export function ContactSection() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold mb-2">AI Business Readiness Assessment</h4>
+                        <h4 className="font-semibold mb-2">Strategic Assessment</h4>
                         <p className="text-sm text-white/80 mb-4">Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap</p>
                         <div className="flex flex-wrap gap-2 mb-4">
                           <Button 

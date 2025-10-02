@@ -9,59 +9,48 @@
   },
   "teamStats": [
     {
-      "icon": "Award",
-      "value": "50+",
-      "label": "Years Combined C-Suite Experience"
-    },
-    {
-      "icon": "Building2",
-      "value": "Fortune 500",
-      "label": "Previous Leadership Roles"
-    },
-    {
       "icon": "Users",
       "value": "100+",
       "label": "Expert Consultants Worldwide"
     },
     {
+      "icon": "Building2",
+      "value": "<20",
+      "label": "Selective Client Partnerships"
+    },
+    {
       "icon": "Target",
-      "value": "$10B+",
-      "label": "Managed Revenue Experience"
+      "value": "Points & %",
+      "label": "Performance-Based Compensation"
+    },
+    {
+      "icon": "Award",
+      "value": "Multi-Million",
+      "label": "Client Value Creation"
     }
   ],
   "leadership": [
     {
-      "name": "Dr. Marcus Thompson",
-      "title": "Chief Executive Officer & Founder",
-      "background": "Former CTO at Fortune 100 Technology Company",
-      "expertise": ["AI Strategy", "Digital Transformation", "Enterprise Architecture"],
-      "bio": "15+ years of C-suite experience leading digital transformation initiatives for Fortune 500 companies. PhD in Computer Science from MIT, former CTO at major technology corporation with $50B+ revenue.",
-      "achievements": ["Led $2B+ digital transformation", "40+ patents in AI/ML", "Built teams of 500+ engineers"],
-      "linkedin": "#",
-      "email": "marcus@smartfactory.io",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      "name": "Doug Richards",
+      "title": "Executive Director & Founder",
+      "background": "Multi-Patented Technologist & Company Scaling Expert",
+      "expertise": ["Company Scaling", "AI Transformation", "Strategic Technology Integration", "Equity-Risk Partnerships"],
+      "bio": "Recognized innovator and proven company scaling expert with extraordinary track record of transformational growth. Founded Smart Factory in 2010, specializing in exponential business acceleration through strategic technology integration and equity-risk partnerships. Multi-patented technologist whose creative background spans from touring musician with legendary acts to pioneering early internet standards and AI-driven business transformation.",
+      "achievements": ["Scaled CFA by 847% in five years", "Led 11.2x exit of global patient billing company", "Transformed insurance company via AI to $32M exit (3.6M baseline)"],
+      "linkedin": "https://linkedin.com/in/dougrichardsKC",
+      "email": "doug@smartfactory.io",
+      "image": "/doug-richards-headshot.png"
     },
     {
-      "name": "Sarah Mitchell",
-      "title": "Chief Strategy Officer",
-      "background": "Former CEO of Mid-Market Manufacturing Company",
-      "expertise": ["Strategic Planning", "Operations Excellence", "M&A Strategy"],
-      "bio": "20+ years of executive leadership including 8 years as CEO of a $500M manufacturing company. Expert in operational transformation and strategic growth initiatives.",
-      "achievements": ["Grew company 300% in 5 years", "Led 12 successful acquisitions", "Transformed manufacturing operations"],
-      "linkedin": "#",
-      "email": "sarah@smartfactory.io",
-      "image": "https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      "name": "James Chen",
-      "title": "Chief Technology Officer",
-      "background": "Former CIO at Global Financial Services Firm",
-      "expertise": ["AI Implementation", "Cloud Architecture", "Cybersecurity"],
-      "bio": "18+ years of technology leadership including 6 years as CIO at a top-10 global bank. Specialist in enterprise AI implementation and large-scale technology transformation.",
-      "achievements": ["Led $1B+ cloud migration", "Implemented AI at global scale", "Managed 2000+ person IT organization"],
-      "linkedin": "#",
-      "email": "james@smartfactory.io",
-      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      "name": "Heather Richards",
+      "title": "Managing Partner",
+      "background": "Multi-Industry Digital Transformation & Customer Success Executive",
+      "expertise": ["Digital Transformation", "Customer Success", "Strategic Planning", "Global Operations"],
+      "bio": "Accomplished executive with extensive cross-industry experience spanning Technology (AWS, Github, Microsoft, Adobe), Healthcare (Hospice Credentialing, American Board of Nursing), Government (Jackson County, MO), Education (Park University, Johns Hopkins), and Sports organizations. Expert in merging data-driven insights with transparent communication to drive measurable organizational transformation and stakeholder alignment.",
+      "achievements": ["Created $20M annual AWS certification program", "Keynote Speaker & Nationally Published", "Recovered $2M+ in unidentified revenue through financial audits"],
+      "linkedin": "https://www.linkedin.com/in/heatherdavisrichards/",
+      "email": "heather@smartfactory.io",
+      "image": "/heather-richards-headshot.jpg"
     }
   ],
   "teamCulture": {

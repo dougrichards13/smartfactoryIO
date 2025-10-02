@@ -8,60 +8,49 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 export function TeamSection() {
   const leadership = [
     {
-      name: "Dr. Marcus Thompson",
-      title: "Chief Executive Officer & Founder",
-      background: "Former CTO at Fortune 100 Technology Company",
-      expertise: ["AI Strategy", "Digital Transformation", "Enterprise Architecture"],
-      bio: "15+ years of C-suite experience leading digital transformation initiatives for Fortune 500 companies. PhD in Computer Science from MIT, former CTO at major technology corporation with $50B+ revenue.",
-      achievements: ["Led $2B+ digital transformation", "40+ patents in AI/ML", "Built teams of 500+ engineers"],
-      linkedin: "#",
-      email: "marcus@smartfactory.io",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      name: "Doug Richards",
+      title: "Executive Director & Founder",
+      background: "Multi-Patented Technologist & Company Scaling Expert",
+      expertise: ["Company Scaling", "AI Transformation", "Strategic Technology Integration", "Equity-Risk Partnerships"],
+      bio: "Recognized innovator and proven company scaling expert with extraordinary track record of transformational growth. Founded Smart Factory in 2010, specializing in exponential business acceleration through strategic technology integration and equity-risk partnerships. Multi-patented technologist whose creative background spans from touring musician with legendary acts to pioneering early internet standards and AI-driven business transformation.",
+      achievements: ["Scaled CFA by 847% in five years", "Led 11.2x exit of global patient billing company", "Transformed insurance company via AI to $32M exit (3.6M baseline)"],
+      linkedin: "https://linkedin.com/in/dougrichardsKC",
+      email: "doug@smartfactory.io",
+      image: "/doug-richards-headshot.png"
     },
     {
-      name: "Sarah Mitchell",
-      title: "Chief Strategy Officer",
-      background: "Former CEO of Mid-Market Manufacturing Company",
-      expertise: ["Strategic Planning", "Operations Excellence", "M&A Strategy"],
-      bio: "20+ years of executive leadership including 8 years as CEO of a $500M manufacturing company. Expert in operational transformation and strategic growth initiatives.",
-      achievements: ["Grew company 300% in 5 years", "Led 12 successful acquisitions", "Transformed manufacturing operations"],
-      linkedin: "#",
-      email: "sarah@smartfactory.io", 
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=400&h=400&fit=crop&crop=face"
+      name: "Heather Richards",
+      title: "Managing Partner",
+      background: "Multi-Industry Digital Transformation & Customer Success Executive",
+      expertise: ["Digital Transformation", "Customer Success", "Strategic Planning", "Global Operations"],
+      bio: "Accomplished executive with extensive cross-industry experience spanning Technology (AWS, Github, Microsoft, Adobe), Healthcare (Hospice Credentialing, American Board of Nursing), Government (Jackson County, MO), Education (Park University, Johns Hopkins), and Sports organizations. Expert in merging data-driven insights with transparent communication to drive measurable organizational transformation and stakeholder alignment.",
+      achievements: ["Created $20M annual AWS certification program", "Keynote Speaker & Nationally Published", "Recovered $2M+ in unidentified revenue through financial audits"],
+      linkedin: "https://www.linkedin.com/in/heatherdavisrichards/",
+      email: "heather@smartfactory.io", 
+      image: "/heather-richards-headshot.jpg"
     },
-    {
-      name: "James Chen",
-      title: "Chief Technology Officer",
-      background: "Former CIO at Global Financial Services Firm",
-      expertise: ["AI Implementation", "Cloud Architecture", "Cybersecurity"],
-      bio: "18+ years of technology leadership including 6 years as CIO at a top-10 global bank. Specialist in enterprise AI implementation and large-scale technology transformation.",
-      achievements: ["Led $1B+ cloud migration", "Implemented AI at global scale", "Managed 2000+ person IT organization"],
-      linkedin: "#",
-      email: "james@smartfactory.io",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-    }
   ];
 
   const teamStats = [
-    {
-      icon: Award,
-      value: "50+",
-      label: "Years Combined C-Suite Experience"
-    },
-    {
-      icon: Building2,
-      value: "Fortune 500",
-      label: "Previous Leadership Roles"
-    },
     {
       icon: Users,
       value: "100+",
       label: "Expert Consultants Worldwide"
     },
     {
+      icon: Building2,
+      value: "<20",
+      label: "Selective Client Partnerships"
+    },
+    {
       icon: Target,
-      value: "$10B+",
-      label: "Managed Revenue Experience"
+      value: "Points & %",
+      label: "Performance-Based Compensation"
+    },
+    {
+      icon: Award,
+      value: "Multi-Million",
+      label: "Client Value Creation"
     }
   ];
 
@@ -150,7 +139,7 @@ export function TeamSection() {
         </div>
 
         {/* Leadership Profiles */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
           {leadership.map((leader, index) => (
             <motion.div
               key={index}
@@ -247,6 +236,100 @@ export function TeamSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Elite Partnership Model */}
+        <motion.div 
+          className="relative mt-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#232632] via-[#1e2129] to-[#181c25] border-2 border-gradient-to-r from-accent via-secondary to-primary rounded-3xl backdrop-blur-xl"
+               style={{
+                 backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(54, 249, 151, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(217, 128, 140, 0.1) 0%, transparent 50%)'
+               }}>
+            <div className="p-12 lg:p-20 relative z-10">
+              {/* Aggressive geometric accents */}
+              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-accent/20 to-transparent rounded-br-3xl"></div>
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-secondary/20 to-transparent rounded-tl-3xl"></div>
+              
+              <div className="text-center max-w-5xl mx-auto">
+                <motion.div 
+                  className="inline-flex items-center px-8 py-4 mb-12 bg-gradient-to-r from-accent/30 via-secondary/30 to-primary/30 border-2 border-accent/50 rounded-full backdrop-blur-sm shadow-2xl"
+                  whileHover={{ scale: 1.05, boxShadow: "0 25px 50px rgba(54, 249, 151, 0.3)" }}
+                  style={{
+                    boxShadow: '0 20px 40px rgba(54, 249, 151, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.2)'
+                  }}
+                >
+                  <div className="w-3 h-3 bg-accent rounded-full mr-4 animate-pulse shadow-lg"></div>
+                  <span className="text-base font-black uppercase tracking-[0.3em] text-white drop-shadow-lg">ELITE PARTNERSHIP MODEL</span>
+                </motion.div>
+                
+                <h3 className="mb-8 text-4xl lg:text-6xl font-black leading-tight text-white drop-shadow-2xl">
+                  WE DON'T JUST CONSULT
+                  <span className="block text-gradient mt-3 text-5xl lg:text-7xl">WE CO-INVEST IN YOUR SUCCESS</span>
+                </h3>
+                
+                <p className="text-2xl lg:text-3xl text-white font-bold leading-relaxed mb-12 max-w-4xl mx-auto drop-shadow-xl">
+                  We maintain <span className="text-accent font-black">fewer than 20 active partnerships</span> globally because our{' '}
+                  <span className="text-secondary font-black">compensation is tied to your exponential growth</span>. 
+                  This isn't consulting—this is <span className="text-gradient font-black">co-investment in your future</span>.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-12 mt-16">
+                  <motion.div 
+                    className="relative group"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div className="relative bg-gradient-to-br from-[#2a2e3a] to-[#1e222d] p-8 rounded-2xl border border-accent/30 backdrop-blur-sm">
+                      <div className="flex items-center mb-6">
+                        <div className="w-4 h-4 bg-accent rounded-full mr-6 flex-shrink-0 shadow-lg animate-pulse"></div>
+                        <h4 className="text-2xl font-black text-white uppercase tracking-wide">PREMIUM + PERFORMANCE</h4>
+                      </div>
+                      <p className="text-white/90 leading-relaxed text-lg font-semibold">
+                        You invest in <span className="text-accent font-black">proven expertise that scales companies from millions to billions in top-line revenue</span>. 
+                        Our performance bonuses are earned alongside <span className="text-secondary font-black">the exponential growth our clients achieve</span>—{' '}
+                        <span className="text-accent font-black">because we've done this before, repeatedly</span>.
+                      </p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="relative group"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 via-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div className="relative bg-gradient-to-br from-[#2a2e3a] to-[#1e222d] p-8 rounded-2xl border border-secondary/30 backdrop-blur-sm">
+                      <div className="flex items-center mb-6">
+                        <div className="w-4 h-4 bg-secondary rounded-full mr-6 flex-shrink-0 shadow-lg animate-pulse"></div>
+                        <h4 className="text-2xl font-black text-white uppercase tracking-wide">PROVEN METHODOLOGY</h4>
+                      </div>
+                      <p className="text-white/90 leading-relaxed text-lg font-semibold">
+                        <span className="text-secondary font-black">100+ world-class consultants</span> deploying proprietary Smart Factory software and{' '}
+                        <span className="text-accent font-black">trademarked scaling methodologies</span> that every billion-dollar client success story has used.{' '}
+                        <span className="text-secondary font-black">This isn't theory—it's a proven, repeatable system</span>.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+                
+                <div className="mt-16 pt-10 border-t border-white/10">
+                  <p className="text-lg text-white/80 italic max-w-3xl mx-auto leading-relaxed">
+                    "We don't bet on projects—we bet on founders. If you're ready to compound value, we'll stand beside you,{' '}
+                    put real skin in the game, and engineer outcomes that reward everyone involved."
+                  </p>
+                  <p className="text-sm text-accent font-semibold mt-4">— Doug Richards, Executive Director & Founder</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Epic border effects */}
+            <div className="absolute -inset-[2px] bg-gradient-to-r from-accent via-secondary to-primary rounded-3xl opacity-50 -z-10"></div>
+            <div className="absolute -inset-[4px] bg-gradient-to-r from-accent/30 via-secondary/30 to-primary/30 rounded-3xl opacity-30 -z-20 blur-sm"></div>
+          </div>
+        </motion.div>
 
       </div>
     </section>

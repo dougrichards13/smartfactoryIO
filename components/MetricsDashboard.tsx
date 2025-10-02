@@ -43,7 +43,7 @@ const defaultMetricsData: MetricsResponse = {
     {
       id: "typical-roi",
       value: "300%+",
-      title: "Typical Client ROI",
+      title: "Measurable Client ROI",
       subtitle: "Average return on investment across engagements: Most clients see 3-5x ROI within 18 months of implementation",
       icon: "TrendingUp",
       color: "primary",
@@ -70,8 +70,8 @@ const defaultMetricsData: MetricsResponse = {
     {
       id: "client-satisfaction",
       value: "98%",
-      title: "Client Satisfaction Rate",
-      subtitle: "Long-term client success metric: High retention and referral rates demonstrate consistent value delivery across all company sizes",
+      title: "Client Renewal Rate",
+      subtitle: "Contract extension success: Nearly all Smart Factory clients extend their engagements - a testament to measurable results and exceptional value delivery",
       icon: "DollarSign",
       color: "primary",
       animationDuration: 3000

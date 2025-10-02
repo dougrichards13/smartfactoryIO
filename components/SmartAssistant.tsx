@@ -47,7 +47,8 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     results: {
       roi: `Our clients typically see 300%+ ROI within 18 months. With an average project investment of $250K, we deliver measurable results that directly impact your bottom line. 98% client satisfaction rate and 15+ years of consistent delivery across industries.`,
       leadership: `Our leadership team brings $10B+ in managed revenue experience and 50+ years of combined C-suite expertise. Former Fortune 500 executives who speak CEO language because they've been CEOs. We understand your challenges because we've lived them.`,
-      scale: `We work with companies of all sizes - from funded startups needing rapid scale to enterprise organizations. Our average project budget of $250K makes transformation accessible while our C-level expertise ensures enterprise-grade results.`
+      scale: `We work with companies of all sizes - from funded startups needing rapid scale to enterprise organizations. Our average project budget of $250K makes transformation accessible while our C-level expertise ensures enterprise-grade results.`,
+      culture: `Our team combines Enterprise Leadership with Startup Agility. We bring the strategic insight and operational experience of Fortune 500 executives with the innovation and agility of a technology startup. This unique combination means we understand both enterprise challenges and startup speed - we've successfully navigated transformation from both perspectives.`
     },
     nextSteps: {
       assessment: `Start with our free AI Business Readiness Assessment - it takes 10 minutes and provides a personalized roadmap for your transformation. You'll get actionable recommendations and can schedule a strategic consultation directly from your results.`,
@@ -87,7 +88,12 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     
     // Team/Leadership questions
     if (input.includes('team') || input.includes('leadership') || input.includes('experience') || input.includes('who')) {
-      return `${smartFactoryKnowledge.results.leadership}\n\n${smartFactoryKnowledge.methodology.differentiation}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+      return `${smartFactoryKnowledge.results.culture}\n\n${smartFactoryKnowledge.results.leadership}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+    }
+    
+    // Culture/Approach questions
+    if (input.includes('culture') || input.includes('startup') || input.includes('agility') || input.includes('enterprise') || input.includes('combination')) {
+      return `${smartFactoryKnowledge.results.culture}\n\n${smartFactoryKnowledge.methodology.differentiation}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
     }
     
     // Contact/Next steps questions

@@ -48,7 +48,10 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
       roi: `Our clients typically see 300%+ ROI within 18 months. With an average project investment of $250K, we deliver measurable results that directly impact your bottom line. 98% client satisfaction rate and 15+ years of consistent delivery across industries.`,
       leadership: `Our leadership team brings $10B+ in managed revenue experience and 50+ years of combined C-suite expertise. Former Fortune 500 executives who speak CEO language because they've been CEOs. We understand your challenges because we've lived them.`,
       scale: `We work with companies of all sizes - from funded startups needing rapid scale to enterprise organizations. Our average project budget of $250K makes transformation accessible while our C-level expertise ensures enterprise-grade results.`,
-      culture: `Our team combines Enterprise Leadership with Startup Agility. We bring the strategic insight and operational experience of Fortune 500 executives with the innovation and agility of a technology startup. This unique combination means we understand both enterprise challenges and startup speed - we've successfully navigated transformation from both perspectives.`
+      culture: `Our team combines Enterprise Leadership with Startup Agility. We bring the strategic insight and operational experience of Fortune 500 executives with the innovation and agility of a technology startup. This unique combination means we understand both enterprise challenges and startup speed - we've successfully navigated transformation from both perspectives.`,
+      philosophy: `We Transform Enterprises, Not Just Technology. Smart Factory doesn't just implement solutions—we architect transformation. Since 2010, we've partnered with C-suite leaders to deliver measurable business outcomes that directly impact your bottom line, market position, and competitive advantage.`,
+      framework: `Our systematic approach combines proven methodologies with cutting-edge technology (including AI) to create sustainable competitive advantages. We don't just change your technology—we transform your entire operational paradigm. When we leave, your company is smarter through our framework: Clarity, Communication, Control.`,
+      foundation: `Founded in 2010, we've been disrupting traditional consulting since day one. We Work Smart with modern solutions, not outdated playbooks. We serve companies of All Sizes - from funded startups to Fortune 500 enterprises, delivering transformation that fits your scale and ambition.`
     },
     nextSteps: {
       assessment: `Start with our free AI Business Readiness Assessment - it takes 10 minutes and provides a personalized roadmap for your transformation. You'll get actionable recommendations and can schedule a strategic consultation directly from your results.`,
@@ -63,7 +66,17 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     
     // Success/Why questions
     if (input.includes('success') || input.includes('why') || input.includes('different') || input.includes('better')) {
-      return `${smartFactoryKnowledge.methodology.success}\n\n${smartFactoryKnowledge.results.roi}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+      return `${smartFactoryKnowledge.results.philosophy}\n\n${smartFactoryKnowledge.methodology.success}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+    }
+    
+    // Philosophy/Transformation questions
+    if (input.includes('philosophy') || input.includes('transform') || input.includes('architect') || input.includes('paradigm')) {
+      return `${smartFactoryKnowledge.results.philosophy}\n\n${smartFactoryKnowledge.results.framework}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+    }
+    
+    // Framework/Process questions
+    if (input.includes('framework') || input.includes('clarity') || input.includes('communication') || input.includes('control') || input.includes('process')) {
+      return `${smartFactoryKnowledge.results.framework}\n\n${smartFactoryKnowledge.results.foundation}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
     }
     
     // Methodology questions
@@ -102,7 +115,7 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     }
     
     // Default comprehensive response
-    return `Smart Factory delivers transformation through our proven "Act as If" methodology - we become part of your team, not outside consultants. Our former Fortune 500 executives understand your challenges and deliver 300%+ ROI with our Smart Suite™ teams.\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+    return `${smartFactoryKnowledge.results.philosophy}\n\n${smartFactoryKnowledge.methodology["act as if"]}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
   };
 
   const scrollToBottom = () => {

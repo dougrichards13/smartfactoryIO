@@ -116,55 +116,6 @@ export function SocialSection() {
         </div>
 
 
-        {/* About Smart Factory Statement */}
-        <motion.div
-          id="about-company"
-          className="text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-12 border border-border/50"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold mb-6">We Transform Enterprises, Not Just Technology</h3>
-          <p className="text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed text-lg font-medium">
-            <span className="text-primary font-bold">Smart Factory doesn't just implement solutions—we architect transformation.</span> 
-            Since 2010, we've partnered with C-suite leaders to deliver measurable business outcomes that 
-            directly impact your bottom line, market position, and competitive advantage.
-          </p>
-          <p className="text-white/80 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Our systematic approach combines <span className="text-secondary font-semibold">proven methodologies</span> 
-            with <span className="text-accent font-semibold">cutting-edge technology</span> (including AI) to create 
-            sustainable competitive advantages. We don't just change your technology—we transform your entire 
-            operational paradigm. When we leave, your company is smarter through our framework: 
-            <span className="text-primary font-bold">Clarity, Communication, Control</span>.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="p-6 bg-background/80 backdrop-blur-sm rounded-lg border-2 border-primary/30 hover:border-primary/50 transition-all duration-300">
-              <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-primary" />
-              </div>
-              <div className="text-2xl font-bold text-primary mb-2">2010</div>
-              <div className="text-sm text-white/90 font-semibold">Founded</div>
-              <div className="text-xs text-white/70 mt-1">Disrupting traditional consulting since day one</div>
-            </div>
-            <div className="p-6 bg-background/80 backdrop-blur-sm rounded-lg border-2 border-secondary/30 hover:border-secondary/50 transition-all duration-300">
-              <div className="w-12 h-12 mx-auto mb-4 bg-secondary/10 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-secondary" />
-              </div>
-              <div className="text-2xl font-bold text-secondary mb-2">Smart</div>
-              <div className="text-sm text-white/90 font-semibold">We Work Smart</div>
-              <div className="text-xs text-white/70 mt-1">Modern solutions, not playbooks</div>
-            </div>
-            <div className="p-6 bg-background/80 backdrop-blur-sm rounded-lg border-2 border-accent/30 hover:border-accent/50 transition-all duration-300">
-              <div className="w-12 h-12 mx-auto mb-4 bg-accent/10 rounded-lg flex items-center justify-center">
-                <Building className="w-6 h-6 text-accent" />
-              </div>
-              <div className="text-2xl font-bold text-accent mb-2">All Sizes</div>
-              <div className="text-sm text-white/90 font-semibold">Every Company</div>
-              <div className="text-xs text-white/70 mt-1">From startups to enterprise</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

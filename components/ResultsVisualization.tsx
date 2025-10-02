@@ -15,31 +15,33 @@ import {
   ReferenceLine
 } from 'recharts';
 
-// Doug's Track Record: Company scaling achievements
+// Enterprise Transition Success by Industry Cluster
 const portfolioGrowthData = [
-  { year: 'CFA Start', value: 100, label: 'Baseline Revenue', company: 'CFA' },
-  { year: 'Year 2', value: 247, label: '147% Growth', company: 'CFA' },
-  { year: 'Year 3', value: 456, label: '356% Growth', company: 'CFA' },
-  { year: 'Year 4', value: 678, label: '578% Growth', company: 'CFA' },
-  { year: 'Year 5', value: 847, label: '747% Growth', company: 'CFA' }
+  { industry: 'Healthcare', success: 94, projects: 8, challenge: 'Regulatory Compliance', outcome: 'Digital Transformation' },
+  { industry: 'Financial Services', success: 96, projects: 12, challenge: 'Risk Management', outcome: 'Process Excellence' },
+  { industry: 'FinTech', success: 92, projects: 6, challenge: 'Scale Rapidly', outcome: 'Infrastructure Build' },
+  { industry: 'Government', success: 89, projects: 7, challenge: 'Bureaucracy Reform', outcome: 'Efficiency Gains' },
+  { industry: 'Technology', success: 95, projects: 9, challenge: 'Innovation Speed', outcome: 'Competitive Edge' },
+  { industry: 'Agriculture', success: 91, projects: 4, challenge: 'Supply Chain', outcome: 'Operational Excellence' },
+  { industry: 'Education', success: 88, projects: 5, challenge: 'Digital Learning', outcome: 'Student Experience' },
+  { industry: 'International', success: 93, projects: 11, challenge: 'Cultural Integration', outcome: 'Global Standards' }
 ];
 
-// Company Transformation: Millions to Billions Journey
+// Global Enterprise Transformation: Geographic & Contract Scope
 const valuationData = [
-  { phase: 'Patient Billing Co.', value: 100, label: 'Starting Valuation', exit: '11.2x Exit' },
-  { phase: 'Post-Transformation', value: 1120, label: '1,120% Increase', exit: '11.2x Exit' },
-  { phase: 'Insurance Co. (AI)', value: 360, label: '$3.6M Baseline', exit: '$32M Exit' },
-  { phase: 'Post-AI Integration', value: 3200, label: '$32M Valuation', exit: '889% Growth' }
+  { region: 'North America', projects: 28, avgContract: 3.2, complexity: 'Enterprise', value: 95 },
+  { region: 'International', projects: 15, avgContract: 4.8, complexity: 'Government', value: 92 },
+  { region: 'Financial Centers', projects: 18, avgContract: 2.1, complexity: 'Compliance', value: 97 },
+  { region: 'Healthcare Systems', projects: 12, avgContract: 5.5, complexity: 'Mission Critical', value: 94 }
 ];
 
-// Smart Factory Evolution: 15 Years of Success
+// C-Suite Evolution: The Transition Crisis Timeline
 const impactTimelineData = [
-  { year: '2010', clients: 5, revenue: 250, methodology: 'Traditional Consulting' },
-  { year: '2013', clients: 15, revenue: 850, methodology: 'Act as If Developed' },
-  { year: '2016', clients: 25, revenue: 2100, methodology: 'Smart Suite Launch' },
-  { year: '2019', clients: 35, revenue: 4200, methodology: 'AI Integration' },
-  { year: '2022', clients: 45, revenue: 7500, methodology: 'AI Accelerator' },
-  { year: '2025', clients: 18, revenue: 12000, methodology: 'Elite Partnership Model' }
+  { stage: 'Founder-Led', challenge: 'Outmatched Leadership', success: 45, description: 'CFO was accountant, CTO ran help desk' },
+  { stage: 'Transition Crisis', challenge: 'Scale or Fail', success: 35, description: 'Mid-size to enterprise transition' },
+  { stage: 'Smart Factory Engaged', challenge: 'Executive Evolution', success: 75, description: 'Board-level transformation begins' },
+  { stage: 'Leadership Transformed', challenge: 'Enterprise Ready', success: 94, description: 'C-suite matches company needs' },
+  { stage: 'Sustained Growth', challenge: 'Market Leadership', success: 96, description: '1-10 year partnerships deliver results' }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -74,20 +76,17 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
 
   const renderPortfolioChart = () => (
     <ResponsiveContainer width="100%" height="100%">
-      <AreaChart data={portfolioGrowthData}>
-        <defs>
-          <linearGradient id="portfolioGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#3EB7FF" stopOpacity={0.8}/>
-            <stop offset="95%" stopColor="#3EB7FF" stopOpacity={0.1}/>
-          </linearGradient>
-        </defs>
+      <BarChart data={portfolioGrowthData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
         <XAxis 
-          dataKey="year" 
+          dataKey="industry" 
           stroke="#8FA0BF" 
-          fontSize={12}
+          fontSize={11}
           tickLine={false}
           axisLine={false}
+          angle={-45}
+          textAnchor="end"
+          height={80}
         />
         <YAxis 
           stroke="#8FA0BF" 
@@ -96,17 +95,30 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
           axisLine={false}
           tickFormatter={(value) => `${value}%`}
         />
-        <Tooltip content={<CustomTooltip />} />
-        <Area
-          type="monotone"
-          dataKey="value"
-          stroke="#3EB7FF"
-          strokeWidth={3}
-          fill="url(#portfolioGradient)"
-          animationDuration={2000}
+        <Tooltip 
+          content={({ active, payload, label }) => {
+            if (active && payload && payload.length) {
+              const data = payload[0].payload;
+              return (
+                <div className="bg-[#232632] border border-primary/30 rounded-xl p-4 shadow-2xl backdrop-blur-xl">
+                  <p className="text-white font-semibold text-sm mb-2">{data.industry}</p>
+                  <p className="text-primary text-sm">Success Rate: {data.success}%</p>
+                  <p className="text-secondary text-sm">Projects: {data.projects}</p>
+                  <p className="text-accent text-xs mt-1">Challenge: {data.challenge}</p>
+                  <p className="text-white/70 text-xs">Outcome: {data.outcome}</p>
+                </div>
+              );
+            }
+            return null;
+          }}
         />
-        <ReferenceLine y={100} stroke="#36F997" strokeDasharray="2 2" opacity={0.7} />
-      </AreaChart>
+        <Bar 
+          dataKey="success" 
+          fill="#3EB7FF"
+          radius={[4, 4, 0, 0]}
+          animationDuration={1500}
+        />
+      </BarChart>
     </ResponsiveContainer>
   );
 
@@ -115,11 +127,66 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
       <BarChart data={valuationData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
         <XAxis 
-          dataKey="phase" 
+          dataKey="region" 
           stroke="#8FA0BF" 
           fontSize={12}
           tickLine={false}
           axisLine={false}
+        />
+        <YAxis 
+          stroke="#8FA0BF" 
+          fontSize={12}
+          tickLine={false}
+          axisLine={false}
+          tickFormatter={(value) => value}
+        />
+        <Tooltip 
+          content={({ active, payload, label }) => {
+            if (active && payload && payload.length) {
+              const data = payload[0].payload;
+              return (
+                <div className="bg-[#232632] border border-primary/30 rounded-xl p-4 shadow-2xl backdrop-blur-xl">
+                  <p className="text-white font-semibold text-sm mb-2">{data.region}</p>
+                  <p className="text-secondary text-sm">Projects: {data.projects}</p>
+                  <p className="text-primary text-sm">Avg Contract: {data.avgContract} years</p>
+                  <p className="text-accent text-xs mt-1">Complexity: {data.complexity}</p>
+                  <p className="text-white/70 text-xs">Success: {data.value}%</p>
+                </div>
+              );
+            }
+            return null;
+          }}
+        />
+        <Bar 
+          dataKey="projects" 
+          fill="#36F997"
+          radius={[8, 8, 0, 0]}
+          animationDuration={1500}
+        />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+
+  const renderImpactChart = () => (
+    <ResponsiveContainer width="100%" height="100%">
+      <AreaChart data={impactTimelineData}>
+        <defs>
+          <linearGradient id="crisisGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#FF6B6B" stopOpacity={0.8}/>
+            <stop offset="50%" stopColor="#FFE66D" stopOpacity={0.6}/>
+            <stop offset="95%" stopColor="#36F997" stopOpacity={0.8}/>
+          </linearGradient>
+        </defs>
+        <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
+        <XAxis 
+          dataKey="stage" 
+          stroke="#8FA0BF" 
+          fontSize={11}
+          tickLine={false}
+          axisLine={false}
+          angle={-45}
+          textAnchor="end"
+          height={100}
         />
         <YAxis 
           stroke="#8FA0BF" 
@@ -128,80 +195,43 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
           axisLine={false}
           tickFormatter={(value) => `${value}%`}
         />
-        <Tooltip content={<CustomTooltip />} />
-        <Bar 
-          dataKey="value" 
-          fill="#36F997"
-          radius={[8, 8, 0, 0]}
-          animationDuration={1500}
-        >
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
-  );
-
-  const renderImpactChart = () => (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={impactTimelineData}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-        <XAxis 
-          dataKey="year" 
-          stroke="#8FA0BF" 
-          fontSize={12}
-          tickLine={false}
-          axisLine={false}
+        <Tooltip 
+          content={({ active, payload, label }) => {
+            if (active && payload && payload.length) {
+              const data = payload[0].payload;
+              return (
+                <div className="bg-[#232632] border border-primary/30 rounded-xl p-4 shadow-2xl backdrop-blur-xl max-w-xs">
+                  <p className="text-white font-semibold text-sm mb-2">{data.stage}</p>
+                  <p className="text-primary text-sm">Success Rate: {data.success}%</p>
+                  <p className="text-accent text-xs mt-1 font-semibold">{data.challenge}</p>
+                  <p className="text-white/70 text-xs mt-2 leading-relaxed">{data.description}</p>
+                </div>
+              );
+            }
+            return null;
+          }}
         />
-        <YAxis 
-          yAxisId="clients"
-          orientation="left"
-          stroke="#3EB7FF" 
-          fontSize={12}
-          tickLine={false}
-          axisLine={false}
-          tickFormatter={(value) => value}
-        />
-        <YAxis 
-          yAxisId="revenue"
-          orientation="right"
-          stroke="#36F997" 
-          fontSize={12}
-          tickLine={false}
-          axisLine={false}
-          tickFormatter={(value) => `$${value}K`}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Line
-          yAxisId="clients"
+        <Area
           type="monotone"
-          dataKey="clients"
-          stroke="#3EB7FF"
-          strokeWidth={3}
-          dot={{ fill: '#3EB7FF', strokeWidth: 2, r: 6 }}
-          activeDot={{ r: 8, stroke: '#3EB7FF', strokeWidth: 2 }}
-          animationDuration={2000}
-        />
-        <Line
-          yAxisId="revenue"
-          type="monotone"
-          dataKey="revenue"
+          dataKey="success"
           stroke="#36F997"
           strokeWidth={3}
-          dot={{ fill: '#36F997', strokeWidth: 2, r: 6 }}
-          activeDot={{ r: 8, stroke: '#36F997', strokeWidth: 2 }}
+          fill="url(#crisisGradient)"
           animationDuration={2500}
         />
-      </LineChart>
+        <ReferenceLine y={50} stroke="#FF6B6B" strokeDasharray="3 3" opacity={0.7} label={{ value: "Crisis Point", position: "topRight" }} />
+      </AreaChart>
     </ResponsiveContainer>
   );
 
   const getChartTitle = () => {
     switch (activeChart) {
       case 'portfolio':
-        return { title: 'Proven Scaling Track Record', subtitle: 'CFA: 847% growth in 5 years - real results, real company' };
+        return { title: 'Enterprise Transition Success', subtitle: 'Industry clusters: When mid-size companies need to scale to enterprise' };
       case 'valuation':
-        return { title: 'Exit Success Stories', subtitle: 'Transformations that created billions in value for stakeholders' };
+        return { title: 'Global Transformation Reach', subtitle: 'Multi-year partnerships spanning continents and complexities' };
       case 'impact':
-        return { title: 'Smart Factory Evolution', subtitle: '15 years: From traditional consulting to elite partnership model' };
+        return { title: 'C-Suite Evolution Crisis', subtitle: 'The harsh reality: Founder leadership must transform or companies fail' };
       default:
         return { title: 'Results Overview', subtitle: 'Choose a metric to explore' };
     }
@@ -261,12 +291,12 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
         {activeChart === 'portfolio' && (
           <>
             <div className="text-center p-3 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="text-2xl font-black text-primary">847%</div>
-              <div className="text-xs text-white/70">CFA Growth</div>
+              <div className="text-2xl font-black text-primary">8 Industries</div>
+              <div className="text-xs text-white/70">Proven Success</div>
             </div>
             <div className="text-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
-              <div className="text-2xl font-black text-secondary">5 Years</div>
-              <div className="text-xs text-white/70">Proven Timeline</div>
+              <div className="text-2xl font-black text-secondary">90%+</div>
+              <div className="text-xs text-white/70">Transition Success</div>
             </div>
           </>
         )}
@@ -274,12 +304,12 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
         {activeChart === 'valuation' && (
           <>
             <div className="text-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
-              <div className="text-2xl font-black text-secondary">11.2x</div>
-              <div className="text-xs text-white/70">Best Exit Multiple</div>
+              <div className="text-2xl font-black text-secondary">1-10 Years</div>
+              <div className="text-xs text-white/70">Contract Duration</div>
             </div>
             <div className="text-center p-3 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="text-2xl font-black text-primary">$32M</div>
-              <div className="text-xs text-white/70">AI Transformation</div>
+              <div className="text-2xl font-black text-primary">5 Continents</div>
+              <div className="text-xs text-white/70">Global Reach</div>
             </div>
           </>
         )}
@@ -287,12 +317,12 @@ export function ResultsVisualization({ activeChart }: ResultsVisualizationProps)
         {activeChart === 'impact' && (
           <>
             <div className="text-center p-3 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="text-2xl font-black text-primary">&lt;20</div>
-              <div className="text-xs text-white/70">Elite Clients</div>
+              <div className="text-2xl font-black text-primary">CEO/Board</div>
+              <div className="text-xs text-white/70">Engagement Level</div>
             </div>
             <div className="text-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
-              <div className="text-2xl font-black text-secondary">100+</div>
-              <div className="text-xs text-white/70">Expert Consultants</div>
+              <div className="text-2xl font-black text-secondary">96%</div>
+              <div className="text-xs text-white/70">Leadership Success</div>
             </div>
           </>
         )}

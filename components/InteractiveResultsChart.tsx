@@ -6,22 +6,22 @@ import { ResultsVisualization } from './ResultsVisualization';
 const chartOptions = [
   {
     id: 'portfolio' as const,
-    label: 'Scaling Track Record',
-    description: '847% CFA growth',
+    label: 'Industry Success',
+    description: '8 proven sectors',
     icon: TrendingUp,
     color: 'primary'
   },
   {
     id: 'valuation' as const,
-    label: 'Exit Success Stories',
-    description: '11.2x best exit',
+    label: 'Global Reach',
+    description: '5 continents',
     icon: Building2,
     color: 'secondary'
   },
   {
     id: 'impact' as const,
-    label: 'Smart Factory Evolution',
-    description: '15 years of growth',
+    label: 'C-Suite Crisis',
+    description: 'Leadership evolution',
     icon: BarChart3,
     color: 'accent'
   }

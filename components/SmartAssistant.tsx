@@ -41,8 +41,19 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     },
     services: {
       "smart suite": `Our Smart Suite™ offers three specialized consulting teams: Smart Suite™ Core (strategic leadership - part-time, full-time, or officer-level), AI Synthesizer™ (revolutionary teams combining human intelligence with AI Accelerator implementation), and Smart Assurance™ (AI-driven quality and testing with ISO standards). Each team works flexibly based on your needs.`,
-      "ai accelerator": `Our AI Accelerator™ platform creates a sovereign environment for your data - no IP exposure risks. With proprietary isolation technology, you get powerful AI capabilities while maintaining complete data sovereignty. Limited to 6 clients in 2025, with 4 spots remaining. Typical deployment: 90 days to measurable results.`,
+      "ai accelerator": `Our AI Accelerator™ platform creates a sovereign environment for your data - no IP exposure risks. With proprietary isolation technology, you get powerful AI capabilities while maintaining complete data sovereignty. Typical deployment delivers measurable results through our proven methodologies.`,
       flexibility: `We offer unmatched flexibility: part-time strategic guidance, full-time team integration, or officer-level leadership. From AI Synthesizer™ innovation to Smart Assurance™ quality - we deliver exactly what you need, when you need it, at the scale that makes sense for your business.`
+    },
+    clients: {
+      "healthcare": `Smart Factory has deep healthcare experience with clients including major health systems, children's hospitals, and healthcare networks. We specialize in regulatory compliance (HIPAA, PHI), digital transformation, and mission-critical system implementations that can't afford downtime.`,
+      "financial services": `Our financial services portfolio includes major banks, credit unions, insurance companies, and cooperative finance organizations. We excel at risk management, SOC 2 compliance, and process excellence that meets strict regulatory requirements.`,
+      "fintech": `We help FinTech companies scale rapidly while maintaining compliance and security. Our experience spans payment processing, digital banking platforms, and financial technology implementations requiring both innovation speed and regulatory adherence.`,
+      "government": `Smart Factory has worked with government entities at federal, state, and international levels including federal reserve systems and foreign governments. We understand bureaucracy reform challenges and deliver efficiency gains within complex regulatory environments.`,
+      "technology": `Our technology sector experience includes major telecommunications companies, software platforms, and digital transformation initiatives. We help tech companies maintain innovation speed while building enterprise-grade operational excellence.`,
+      "agriculture": `In agriculture, we've helped implement supply chain optimization, operational excellence, and technology integration that modernizes traditional farming and agricultural business operations while respecting industry-specific requirements.`,
+      "education": `Our education clients include major universities, community colleges, and specialized training institutions. We focus on digital learning transformation, operational efficiency, and student experience enhancement while working within academic institutional frameworks.`,
+      "international": `Smart Factory has global reach with experience across multiple continents including work with international airlines, foreign governments, and multinational corporations. We understand cultural integration challenges and implement global standards across diverse business environments.`,
+      "sports entertainment": `We've worked with major professional sports leagues and entertainment organizations, understanding the unique challenges of high-profile, performance-driven industries with complex stakeholder relationships and public visibility requirements.`
     },
     results: {
       roi: `Our clients typically see 300%+ ROI within 18 months. With an average project investment of $250K, we deliver measurable results that directly impact your bottom line. 98% client satisfaction rate and 15+ years of consistent delivery across industries.`,
@@ -107,6 +118,40 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
     // Culture/Approach questions
     if (input.includes('culture') || input.includes('startup') || input.includes('agility') || input.includes('enterprise') || input.includes('combination')) {
       return `${smartFactoryKnowledge.results.culture}\n\n${smartFactoryKnowledge.methodology.differentiation}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+    }
+    
+    // Client/Industry experience questions
+    if (input.includes('client') || input.includes('customer') || input.includes('industry') || input.includes('sector') || input.includes('experience')) {
+      // Check for specific industries
+      if (input.includes('healthcare') || input.includes('hospital') || input.includes('medical')) {
+        return `${smartFactoryKnowledge.clients.healthcare}\n\n${smartFactoryKnowledge.results.leadership}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+      }
+      if (input.includes('bank') || input.includes('financial') || input.includes('finance') || input.includes('insurance')) {
+        return `${smartFactoryKnowledge.clients["financial services"]}\n\n${smartFactoryKnowledge.results.scale}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+      }
+      if (input.includes('fintech') || input.includes('payment') || input.includes('digital banking')) {
+        return `${smartFactoryKnowledge.clients.fintech}\n\n${smartFactoryKnowledge.services.flexibility}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+      }
+      if (input.includes('government') || input.includes('federal') || input.includes('public sector')) {
+        return `${smartFactoryKnowledge.clients.government}\n\n${smartFactoryKnowledge.methodology.differentiation}\n\n${smartFactoryKnowledge.nextSteps.calendar}`;
+      }
+      if (input.includes('tech') || input.includes('software') || input.includes('telecom')) {
+        return `${smartFactoryKnowledge.clients.technology}\n\n${smartFactoryKnowledge.services["ai accelerator"]}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+      }
+      if (input.includes('agriculture') || input.includes('farming') || input.includes('supply chain')) {
+        return `${smartFactoryKnowledge.clients.agriculture}\n\n${smartFactoryKnowledge.results.framework}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+      }
+      if (input.includes('education') || input.includes('university') || input.includes('college') || input.includes('school')) {
+        return `${smartFactoryKnowledge.clients.education}\n\n${smartFactoryKnowledge.results.culture}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+      }
+      if (input.includes('international') || input.includes('global') || input.includes('overseas')) {
+        return `${smartFactoryKnowledge.clients.international}\n\n${smartFactoryKnowledge.results.leadership}\n\n${smartFactoryKnowledge.nextSteps.calendar}`;
+      }
+      if (input.includes('sports') || input.includes('entertainment') || input.includes('league')) {
+        return `${smartFactoryKnowledge.clients["sports entertainment"]}\n\n${smartFactoryKnowledge.methodology.success}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+      }
+      // General client question
+      return `Smart Factory has worked across 8+ major industry clusters including Healthcare, Financial Services, FinTech, Government, Technology, Agriculture, Education, International, and Sports & Entertainment.\n\n${smartFactoryKnowledge.results.culture}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
     }
     
     // Contact/Next steps questions

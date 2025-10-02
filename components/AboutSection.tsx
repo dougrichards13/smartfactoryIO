@@ -22,66 +22,82 @@ export function AboutSection() {
     {
       category: "Agriculture & Cooperative Finance",
       description: "Agricultural lending transformation and cooperative growth",
-      publicClients: ["Cooperative Finance Association"],
-      privateClients: ["Agricultural cooperatives", "Rural financial institutions", "Farm credit systems"],
+      securityLevel: "Confidential",
+      clientTypes: ["National cooperative systems", "Agricultural finance institutions", "Rural credit organizations"],
+      challengeFocus: ["Digital transformation", "Risk management", "Operational scaling"],
       impact: "300%+ average client ROI achievement",
-      engagement: "COO/CTO leadership - transformational growth"
+      engagement: "C-Suite partnership - COO/CTO level integration",
+      scale: "$500M+ AUM organizations"
     },
     {
-      category: "Federal Banking Systems", 
+      category: "Federal Banking & Regulatory", 
       description: "Central banking technology and regulatory transformation",
-      publicClients: ["Federal Reserve System"],
-      privateClients: ["Regional banking institutions", "Credit unions"],
-      impact: "Critical infrastructure modernization",
-      engagement: "Government contract excellence"
+      securityLevel: "Top Secret",
+      clientTypes: ["Federal reserve systems", "Government banking entities", "Regulatory institutions"],
+      challengeFocus: ["Critical infrastructure", "Regulatory compliance", "Security protocols"],
+      impact: "Mission-critical system modernization",
+      engagement: "Government contract - highest security clearance",
+      scale: "National infrastructure level"
     },
     {
       category: "Global Healthcare & Life Sciences",
       description: "Pharmaceutical innovation and biotechnology advancement",
-      publicClients: ["Johnson & Johnson", "Bayer AG"],
-      privateClients: ["Biotech startups", "Medical device manufacturers"],
+      securityLevel: "Highly Confidential",
+      clientTypes: ["Fortune 500 pharmaceutical", "Global biotech leaders", "Medical device innovators"],
+      challengeFocus: ["Digital transformation", "R&D acceleration", "Regulatory compliance"],
       impact: "40%+ efficiency improvement",
-      engagement: "Enterprise-scale digital transformation"
+      engagement: "Board-level advisory - transformation leadership",
+      scale: "$10B+ market cap organizations"
     },
     {
       category: "Professional Sports & Entertainment",
       description: "Fan engagement technology and operational excellence",
-      publicClients: ["NBA (National Basketball Association)", "MLB (Major League Baseball)"],
-      privateClients: ["Professional franchises", "Sports technology companies"],
-      impact: "Fan experience revolution",
-      engagement: "League-wide technology initiatives"
+      securityLevel: "Confidential",
+      clientTypes: ["Major league organizations", "Professional sports entities", "Entertainment platforms"],
+      challengeFocus: ["Fan experience", "Technology integration", "Operational excellence"],
+      impact: "Fan engagement revolution",
+      engagement: "League-wide initiatives - multi-year partnerships",
+      scale: "Multi-billion dollar industry impact"
     },
     {
       category: "International Airlines & Transportation",
       description: "Aviation technology and passenger experience optimization",
-      publicClients: ["Etihad Airways", "Sprint Corporation"],
-      privateClients: ["Regional carriers", "Transportation logistics"],
+      securityLevel: "Restricted",
+      clientTypes: ["International carriers", "Global transportation", "Aviation technology"],
+      challengeFocus: ["Operational efficiency", "Customer experience", "Technology modernization"],
       impact: "Operational efficiency breakthroughs",
-      engagement: "Global fleet management systems"
+      engagement: "Global fleet management - multi-continent operations",
+      scale: "International airline networks"
     },
     {
       category: "Higher Education & Research",
       description: "Academic digital transformation and research innovation",
-      publicClients: ["University of Central Missouri", "University of Kansas Health System"],
-      privateClients: ["Private universities", "Research institutions"],
+      securityLevel: "Confidential",
+      clientTypes: ["Major university systems", "Healthcare institutions", "Research organizations"],
+      challengeFocus: ["Digital learning", "Research acceleration", "Student experience"],
       impact: "Educational technology advancement",
-      engagement: "Campus-wide digital initiatives"
+      engagement: "Campus-wide digital initiatives",
+      scale: "50,000+ student populations"
     },
     {
       category: "Financial Services & Insurance",
       description: "Banking innovation and insurance technology",
-      publicClients: ["Armed Forces Insurance", "Bank of Oklahoma"],
-      privateClients: ["Regional banks", "Insurance providers"],
+      securityLevel: "Highly Confidential",
+      clientTypes: ["Regional banking leaders", "Insurance innovators", "Financial technology"],
+      challengeFocus: ["Platform modernization", "Regulatory compliance", "Customer experience"],
       impact: "Platform modernization excellence",
-      engagement: "Regulatory compliance excellence"
+      engagement: "Board advisory - regulatory transformation",
+      scale: "$1B+ assets under management"
     },
     {
       category: "Technology & Innovation",
       description: "Enterprise software development and platform scaling",
-      publicClients: ["Altare (Public Markets)", "Evergy Inc."],
-      privateClients: ["SaaS platforms", "Enterprise software companies"],
-      impact: "98% client satisfaction rate",
-      engagement: "IPO preparation and scaling"
+      securityLevel: "Confidential",
+      clientTypes: ["Public market leaders", "Utility innovators", "SaaS platforms"],
+      challengeFocus: ["IPO preparation", "Platform scaling", "Market expansion"],
+      impact: "100% client satisfaction rate",
+      engagement: "IPO advisory - scaling leadership",
+      scale: "Pre-IPO to $10B+ market cap"
     }
   ];
 
@@ -206,20 +222,20 @@ export function AboutSection() {
                     {portfolio.description}
                   </div>
                   
-                  {/* Public Clients - Always Visible */}
+                  {/* Security Level & Scale */}
                   <div className="space-y-2">
-                    <div className="text-xs font-bold text-secondary uppercase tracking-wide">Notable Clients:</div>
-                    <div className="flex flex-wrap gap-1">
-                      {portfolio.publicClients.map((client, clientIndex) => (
-                        <div key={clientIndex} className="text-xs font-bold text-white bg-secondary/20 px-2 py-1 rounded-full">
-                          {client}
-                        </div>
-                      ))}
+                    <div className="flex items-center justify-between">
+                      <div className="text-xs font-bold text-secondary bg-secondary/20 px-2 py-1 rounded-full">
+                        🔒 {portfolio.securityLevel}
+                      </div>
+                      <div className="text-xs text-white/80 font-medium">
+                        {portfolio.scale}
+                      </div>
                     </div>
                   </div>
                   
                   <div className="text-xs text-white/60 text-center pt-2">
-                    Hover for full portfolio
+                    Hover for engagement details
                   </div>
                 </div>
 
@@ -232,24 +248,31 @@ export function AboutSection() {
                     
                     <div className="flex-1 space-y-4">
                       <div>
-                        <div className="text-xs font-bold text-accent uppercase tracking-wide mb-2">✓ Public Clients:</div>
+                        <div className="text-xs font-bold text-accent uppercase tracking-wide mb-2">🏢 Client Types:</div>
                         <div className="space-y-1">
-                          {portfolio.publicClients.map((client, clientIndex) => (
-                            <div key={clientIndex} className="text-sm text-white font-bold bg-accent/30 px-3 py-1 rounded">
-                              {client}
+                          {portfolio.clientTypes.map((type, typeIndex) => (
+                            <div key={typeIndex} className="text-sm text-white font-medium bg-accent/30 px-3 py-1 rounded">
+                              {type}
                             </div>
                           ))}
                         </div>
                       </div>
                       
                       <div>
-                        <div className="text-xs font-bold text-white/90 uppercase tracking-wide mb-2">Additional Portfolio:</div>
+                        <div className="text-xs font-bold text-white/90 uppercase tracking-wide mb-2">🎯 Challenge Focus:</div>
                         <div className="space-y-1">
-                          {portfolio.privateClients.map((client, clientIndex) => (
-                            <div key={clientIndex} className="text-xs text-white/80">
-                              • {client}
+                          {portfolio.challengeFocus.map((challenge, challengeIndex) => (
+                            <div key={challengeIndex} className="text-xs text-white/80">
+                              • {challenge}
                             </div>
                           ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <div className="text-xs font-bold text-secondary uppercase tracking-wide mb-2">🔒 Security Level:</div>
+                        <div className="text-sm text-secondary font-bold bg-secondary/20 px-3 py-1 rounded inline-block">
+                          {portfolio.securityLevel}
                         </div>
                       </div>
                     </div>
@@ -288,8 +311,8 @@ export function AboutSection() {
             </div>
             
             <p className="text-sm text-white/70 max-w-2xl mx-auto leading-relaxed">
-              <span className="text-accent font-semibold">Public company engagements</span> showcase our proven ability to deliver under the highest scrutiny.<br/>
-              <span className="text-primary font-semibold">Private client success</span> demonstrates our versatility across all enterprise scales.
+              <span className="text-accent font-semibold">Security-first approach</span> ensures all client work maintains strict confidentiality protocols.<br/>
+              <span className="text-primary font-semibold">Industry expertise</span> demonstrates our proven ability to deliver transformation across all enterprise scales.
             </p>
           </div>
         </motion.div>

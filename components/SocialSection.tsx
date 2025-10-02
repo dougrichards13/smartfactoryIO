@@ -9,10 +9,10 @@ export function SocialSection() {
     {
       icon: Linkedin,
       name: "LinkedIn",
-      handle: "@SmartFactoryAI",
+      handle: "@SmartFactoryIO",
       description: "Enterprise AI insights and thought leadership",
-      followers: "25K+ followers",
-      url: "https://linkedin.com/company/smartfactory",
+      followers: "811+ followers",
+      url: "https://www.linkedin.com/company/smartfactoryio",
       color: "text-[#0077B5]"
     },
     {
@@ -27,10 +27,10 @@ export function SocialSection() {
     {
       icon: Youtube,
       name: "YouTube",
-      handle: "Smart Factory Channel",
+      handle: "@SmartFactoryIO",
       description: "C-suite AI education and case studies",
-      followers: "12K+ subscribers",
-      url: "https://youtube.com/@smartfactory",
+      followers: "Growing subscriber base",
+      url: "https://www.youtube.com/@SmartFactoryIO",
       color: "text-[#FF0000]"
     },
     {

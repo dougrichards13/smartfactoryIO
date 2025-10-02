@@ -3,11 +3,14 @@ import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export function Header() {
+interface HeaderProps {
+  onOmnisToggle?: () => void;
+}
+
+export function Header({ onOmnisToggle }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [chatWidget, setChatWidget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,38 +21,6 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Detect Microsoft Teams chat widget when it loads
-  useEffect(() => {
-    const detectChatWidget = () => {
-      const selectors = [
-        '[data-automation-id="chatButton"]',
-        '.ms-chatBot-widget',
-        '#chatbot',
-        'iframe[src*="customerconnect"]',
-        '[id*="chat"]',
-        '[class*="chat"]',
-        '[class*="widget"]'
-      ];
-      
-      for (const selector of selectors) {
-        const widget = document.querySelector(selector) as HTMLElement;
-        if (widget) {
-          console.log(`Chat widget found with selector: ${selector}`, widget);
-          setChatWidget(widget);
-          return;
-        }
-      }
-    };
-    
-    // Check immediately
-    detectChatWidget();
-    
-    // Check periodically for chat widget loading
-    const interval = setInterval(detectChatWidget, 1000);
-    
-    // Clean up
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -61,66 +32,13 @@ export function Header() {
     scrollToSection('contact');
   };
 
-  const openLiveSupport = () => {
-    console.log('Live Support clicked');
-    
-    // Method 1: Use detected chat widget if available
-    if (chatWidget) {
-      console.log('Using detected chat widget:', chatWidget);
-      chatWidget.click();
-      return;
+  const openOmnis = () => {
+    if (onOmnisToggle) {
+      onOmnisToggle();
+    } else {
+      // Fallback to contact section if no handler provided
+      scrollToContact();
     }
-    
-    // Method 2: Try Microsoft Teams API methods
-    try {
-      if (window.mscc) {
-        console.log('mscc object found:', window.mscc);
-        
-        if (window.mscc.WidgetElement && window.mscc.WidgetElement.open) {
-          console.log('Calling mscc.WidgetElement.open()');
-          window.mscc.WidgetElement.open();
-          return;
-        }
-        
-        if (typeof window.mscc.open === 'function') {
-          console.log('Calling mscc.open()');
-          window.mscc.open();
-          return;
-        }
-        
-        if (typeof window.mscc.show === 'function') {
-          console.log('Calling mscc.show()');
-          window.mscc.show();
-          return;
-        }
-      }
-    } catch (error) {
-      console.error('Error with mscc API:', error);
-    }
-    
-    // Method 3: Search for chat widget and click it
-    const selectors = [
-      '[data-automation-id="chatButton"]',
-      '.ms-chatBot-widget', 
-      '#chatbot',
-      'iframe[src*="customerconnect"]',
-      '[id*="chat"][style*="display: block"]',
-      '[class*="chat"]:not([style*="display: none"])',
-      'button[title*="chat" i]',
-      'button[aria-label*="chat" i]'
-    ];
-    
-    for (const selector of selectors) {
-      const widget = document.querySelector(selector) as HTMLElement;
-      if (widget && widget.offsetParent !== null) { // Check if visible
-        console.log(`Found and clicking chat widget: ${selector}`, widget);
-        widget.click();
-        return;
-      }
-    }
-    
-    console.log('No chat widget found immediately, falling back to contact section');
-    scrollToContact();
   };
 
   const handleNavClick = (item: any) => {
@@ -272,13 +190,13 @@ export function Header() {
           <div className="hidden lg:flex items-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
-                onClick={openLiveSupport}
+                onClick={openOmnis}
                 className="relative bg-gradient-to-r from-secondary to-accent text-black font-bold px-8 py-3 rounded-xl uppercase tracking-[0.1em] text-sm shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10"
                 style={{
                   boxShadow: '0 4px 20px rgba(217, 128, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
                 }}
               >
-                LIVE SUPPORT
+                OMNIS
                 <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </motion.div>
@@ -381,10 +299,10 @@ export function Header() {
                   transition={{ duration: 0.4, delay: 0.3 }}
                 >
                   <Button 
-                    onClick={openLiveSupport}
+                    onClick={openOmnis}
                     className="w-full gradient-accent text-accent-foreground font-bold py-3 hover:shadow-xl transition-all duration-300 border-2 border-accent/20 uppercase tracking-wider"
                   >
-                    LIVE SUPPORT
+                    OMNIS
                   </Button>
                 </motion.div>
               </nav>

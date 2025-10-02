@@ -6,10 +6,16 @@ import { AIAcceleratorSection } from './components/AIAcceleratorSection';
 import { TeamSection } from './components/TeamSection';
 import { SocialSection } from './components/SocialSection';
 import { ContactSection } from './components/ContactSection';
+import { SmartAssistant } from './components/SmartAssistant';
 import { ContentProvider } from './src/contexts/ContentContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+  const [omnisOpen, setOmnisOpen] = useState(false);
+  
+  const toggleOmnis = () => {
+    setOmnisOpen(prev => !prev);
+  };
   useEffect(() => {
     // Set SEO metadata
     document.title = "Smart Factory - AI Consulting for Visionary Leaders | Enterprise AI Transformation";
@@ -147,7 +153,7 @@ export default function App() {
     <ContentProvider>
       <div className="min-h-screen bg-background">
           {/* SEO-friendly page structure with semantic HTML */}
-          <Header />
+          <Header onOmnisToggle={toggleOmnis} />
           <main role="main">
             <HeroSection />
             <AboutSection />
@@ -157,6 +163,12 @@ export default function App() {
             <SocialSection />
             <ContactSection />
           </main>
+          
+          {/* Omnis AI Assistant */}
+          <SmartAssistant 
+            isOpen={omnisOpen} 
+            onToggle={toggleOmnis}
+          />
       
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12">

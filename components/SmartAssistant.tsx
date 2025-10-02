@@ -21,9 +21,9 @@ export function SmartAssistant({ isOpen, onToggle, apiEndpoint = '/api/chat' }: 
     {
       id: '1',
       role: 'assistant',
-      content: `Hello! I'm your Smart Factory expert assistant. With 15+ years of transformation experience and former Fortune 500 executives on our team, I can help you understand why we consistently deliver 300%+ ROI for clients.
+      content: `Hello! I'm Omnis, Smart Factory's AI assistant. With 15+ years of transformation experience and $6.3B+ in documented value growth across 62 enterprise clients, I can help you understand how Smart Factory consistently delivers results.
 
-I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform, and proven "Act as If" methodology. What questions do you have about transforming your business?`,
+I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ platform, and proven methodologies. I can also help qualify your transformation needs and connect you with our experts. What questions do you have about transforming your business?`,
       timestamp: new Date()
     }
   ]);
@@ -247,8 +247,8 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
                 <Bot className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-bold text-white">Smart Factory Assistant</h3>
-                <p className="text-xs text-white/70">Built in-house • Secure • Private</p>
+                <h3 className="font-bold text-white">Omnis</h3>
+                <p className="text-xs text-white/70">Smart Factory AI Assistant</p>
               </div>
             </div>
             <Button 
@@ -331,7 +331,7 @@ I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask me why Smart Factory delivers 300%+ ROI..."
+              placeholder="Ask Omnis about Smart Factory's transformation approach..."
               className="flex-1 p-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
               rows={2}
               disabled={isLoading}

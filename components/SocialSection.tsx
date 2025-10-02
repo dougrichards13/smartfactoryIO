@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Youtube, Globe, Calendar, Zap, Building } from 'lucide-react';
+import { Linkedin, Youtube, Calendar, Zap, Building } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -9,38 +9,20 @@ export function SocialSection() {
     {
       icon: Linkedin,
       name: "LinkedIn",
-      handle: "@SmartFactoryIO",
-      description: "Enterprise AI insights and thought leadership",
-      followers: "811+ followers",
-      url: "https://www.linkedin.com/company/smartfactoryio",
+      handle: "Smart Factory",
+      description: "Enterprise transformation insights and thought leadership for C-level executives",
+      followers: "Growing professional network",
+      url: "https://www.linkedin.com/company/smartfactoryIO",
       color: "text-[#0077B5]"
-    },
-    {
-      icon: Twitter,
-      name: "X (Twitter)",
-      handle: "@SmartFactoryIO",
-      description: "Real-time AI innovation and industry news",
-      followers: "18K+ followers", 
-      url: "https://twitter.com/smartfactoryio",
-      color: "text-[#1DA1F2]"
     },
     {
       icon: Youtube,
       name: "YouTube",
       handle: "@SmartFactoryIO",
-      description: "C-suite AI education and case studies",
-      followers: "Growing subscriber base",
+      description: "Executive education, case studies, and transformation insights",
+      followers: "C-suite focused content",
       url: "https://www.youtube.com/@SmartFactoryIO",
       color: "text-[#FF0000]"
-    },
-    {
-      icon: Globe,
-      name: "Smart Factory Blog",
-      handle: "insights.smartfactory.io",
-      description: "Deep-dive articles on enterprise AI transformation",
-      followers: "50K+ monthly readers",
-      url: "https://insights.smartfactory.io",
-      color: "text-primary"
     }
   ];
 
@@ -69,7 +51,7 @@ export function SocialSection() {
       <div className="container-custom">
 
         {/* Social Channels */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
+        <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-20">
           {socialChannels.map((channel, index) => {
             const IconComponent = channel.icon;
             return (
@@ -80,32 +62,30 @@ export function SocialSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 hover:border-primary/20 group">
-                  <CardContent className="p-6 text-center">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 hover:border-primary/20 group bg-gradient-to-br from-white/5 to-white/10">
+                  <CardContent className="p-8 text-center">
                     {/* Icon */}
-                    <div className="w-16 h-16 mx-auto mb-4 bg-muted rounded-xl flex items-center justify-center group-hover:bg-muted/80 transition-colors">
-                      <IconComponent className={`w-8 h-8 ${channel.color}`} />
+                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
+                      <IconComponent className={`w-10 h-10 ${channel.color}`} />
                     </div>
                     
                     {/* Channel Info */}
-                    <h3 className="text-lg font-semibold mb-1">{channel.name}</h3>
-                    <p className="text-sm text-white/80 font-medium mb-2">{channel.handle}</p>
-                    <p className="text-xs text-white/80 mb-4 leading-relaxed">{channel.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-white">{channel.name}</h3>
+                    <p className="text-sm text-primary font-semibold mb-3">{channel.handle}</p>
+                    <p className="text-sm text-white/80 mb-6 leading-relaxed">{channel.description}</p>
                     
                     {/* Followers */}
-                    <Badge variant="outline" className="mb-4 bg-primary/10 border-primary/20 text-primary">
+                    <Badge variant="outline" className="mb-6 bg-accent/10 border-accent/20 text-accent px-3 py-1">
                       {channel.followers}
                     </Badge>
                     
                     {/* Follow Button */}
                     <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="w-full hover:bg-primary/10 border-primary/20"
+                      className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-2" 
                       asChild
                     >
                       <a href={channel.url} target="_blank" rel="noopener noreferrer">
-                        Follow
+                        Connect & Follow
                       </a>
                     </Button>
                   </CardContent>

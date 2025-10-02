@@ -27,6 +27,23 @@ export function Header() {
     scrollToSection('contact');
   };
 
+  const openLiveSupport = () => {
+    // Trigger Microsoft Teams chat overlay
+    if (window.mscc && window.mscc.WidgetElement) {
+      window.mscc.WidgetElement.open();
+    } else {
+      // If not loaded yet, try again after a short delay
+      setTimeout(() => {
+        if (window.mscc && window.mscc.WidgetElement) {
+          window.mscc.WidgetElement.open();
+        } else {
+          console.log('Microsoft Teams chat not available. Falling back to contact section.');
+          scrollToContact();
+        }
+      }, 500);
+    }
+  };
+
   const handleNavClick = (item: any) => {
     if (item.isExternal) {
       window.open(item.url, '_blank', 'noopener,noreferrer');
@@ -176,16 +193,14 @@ export function Header() {
           <div className="hidden lg:flex items-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
-                asChild
+                onClick={openLiveSupport}
                 className="relative bg-gradient-to-r from-secondary to-accent text-black font-bold px-8 py-3 rounded-xl uppercase tracking-[0.1em] text-sm shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10"
                 style={{
                   boxShadow: '0 4px 20px rgba(217, 128, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
                 }}
               >
-                <a href="mailto:contact@smartfactory.io">
-                  CONTACT US
-                  <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
+                LIVE SUPPORT
+                <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </motion.div>
           </div>
@@ -287,12 +302,10 @@ export function Header() {
                   transition={{ duration: 0.4, delay: 0.3 }}
                 >
                   <Button 
-                    asChild
+                    onClick={openLiveSupport}
                     className="w-full gradient-accent text-accent-foreground font-bold py-3 hover:shadow-xl transition-all duration-300 border-2 border-accent/20 uppercase tracking-wider"
                   >
-                    <a href="mailto:contact@smartfactory.io">
-                      CONTACT US
-                    </a>
+                    LIVE SUPPORT
                   </Button>
                 </motion.div>
               </nav>

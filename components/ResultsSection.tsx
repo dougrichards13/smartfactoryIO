@@ -97,20 +97,20 @@ export function ResultsSection() {
                   )) || (
                     <>
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Manufacturing & Industrial</span>
-                        <span className="text-sm text-accent font-semibold">$2.1B impact</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Healthcare & Life Sciences</span>
-                        <span className="text-sm text-accent font-semibold">$1.8B impact</span>
-                      </div>
-                      <div className="flex justify-between items-center">
                         <span className="text-sm font-medium">Financial Services</span>
-                        <span className="text-sm text-accent font-semibold">$900M impact</span>
+                        <span className="text-sm text-accent font-semibold">$1.2B growth</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Technology & Software</span>
-                        <span className="text-sm text-accent font-semibold">$200M impact</span>
+                        <span className="text-sm font-medium">International</span>
+                        <span className="text-sm text-accent font-semibold">$1.8B growth</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Technology</span>
+                        <span className="text-sm text-accent font-semibold">$940M growth</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Healthcare</span>
+                        <span className="text-sm text-accent font-semibold">$850M growth</span>
                       </div>
                     </>
                   )}

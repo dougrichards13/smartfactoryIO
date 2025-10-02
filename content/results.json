@@ -10,9 +10,9 @@
   "impactMetrics": [
     {
       "icon": "DollarSign",
-      "value": "$5B+",
-      "label": "Project Impact",
-      "description": "Total value delivered across all client engagements"
+      "value": "$6.3B+",
+      "label": "Value Growth Delivered",
+      "description": "Total market value growth across 62 enterprise clients"
     },
     {
       "icon": "TrendingUp",
@@ -38,20 +38,20 @@
     "description": "Our transformational impact spans across multiple industries, with consistently high ROI and client satisfaction rates that demonstrate the effectiveness of the Smart Factory Method™.",
     "industries": [
       {
-        "name": "Manufacturing & Industrial",
-        "impact": "$2.1B impact"
-      },
-      {
-        "name": "Healthcare & Life Sciences",
-        "impact": "$1.8B impact"
+        "name": "International",
+        "impact": "$1.8B growth"
       },
       {
         "name": "Financial Services",
-        "impact": "$900M impact"
+        "impact": "$1.2B growth"
       },
       {
-        "name": "Technology & Software",
-        "impact": "$200M impact"
+        "name": "Technology",
+        "impact": "$940M growth"
+      },
+      {
+        "name": "Healthcare",
+        "impact": "$850M growth"
       }
     ],
     "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop&crop=center",
@@ -91,16 +91,16 @@
     "description": "Every enterprise transformation begins with a conversation. Discover how Smart Factory can deliver measurable results for your organization with our proven methodology and world-class expertise.",
     "stats": [
       {
-        "value": "98%",
-        "label": "Client Satisfaction"
+        "value": "62",
+        "label": "Enterprise Clients"
       },
       {
-        "value": "340%",
-        "label": "Average ROI"
+        "value": "100%",
+        "label": "Contract Expansion"
       },
       {
-        "value": "90 Days",
-        "label": "Avg. Implementation"
+        "value": "8",
+        "label": "Industry Verticals"
       }
     ]
   }

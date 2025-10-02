@@ -18,19 +18,19 @@
   },
   "portfolioSummary": {
     "totalImpact": {
-      "value": "$5B+",
-      "title": "Total Portfolio Impact",
-      "subtitle": "Documented value creation"
+      "value": "$6.3B+",
+      "title": "Total Value Growth Delivered",
+      "subtitle": "Documented market value creation"
     },
     "majorEnterprises": {
-      "value": "25+",
-      "title": "Major Enterprises", 
-      "subtitle": "Fortune 500 & Global Leaders"
+      "value": "62",
+      "title": "Enterprise Clients", 
+      "subtitle": "Across 8 Industry Verticals"
     },
     "clientRetention": {
-      "value": "98%",
-      "title": "Client Success",
-      "subtitle": "Long-term goals exceeded"
+      "value": "100%",
+      "title": "Contract Expansion",
+      "subtitle": "Land-and-expand success rate"
     }
   },
   "portfolioFooter": {

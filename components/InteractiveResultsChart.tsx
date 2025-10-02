@@ -6,22 +6,22 @@ import { ResultsVisualization } from './ResultsVisualization';
 const chartOptions = [
   {
     id: 'portfolio' as const,
-    label: 'Industry Success',
-    description: '8 proven sectors',
+    label: 'Market Impact',
+    description: '$6.3B+ value growth',
     icon: TrendingUp,
     color: 'primary'
   },
   {
     id: 'valuation' as const,
-    label: 'Global Reach',
-    description: '5 continents',
+    label: 'Executive Metrics',
+    description: '340% avg ROI',
     icon: Building2,
     color: 'secondary'
   },
   {
     id: 'impact' as const,
-    label: 'C-Suite Crisis',
-    description: 'Leadership evolution',
+    label: 'Our Advantage',
+    description: '2x better results',
     icon: BarChart3,
     color: 'accent'
   }

@@ -32,7 +32,7 @@ export function AboutSection() {
     {
       category: "Federal Banking & Regulatory", 
       description: "Central banking technology and regulatory transformation",
-      securityLevel: "Top Secret",
+      securityLevel: "Classified",
       clientTypes: ["Federal reserve systems", "Government banking entities", "Regulatory institutions"],
       challengeFocus: ["Critical infrastructure", "Regulatory compliance", "Security protocols"],
       impact: "Mission-critical system modernization",
@@ -42,7 +42,7 @@ export function AboutSection() {
     {
       category: "Global Healthcare & Life Sciences",
       description: "Pharmaceutical innovation and biotechnology advancement",
-      securityLevel: "Highly Confidential",
+      securityLevel: "Confidential",
       clientTypes: ["Fortune 500 pharmaceutical", "Global biotech leaders", "Medical device innovators"],
       challengeFocus: ["Digital transformation", "R&D acceleration", "Regulatory compliance"],
       impact: "40%+ efficiency improvement",
@@ -62,7 +62,7 @@ export function AboutSection() {
     {
       category: "International Airlines & Transportation",
       description: "Aviation technology and passenger experience optimization",
-      securityLevel: "Restricted",
+      securityLevel: "Protected",
       clientTypes: ["International carriers", "Global transportation", "Aviation technology"],
       challengeFocus: ["Operational efficiency", "Customer experience", "Technology modernization"],
       impact: "Operational efficiency breakthroughs",
@@ -82,7 +82,7 @@ export function AboutSection() {
     {
       category: "Financial Services & Insurance",
       description: "Banking innovation and insurance technology",
-      securityLevel: "Highly Confidential",
+      securityLevel: "Confidential",
       clientTypes: ["Regional banking leaders", "Insurance innovators", "Financial technology"],
       challengeFocus: ["Platform modernization", "Regulatory compliance", "Customer experience"],
       impact: "Platform modernization excellence",
@@ -207,7 +207,7 @@ export function AboutSection() {
             {clientPortfolio.map((portfolio, index) => (
               <motion.div 
                 key={index}
-                className="group cursor-pointer p-6 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent/40 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 relative h-[280px] hover:h-[380px] overflow-hidden hover:overflow-visible hover:z-30"
+                className="group cursor-pointer p-6 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent/40 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 relative h-[320px] hover:h-[420px] overflow-hidden hover:z-30"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -240,18 +240,18 @@ export function AboutSection() {
                 </div>
 
                 {/* Hover Expanded Content */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-br from-primary/95 to-secondary/95 backdrop-blur-xl rounded-2xl p-6 z-10">
-                  <div className="space-y-4 h-full flex flex-col">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-br from-primary/95 to-secondary/95 backdrop-blur-xl rounded-2xl p-6 z-10 overflow-hidden">
+                  <div className="space-y-3 h-full flex flex-col">
                     <div className="text-sm font-black text-white uppercase tracking-wider border-b border-accent/30 pb-2">
                       {portfolio.category}
                     </div>
                     
-                    <div className="flex-1 space-y-4">
+                    <div className="flex-1 space-y-3 overflow-y-auto">
                       <div>
-                        <div className="text-xs font-bold text-accent uppercase tracking-wide mb-2">🏢 Client Types:</div>
+                        <div className="text-xs font-bold text-accent uppercase tracking-wide mb-1">🏢 Client Types:</div>
                         <div className="space-y-1">
                           {portfolio.clientTypes.map((type, typeIndex) => (
-                            <div key={typeIndex} className="text-sm text-white font-medium bg-accent/30 px-3 py-1 rounded">
+                            <div key={typeIndex} className="text-xs text-white font-medium bg-accent/30 px-2 py-1 rounded">
                               {type}
                             </div>
                           ))}
@@ -259,7 +259,7 @@ export function AboutSection() {
                       </div>
                       
                       <div>
-                        <div className="text-xs font-bold text-white/90 uppercase tracking-wide mb-2">🎯 Challenge Focus:</div>
+                        <div className="text-xs font-bold text-white/90 uppercase tracking-wide mb-1">🎯 Challenge Focus:</div>
                         <div className="space-y-1">
                           {portfolio.challengeFocus.map((challenge, challengeIndex) => (
                             <div key={challengeIndex} className="text-xs text-white/80">
@@ -270,14 +270,14 @@ export function AboutSection() {
                       </div>
                       
                       <div>
-                        <div className="text-xs font-bold text-secondary uppercase tracking-wide mb-2">🔒 Security Level:</div>
-                        <div className="text-sm text-secondary font-bold bg-secondary/20 px-3 py-1 rounded inline-block">
+                        <div className="text-xs font-bold text-secondary uppercase tracking-wide mb-1">🔒 Security Level:</div>
+                        <div className="text-sm text-secondary font-bold bg-secondary/20 px-2 py-1 rounded inline-block">
                           {portfolio.securityLevel}
                         </div>
                       </div>
                     </div>
                     
-                    <div className="border-t border-white/30 pt-3 space-y-1">
+                    <div className="border-t border-white/30 pt-2 space-y-1 flex-shrink-0">
                       <div className="text-sm font-bold text-accent">{portfolio.impact}</div>
                       <div className="text-xs text-white/90">{portfolio.engagement}</div>
                     </div>

@@ -103,10 +103,9 @@
   "confidentiality": {
     "security_approach": "Security-first methodology ensures all client work maintains strict confidentiality protocols",
     "security_levels": [
-      "Top Secret: Federal and government contracts with highest security clearance",
-      "Highly Confidential: Fortune 500 pharmaceutical, banking, and critical infrastructure",
-      "Confidential: Professional sports, education, and technology transformation projects",
-      "Restricted: International transportation and specialized industry engagements"
+      "Classified: Federal and government contracts with appropriate security protocols",
+      "Confidential: Fortune 500 pharmaceutical, banking, and critical infrastructure",
+      "Protected: International transportation and specialized industry engagements"
     ],
     "client_disclosure_policy": "We focus on industry expertise and transformation capabilities rather than specific client names. Many engagements are contractually confidential or involve top-secret work that can never be disclosed.",
     "portfolio_approach": "Showcase client types, challenge categories, and engagement scale while maintaining complete confidentiality of specific organizations and project details"

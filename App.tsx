@@ -3,7 +3,6 @@ import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { AIAcceleratorSection } from './components/AIAcceleratorSection';
-import { MethodSection } from './components/MethodSection';
 import { TeamSection } from './components/TeamSection';
 import { SocialSection } from './components/SocialSection';
 import { ContactSection } from './components/ContactSection';
@@ -154,7 +153,6 @@ export default function App() {
             <AboutSection />
             <ServicesSection />
             <AIAcceleratorSection />
-            <MethodSection />
             <TeamSection />
             <SocialSection />
             <ContactSection />

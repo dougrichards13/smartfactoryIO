@@ -21,9 +21,9 @@ export function SmartAssistant({ isOpen, onToggle, apiEndpoint = '/api/chat' }: 
     {
       id: '1',
       role: 'assistant',
-      content: `Hello! I'm Smart Factory's AI Assistant. I can help you learn about our consulting services, including our Smart Suite™ teams, AI Synthesizer™ specialists, and Smart Assurance™ quality experts.
+      content: `Hello! I'm your Smart Factory expert assistant. With 15+ years of transformation experience and former Fortune 500 executives on our team, I can help you understand why we consistently deliver 300%+ ROI for clients.
 
-I'm built and trained by Smart Factory using open-source models - demonstrating our commitment to AI security and independence. How can I help you today?`,
+I'm here to discuss our Smart Suite™ consulting teams, AI Accelerator platform, and proven "Act as If" methodology. What questions do you have about transforming your business?`,
       timestamp: new Date()
     }
   ]);
@@ -31,6 +31,73 @@ I'm built and trained by Smart Factory using open-source models - demonstrating 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Smart Factory Knowledge Base for Conversion-Focused Responses
+  const smartFactoryKnowledge = {
+    methodology: {
+      "act as if": `Our "Act as If" methodology sets us apart from traditional consultants. We don't just deliver reports—we become part of your team. We have titles, integrate into your org structure, and present ourselves internally and externally as stewards of your company's goals and strategies. This approach has delivered 300%+ ROI for our clients over 15+ years.`,
+      success: `Smart Factory's success comes from our unique approach: we 'Act as If' we are employees of your company. Unlike other consultants who deliver recommendations and leave, we integrate as team members with titles and responsibilities. This systematic, assembly-line approach to consulting delivers predictable outcomes at enterprise scale.`,
+      differentiation: `What makes us different? Three things: 1) Our former Fortune 500 executives understand your challenges because they've lived them. 2) Our 'Act as If' principle means we work as your colleagues, not outside vendors. 3) Our systematic processes deliver predictable results - we've revolutionized consulting the same way Henry Ford revolutionized manufacturing.`
+    },
+    services: {
+      "smart suite": `Our Smart Suite™ offers three specialized consulting teams: Smart Suite™ Core (strategic leadership - part-time, full-time, or officer-level), AI Synthesizer™ (revolutionary teams combining human intelligence with AI Accelerator implementation), and Smart Assurance™ (AI-driven quality and testing with ISO standards). Each team works flexibly based on your needs.`,
+      "ai accelerator": `Our AI Accelerator™ platform creates a sovereign environment for your data - no IP exposure risks. With proprietary isolation technology, you get powerful AI capabilities while maintaining complete data sovereignty. Limited to 6 clients in 2025, with 4 spots remaining. Typical deployment: 90 days to measurable results.`,
+      flexibility: `We offer unmatched flexibility: part-time strategic guidance, full-time team integration, or officer-level leadership. From AI Synthesizer™ innovation to Smart Assurance™ quality - we deliver exactly what you need, when you need it, at the scale that makes sense for your business.`
+    },
+    results: {
+      roi: `Our clients typically see 300%+ ROI within 18 months. With an average project investment of $250K, we deliver measurable results that directly impact your bottom line. 98% client satisfaction rate and 15+ years of consistent delivery across industries.`,
+      leadership: `Our leadership team brings $10B+ in managed revenue experience and 50+ years of combined C-suite expertise. Former Fortune 500 executives who speak CEO language because they've been CEOs. We understand your challenges because we've lived them.`,
+      scale: `We work with companies of all sizes - from funded startups needing rapid scale to enterprise organizations. Our average project budget of $250K makes transformation accessible while our C-level expertise ensures enterprise-grade results.`
+    },
+    nextSteps: {
+      assessment: `Start with our free AI Business Readiness Assessment - it takes 10 minutes and provides a personalized roadmap for your transformation. You'll get actionable recommendations and can schedule a strategic consultation directly from your results.`,
+      contact: `Ready to transform your business? Three ways to connect: 1) Take our AI Business Readiness Assessment (10 minutes), 2) Schedule directly at our calendar link, or 3) Call 816-686-7092. Our team responds within 2 hours for qualified prospects.`,
+      calendar: `Schedule your strategic consultation directly through our calendar system. We'll assess your readiness, understand your goals, and create a customized approach that delivers measurable ROI. Book now - transformation starts with a conversation.`
+    }
+  };
+
+  // Intelligent Response Generator
+  const generateSmartResponse = (userInput: string): string => {
+    const input = userInput.toLowerCase();
+    
+    // Success/Why questions
+    if (input.includes('success') || input.includes('why') || input.includes('different') || input.includes('better')) {
+      return `${smartFactoryKnowledge.methodology.success}\n\n${smartFactoryKnowledge.results.roi}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+    }
+    
+    // Methodology questions
+    if (input.includes('method') || input.includes('approach') || input.includes('act as if') || input.includes('how do you work')) {
+      return `${smartFactoryKnowledge.methodology["act as if"]}\n\n${smartFactoryKnowledge.methodology.differentiation}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+    }
+    
+    // Services questions
+    if (input.includes('service') || input.includes('smart suite') || input.includes('what do you do') || input.includes('offering')) {
+      return `${smartFactoryKnowledge.services["smart suite"]}\n\n${smartFactoryKnowledge.services.flexibility}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+    }
+    
+    // AI Accelerator questions
+    if (input.includes('ai accelerator') || input.includes('platform') || input.includes('technology') || input.includes('ai')) {
+      return `${smartFactoryKnowledge.services["ai accelerator"]}\n\n${smartFactoryKnowledge.results.leadership}\n\n${smartFactoryKnowledge.nextSteps.calendar}`;
+    }
+    
+    // ROI/Results questions
+    if (input.includes('roi') || input.includes('results') || input.includes('return') || input.includes('value') || input.includes('cost')) {
+      return `${smartFactoryKnowledge.results.roi}\n\n${smartFactoryKnowledge.results.scale}\n\nReady to see what Smart Factory can deliver for your business? ${smartFactoryKnowledge.nextSteps.assessment}`;
+    }
+    
+    // Team/Leadership questions
+    if (input.includes('team') || input.includes('leadership') || input.includes('experience') || input.includes('who')) {
+      return `${smartFactoryKnowledge.results.leadership}\n\n${smartFactoryKnowledge.methodology.differentiation}\n\n${smartFactoryKnowledge.nextSteps.contact}`;
+    }
+    
+    // Contact/Next steps questions
+    if (input.includes('contact') || input.includes('start') || input.includes('begin') || input.includes('next') || input.includes('schedule')) {
+      return `${smartFactoryKnowledge.nextSteps.contact}\n\nOur AI Business Readiness Assessment is the perfect starting point - it analyzes your organization's transformation readiness and provides a custom roadmap in just 10 minutes.`;
+    }
+    
+    // Default comprehensive response
+    return `Smart Factory delivers transformation through our proven "Act as If" methodology - we become part of your team, not outside consultants. Our former Fortune 500 executives understand your challenges and deliver 300%+ ROI with our Smart Suite™ teams.\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -56,48 +123,29 @@ I'm built and trained by Smart Factory using open-source models - demonstrating 
     setError(null);
 
     try {
-      // This will connect to the local Ollama API when implemented
-      const response = await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: userMessage.content,
-          context: messages.slice(-10) // Send last 10 messages for context
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get response from AI assistant');
-      }
-
-      const data = await response.json();
+      // Simulate processing time for realistic experience
+      await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+      
+      // Generate intelligent Smart Factory response
+      const responseContent = generateSmartResponse(userMessage.content);
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: data.response,
+        content: responseContent,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, assistantMessage]);
     } catch (err) {
       console.error('AI Assistant Error:', err);
-      setError('Sorry, I\'m having trouble connecting right now. Please try the contact form below or call us directly.');
+      setError('Sorry, I\'m having trouble responding right now. Please try again or contact us directly.');
       
-      // Fallback response
+      // Fallback response with updated contact info
       const fallbackMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `I apologize, but I'm currently experiencing technical difficulties. 
-
-For immediate assistance, please:
-• Use the contact form below
-• Call our priority line: +1 (555) 123-4567  
-• Email: leadership@smartfactory.io
-
-One of our Smart Suite™ team members will respond within 2 hours during business hours.`,
+        content: `I apologize for the technical difficulty. Let me connect you directly with our team:\n\n• Take our AI Business Readiness Assessment (10 minutes)\n• Call our direct line: 816-686-7092\n• Email: contact@smartfactory.io\n• Schedule directly through our calendar system\n\nOur Smart Suite™ team responds within 2 hours for qualified prospects.`,
         timestamp: new Date()
       };
       
@@ -219,7 +267,7 @@ One of our Smart Suite™ team members will respond within 2 hours during busine
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask about our consulting services..."
+              placeholder="Ask me why Smart Factory delivers 300%+ ROI..."
               className="flex-1 p-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
               rows={2}
               disabled={isLoading}

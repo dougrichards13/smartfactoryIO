@@ -43,13 +43,11 @@ export function Header() {
       hasDropdown: true,
       submenu: [
         { label: 'About Smart Factory', id: 'about-company', description: 'Our company overview' },
-        { label: 'Three Pillars', id: 'services', description: 'Smart Architects, Engineers & Assurance' },
-        { label: 'Our Method', id: 'method', description: 'How we deliver transformation' },
+        { label: 'Three Pillars', id: 'services', description: 'Smart Suite™ consulting teams' },
         { label: 'Leadership Team', id: 'team', description: 'Meet our experts' }
       ]
     },
     { label: 'AI ACCELERATOR', id: 'ai-accelerator' },
-    { label: 'METHOD', id: 'method' },
     { label: 'INSIGHTS', id: 'insights', isExternal: true, url: 'https://www.linkedin.com/company/smartfactoryio' },
     { label: 'TEAM', id: 'team' }
   ];
@@ -89,7 +87,6 @@ export function Header() {
                 const colors = [
                   { text: 'group-hover:text-primary', bg: 'from-primary/10 to-primary/20', underline: 'from-primary to-primary-light' }, // Overview - Electric Blue
                   { text: 'group-hover:text-accent', bg: 'from-accent/10 to-accent/20', underline: 'from-accent to-accent-light' }, // AI Accelerator - Accent
-                  { text: 'group-hover:text-secondary', bg: 'from-secondary/10 to-secondary/20', underline: 'from-secondary to-secondary-light' }, // Method - Neon Green
                   { text: 'group-hover:text-accent', bg: 'from-accent/10 to-accent/20', underline: 'from-accent to-accent-light' }, // Insights - Accent
                   { text: 'group-hover:text-primary', bg: 'from-primary/10 to-primary/20', underline: 'from-primary to-primary-light' }, // Team - Electric Blue
                 ];

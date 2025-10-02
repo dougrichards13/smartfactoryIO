@@ -22,7 +22,7 @@ export function AboutSection() {
     {
       category: "Agriculture & Cooperative Finance",
       description: "Agricultural lending transformation and cooperative growth",
-      securityLevel: "Confidential",
+      strategicValue: ["Risk reduction", "Competitive differentiation", "Operational efficiency"],
       clientTypes: ["National cooperative systems", "Agricultural finance institutions", "Rural credit organizations"],
       challengeFocus: ["Digital transformation", "Risk management", "Operational scaling"],
       impact: "300%+ average client ROI achievement",
@@ -32,7 +32,7 @@ export function AboutSection() {
     {
       category: "Federal Banking & Regulatory", 
       description: "Central banking technology and regulatory transformation",
-      securityLevel: "Classified",
+      strategicValue: ["Mission-critical reliability", "Regulatory excellence", "Strategic modernization"],
       clientTypes: ["Federal reserve systems", "Government banking entities", "Regulatory institutions"],
       challengeFocus: ["Critical infrastructure", "Regulatory compliance", "Security protocols"],
       impact: "Mission-critical system modernization",
@@ -42,7 +42,7 @@ export function AboutSection() {
     {
       category: "Global Healthcare & Life Sciences",
       description: "Pharmaceutical innovation and biotechnology advancement",
-      securityLevel: "Confidential",
+      strategicValue: ["Time-to-market acceleration", "R&D ROI optimization", "Market leadership"],
       clientTypes: ["Fortune 500 pharmaceutical", "Global biotech leaders", "Medical device innovators"],
       challengeFocus: ["Digital transformation", "R&D acceleration", "Regulatory compliance"],
       impact: "40%+ efficiency improvement",
@@ -52,7 +52,7 @@ export function AboutSection() {
     {
       category: "Professional Sports & Entertainment",
       description: "Fan engagement technology and operational excellence",
-      securityLevel: "Confidential",
+      strategicValue: ["Revenue growth", "Brand differentiation", "Customer engagement"],
       clientTypes: ["Major league organizations", "Professional sports entities", "Entertainment platforms"],
       challengeFocus: ["Fan experience", "Technology integration", "Operational excellence"],
       impact: "Fan engagement revolution",
@@ -62,7 +62,7 @@ export function AboutSection() {
     {
       category: "International Airlines & Transportation",
       description: "Aviation technology and passenger experience optimization",
-      securityLevel: "Protected",
+      strategicValue: ["Cost optimization", "Operational excellence", "Customer satisfaction"],
       clientTypes: ["International carriers", "Global transportation", "Aviation technology"],
       challengeFocus: ["Operational efficiency", "Customer experience", "Technology modernization"],
       impact: "Operational efficiency breakthroughs",
@@ -72,7 +72,7 @@ export function AboutSection() {
     {
       category: "Higher Education & Research",
       description: "Academic digital transformation and research innovation",
-      securityLevel: "Confidential",
+      strategicValue: ["Innovation leadership", "Operational transformation", "Competitive positioning"],
       clientTypes: ["Major university systems", "Healthcare institutions", "Research organizations"],
       challengeFocus: ["Digital learning", "Research acceleration", "Student experience"],
       impact: "Educational technology advancement",
@@ -82,7 +82,7 @@ export function AboutSection() {
     {
       category: "Financial Services & Insurance",
       description: "Banking innovation and insurance technology",
-      securityLevel: "Confidential",
+      strategicValue: ["Market expansion", "Risk management", "Digital leadership"],
       clientTypes: ["Regional banking leaders", "Insurance innovators", "Financial technology"],
       challengeFocus: ["Platform modernization", "Regulatory compliance", "Customer experience"],
       impact: "Platform modernization excellence",
@@ -92,7 +92,7 @@ export function AboutSection() {
     {
       category: "Technology & Innovation",
       description: "Enterprise software development and platform scaling",
-      securityLevel: "Confidential",
+      strategicValue: ["Growth acceleration", "Market dominance", "Valuation optimization"],
       clientTypes: ["Public market leaders", "Utility innovators", "SaaS platforms"],
       challengeFocus: ["IPO preparation", "Platform scaling", "Market expansion"],
       impact: "100% client satisfaction rate",
@@ -222,15 +222,18 @@ export function AboutSection() {
                     {portfolio.description}
                   </div>
                   
-                  {/* Security Level & Scale */}
+                  {/* Strategic Value & Scale */}
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="text-xs font-bold text-secondary bg-secondary/20 px-2 py-1 rounded-full">
-                        🔒 {portfolio.securityLevel}
-                      </div>
-                      <div className="text-xs text-white/80 font-medium">
-                        {portfolio.scale}
-                      </div>
+                    <div className="text-xs font-bold text-accent uppercase tracking-wide mb-1">Strategic Value:</div>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {portfolio.strategicValue.map((value, valueIndex) => (
+                        <div key={valueIndex} className="text-xs font-medium text-white bg-accent/20 px-2 py-1 rounded-full">
+                          {value}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-xs text-white/80 font-medium text-center">
+                      {portfolio.scale}
                     </div>
                   </div>
                   
@@ -270,9 +273,13 @@ export function AboutSection() {
                       </div>
                       
                       <div>
-                        <div className="text-xs font-bold text-secondary uppercase tracking-wide mb-1">🔒 Security Level:</div>
-                        <div className="text-sm text-secondary font-bold bg-secondary/20 px-2 py-1 rounded inline-block">
-                          {portfolio.securityLevel}
+                        <div className="text-xs font-bold text-accent uppercase tracking-wide mb-1">🎯 Strategic Value:</div>
+                        <div className="flex flex-wrap gap-1">
+                          {portfolio.strategicValue.map((value, valueIndex) => (
+                            <div key={valueIndex} className="text-xs text-white font-medium bg-accent/30 px-2 py-1 rounded">
+                              {value}
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>

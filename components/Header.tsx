@@ -7,6 +7,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [chatWidget, setChatWidget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,39 @@ export function Header() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Detect Microsoft Teams chat widget when it loads
+  useEffect(() => {
+    const detectChatWidget = () => {
+      const selectors = [
+        '[data-automation-id="chatButton"]',
+        '.ms-chatBot-widget',
+        '#chatbot',
+        'iframe[src*="customerconnect"]',
+        '[id*="chat"]',
+        '[class*="chat"]',
+        '[class*="widget"]'
+      ];
+      
+      for (const selector of selectors) {
+        const widget = document.querySelector(selector) as HTMLElement;
+        if (widget) {
+          console.log(`Chat widget found with selector: ${selector}`, widget);
+          setChatWidget(widget);
+          return;
+        }
+      }
+    };
+    
+    // Check immediately
+    detectChatWidget();
+    
+    // Check periodically for chat widget loading
+    const interval = setInterval(detectChatWidget, 1000);
+    
+    // Clean up
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -28,20 +62,65 @@ export function Header() {
   };
 
   const openLiveSupport = () => {
-    // Trigger Microsoft Teams chat overlay
-    if (window.mscc && window.mscc.WidgetElement) {
-      window.mscc.WidgetElement.open();
-    } else {
-      // If not loaded yet, try again after a short delay
-      setTimeout(() => {
-        if (window.mscc && window.mscc.WidgetElement) {
-          window.mscc.WidgetElement.open();
-        } else {
-          console.log('Microsoft Teams chat not available. Falling back to contact section.');
-          scrollToContact();
-        }
-      }, 500);
+    console.log('Live Support clicked');
+    
+    // Method 1: Use detected chat widget if available
+    if (chatWidget) {
+      console.log('Using detected chat widget:', chatWidget);
+      chatWidget.click();
+      return;
     }
+    
+    // Method 2: Try Microsoft Teams API methods
+    try {
+      if (window.mscc) {
+        console.log('mscc object found:', window.mscc);
+        
+        if (window.mscc.WidgetElement && window.mscc.WidgetElement.open) {
+          console.log('Calling mscc.WidgetElement.open()');
+          window.mscc.WidgetElement.open();
+          return;
+        }
+        
+        if (typeof window.mscc.open === 'function') {
+          console.log('Calling mscc.open()');
+          window.mscc.open();
+          return;
+        }
+        
+        if (typeof window.mscc.show === 'function') {
+          console.log('Calling mscc.show()');
+          window.mscc.show();
+          return;
+        }
+      }
+    } catch (error) {
+      console.error('Error with mscc API:', error);
+    }
+    
+    // Method 3: Search for chat widget and click it
+    const selectors = [
+      '[data-automation-id="chatButton"]',
+      '.ms-chatBot-widget', 
+      '#chatbot',
+      'iframe[src*="customerconnect"]',
+      '[id*="chat"][style*="display: block"]',
+      '[class*="chat"]:not([style*="display: none"])',
+      'button[title*="chat" i]',
+      'button[aria-label*="chat" i]'
+    ];
+    
+    for (const selector of selectors) {
+      const widget = document.querySelector(selector) as HTMLElement;
+      if (widget && widget.offsetParent !== null) { // Check if visible
+        console.log(`Found and clicking chat widget: ${selector}`, widget);
+        widget.click();
+        return;
+      }
+    }
+    
+    console.log('No chat widget found immediately, falling back to contact section');
+    scrollToContact();
   };
 
   const handleNavClick = (item: any) => {

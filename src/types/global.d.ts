@@ -3,10 +3,18 @@ declare global {
   interface Window {
     mscc?: {
       WidgetElement?: {
-        open: () => void;
-        close: () => void;
+        open?: () => void;
+        close?: () => void;
       };
+      open?: () => void;
+      show?: () => void;
+      close?: () => void;
+      hide?: () => void;
     };
+    openChat?: () => void;
+    showChat?: () => void;
+    startChat?: () => void;
+    toggleChat?: () => void;
   }
 }
 

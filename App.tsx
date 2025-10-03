@@ -6,6 +6,7 @@ import { AIAcceleratorSection } from './components/AIAcceleratorSection';
 import { TeamSection } from './components/TeamSection';
 import { SocialSection } from './components/SocialSection';
 import { ContactSection } from './components/ContactSection';
+import { PortfolioSection } from './components/PortfolioSection';
 import { SmartAssistant } from './components/SmartAssistant';
 import { ContentProvider } from './src/contexts/ContentContext';
 import { useEffect, useState } from 'react';
@@ -164,6 +165,9 @@ export default function App() {
             <ContactSection />
           </main>
           
+          {/* Portfolio Section */}
+          <PortfolioSection />
+          
           {/* Omnis AI Assistant */}
           <SmartAssistant 
             isOpen={omnisOpen} 
@@ -173,7 +177,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-2 mb-4">
@@ -183,41 +187,19 @@ export default function App() {
                 <span className="font-semibold">Smart Factory</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Transforming human potential into business reality through AI-driven consulting since 2011.
+                Transforming human potential into business reality since 2010.
               </p>
               <p className="text-xs text-muted-foreground">
                 © 2025 Smart Factory. All rights reserved.
               </p>
             </div>
 
-            {/* Services */}
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <nav className="space-y-2">
-                <a href="#services" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Smart Architects™</a>
-                <a href="#services" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Smart Engineers™</a>
-                <a href="#services" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Smart Assurance™</a>
-                <a href="#ai-accelerator" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">AI Accelerator™</a>
-              </nav>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <nav className="space-y-2">
-                <a href="#about" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
-                <a href="#method" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Method</a>
-                <a href="#team" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Leadership</a>
-                <a href="#social" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</a>
-              </nav>
-            </div>
-
             {/* Contact */}
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
-                <p className="text-sm text-muted-foreground">leadership@smartfactory.io</p>
+                <p className="text-sm text-muted-foreground">+1 (913) 755-9268 (main)</p>
+                <p className="text-sm text-muted-foreground">contact@smartfactory.io</p>
                 <a href="#contact" className="block text-sm text-primary hover:text-primary-light transition-colors">Talk to a Smart Architect™</a>
               </div>
             </div>

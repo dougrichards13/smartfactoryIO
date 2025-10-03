@@ -1,7 +1,6 @@
 import { Users2, Settings, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { useContent } from '../src/contexts/ContentContext';
 
@@ -71,9 +70,31 @@ export function ServicesSection() {
     }
   ];
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  // Create professional mailto links for each service
+  const getMailtoLink = (consultantTitle: string) => {
+    const email = 'contact@smartfactory.io';
+    let subject = '';
+    let body = '';
+
+    switch (consultantTitle) {
+      case 'Smart Suite™':
+        subject = 'Smart Suite™ Executive Partnership Inquiry';
+        body = 'Hello Smart Factory team,%0D%0A%0D%0AI am interested in exploring Smart Suite™ consulting services for our organization. We are looking for C-Suite level strategic technology leadership and would like to discuss:%0D%0A%0D%0A• Our current transformation challenges%0D%0A• Flexible engagement models%0D%0A• Executive partnership opportunities%0D%0A%0D%0APlease contact me to schedule a strategic consultation.%0D%0A%0D%0ABest regards';
+        break;
+      case 'AI Synthesizer™':
+        subject = 'AI Synthesizer™ Implementation Partnership';
+        body = 'Hello Smart Factory team,%0D%0A%0D%0AI am interested in exploring AI Synthesizer™ services for our AI transformation initiative. We need expert guidance on:%0D%0A%0D%0A• AI Accelerator platform implementation%0D%0A• Human-machine collaboration architecture%0D%0A• Strategic AI integration planning%0D%0A%0D%0APlease contact me to discuss our AI transformation roadmap.%0D%0A%0D%0ABest regards';
+        break;
+      case 'Smart Assurance™':
+        subject = 'Smart Assurance™ Quality Partnership Inquiry';
+        body = 'Hello Smart Factory team,%0D%0A%0D%0AI am interested in Smart Assurance™ services for our quality and compliance initiatives. We need expertise in:%0D%0A%0D%0A• AI-powered quality assurance%0D%0A• ISO standards implementation%0D%0A• Risk assessment and compliance%0D%0A%0D%0APlease contact me to discuss our quality assurance requirements.%0D%0A%0D%0ABest regards';
+        break;
+      default:
+        subject = 'Smart Factory Partnership Inquiry';
+        body = 'Hello Smart Factory team,%0D%0A%0D%0AI am interested in learning more about your consulting services. Please contact me to discuss our transformation needs.%0D%0A%0D%0ABest regards';
+    }
+
+    return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
   };
 
   const getColorClasses = (color: string) => {
@@ -147,7 +168,7 @@ export function ServicesSection() {
         {/* Consultant Types Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 items-stretch">
           {consultantTypes.map((consultant, index) => {
-            const colorClasses = getColorClasses(consultant.color);
+            // const colorClasses = getColorClasses(consultant.color);
             const IconComponent = consultant.icon;
             
             return (
@@ -278,9 +299,9 @@ export function ServicesSection() {
                     </div>
 
                     {/* Premium CTA */}
-                    <Button 
-                      onClick={scrollToContact}
-                      className={`relative w-full py-3 text-sm font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-black transition-all duration-500 group border-0 rounded-2xl overflow-hidden`}
+                    <a 
+                      href={getMailtoLink(consultant.title)}
+                      className={`relative w-full py-3 text-sm font-black uppercase tracking-[0.1em] bg-gradient-to-r ${consultant.color === 'primary' ? 'from-primary via-primary-light to-primary' : consultant.color === 'secondary' ? 'from-secondary via-secondary-light to-secondary' : 'from-accent via-accent-light to-accent'} text-black transition-all duration-500 group border-0 rounded-2xl overflow-hidden inline-block text-center no-underline`}
                       style={{
                         boxShadow: consultant.color === 'primary' ? '0 8px 32px rgba(17, 100, 102, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : consultant.color === 'secondary' ? '0 8px 32px rgba(217, 128, 140, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)' : '0 8px 32px rgba(255, 203, 154, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
                       }}
@@ -291,7 +312,7 @@ export function ServicesSection() {
                       </span>
                       <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </Button>
+                    </a>
                     
                     {/* Premium geometric accents */}
                     <div className={`absolute top-8 right-8 w-4 h-4 ${consultant.color === 'primary' ? 'bg-primary' : consultant.color === 'secondary' ? 'bg-secondary' : 'bg-accent'} rounded-full opacity-30 group-hover:opacity-100 transition-all duration-300`}

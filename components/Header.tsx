@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CompactAnimatedLogo } from './AnimatedLogo';
 
 interface HeaderProps {
   onOmnisToggle?: () => void;
@@ -56,7 +57,7 @@ export function Header({ onOmnisToggle }: HeaderProps) {
       id: 'about',
       hasDropdown: true,
       submenu: [
-        { label: 'About Smart Factory', id: 'about-company', description: 'Our company overview' },
+        { label: 'About Smart Factory', id: 'about', description: 'Our company overview' },
         { label: 'Three Pillars', id: 'services', description: 'Smart Suite™ consulting teams' },
         { label: 'Leadership Team', id: 'team', description: 'Meet our experts' }
       ]
@@ -90,7 +91,7 @@ export function Header({ onOmnisToggle }: HeaderProps) {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <span className="font-black text-2xl text-white uppercase tracking-[0.2em] leading-none drop-shadow-lg">SMART FACTORY</span>
+            <CompactAnimatedLogo onHover={true} />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -191,12 +192,13 @@ export function Header({ onOmnisToggle }: HeaderProps) {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
                 onClick={openOmnis}
+                title="Smart Factory AI Agent"
                 className="relative bg-gradient-to-r from-secondary to-accent text-black font-bold px-8 py-3 rounded-xl uppercase tracking-[0.1em] text-sm shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10"
                 style={{
                   boxShadow: '0 4px 20px rgba(217, 128, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
                 }}
               >
-                OMNIS
+                TALK TO OMNIS
                 <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </motion.div>
@@ -300,9 +302,10 @@ export function Header({ onOmnisToggle }: HeaderProps) {
                 >
                   <Button 
                     onClick={openOmnis}
+                    title="Smart Factory AI Agent"
                     className="w-full gradient-accent text-accent-foreground font-bold py-3 hover:shadow-xl transition-all duration-300 border-2 border-accent/20 uppercase tracking-wider"
                   >
-                    OMNIS
+                    TALK TO OMNIS
                   </Button>
                 </motion.div>
               </nav>

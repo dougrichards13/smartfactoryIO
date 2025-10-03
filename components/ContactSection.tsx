@@ -1,4 +1,4 @@
-import { MessageCircle, Calendar, Phone, Mail, CheckCircle, ArrowRight, Brain } from 'lucide-react';
+import { Calendar, Phone, Mail, CheckCircle, ArrowRight, Brain } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { SmartAssistant } from './SmartAssistant';
 import { BusinessReadinessAssessment } from './BusinessReadinessAssessment';
 import { AIAdvisorVisual } from './AIAdvisorVisual';
+import { OmnisIcon } from './OmnisIcon';
 
 export function ContactSection() {
   const [assistantOpen, setAssistantOpen] = useState(false);
@@ -20,17 +21,7 @@ export function ContactSection() {
     "Or, early stage funded startup needing rapid scale"
   ];
 
-  // Only AI Assessment card - other contact methods are now integrated as quick actions
-  const contactMethods = [
-    {
-      icon: Brain,
-      title: "Strategic Assessment",
-      description: "Advanced diagnostic that analyzes your organization's transformation readiness and provides a custom roadmap",
-      action: "Start Assessment",
-      primary: true,
-      onClick: () => setAssessmentOpen(true)
-    }
-  ];
+  // Contact methods removed - now integrated as quick actions
 
   const openAssistant = () => {
     setAssistantOpen(true);
@@ -72,24 +63,25 @@ export function ContactSection() {
             {/* Primary Chatbot CTA */}
             <Card className="border-2 border-primary/20 bg-primary/5">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <MessageCircle className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                  <OmnisIcon size={80} animate={true} />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Smart Factory AI Assistant</h3>
+                <h3 className="text-2xl font-semibold mb-4">Omnis™ <span className="text-sm font-normal text-white/60">(AHM-nis)</span></h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Our Smart Assistant helps match you with the right consulting experts. We'll understand your business challenges, 
-                  assess your needs, and connect you with the Smart Suite™ team that has the proven track record to deliver results in your industry.
+                  <strong>Omnis™ is Smart Factory's proprietary AI agent</strong>—software we built specifically for enterprise consulting engagement.
+                  This isn't off-the-shelf chatbot technology. Omnis understands complex business transformation challenges and intelligently matches you 
+                  with our Smart Suite™ experts who have proven track records solving exactly your type of problems.
                 </p>
                 <Button 
                   size="lg" 
                   onClick={openAssistant}
                   className="w-full gradient-primary text-white hover:shadow-xl transition-all duration-300 group mb-4"
                 >
-                  Start Smart Conversation
+                  Talk to Omnis
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <p className="text-xs text-white/80">
-                  Available 24/7 • Instant qualification • Direct scheduling
+                  Available 24/7 • Intelligent matching • Executive scheduling
                 </p>
               </CardContent>
             </Card>

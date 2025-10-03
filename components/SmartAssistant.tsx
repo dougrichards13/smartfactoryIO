@@ -21,9 +21,13 @@ export function SmartAssistant({ isOpen, onToggle, apiEndpoint = '/api/chat' }: 
     {
       id: '1',
       role: 'assistant',
-      content: `Hello! I'm Omnis, Smart Factory's AI assistant. With 15+ years of transformation experience and $6.3B+ in documented value growth across 62 enterprise clients, I can help you understand how Smart Factory consistently delivers results.
+      content: `I am Omnis. I provide strategic guidance on Smart Factory's enterprise transformation capabilities.
 
-I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ platform, and proven methodologies. I can also help qualify your transformation needs and connect you with our experts. What questions do you have about transforming your business?`,
+Analysis: 15+ years operational history, $6.3B+ documented value creation across 62 enterprise clients, 100% contract expansion rate.
+
+Capabilities: I can analyze your transformation requirements, map Smart Suite™ consulting frameworks to your objectives, and identify optimal engagement pathways. Three primary service architectures available: Smart Suite™ (C-level integration), AI Synthesizer™ (human-AI collaboration), Smart Assurance™ (quality systems).
+
+What strategic objective requires guidance?`,
       timestamp: new Date()
     }
   ]);
@@ -75,9 +79,14 @@ I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ p
   const generateSmartResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
     
-    // Success/Why questions
+    // Success/Why questions - Framework Response
     if (input.includes('success') || input.includes('why') || input.includes('different') || input.includes('better')) {
-      return `${smartFactoryKnowledge.results.philosophy}\n\n${smartFactoryKnowledge.methodology.success}\n\n${smartFactoryKnowledge.nextSteps.assessment}`;
+      return `Analysis: Three differentiation factors create Smart Factory's competitive advantage.\n\nFramework:\n1. Methodology: "Act as If" principle - integration as team members, not external consultants\n2. Execution: Systematic processes delivering predictable outcomes at enterprise scale\n3. Results: 300%+ ROI, 100% contract expansion rate\n\nRecommendation: Begin with Strategic Assessment to map these advantages to your specific objectives.`;
+    }
+    
+    // Problem/Challenge questions - Advisory Framework
+    if (input.includes('problem') || input.includes('challenge') || input.includes('issue') || input.includes('help')) {
+      return `Assessment: Organizations typically face three core data challenges.\n\nRanked by Impact:\n1. Critical: Stakeholder alignment - misaligned objectives derail 70% of initiatives\n2. High: Integration complexity - technical debt compounds without strategic approach\n3. Moderate: Change management - requires structured transition framework\n\nNext Step: Strategic Assessment will identify your specific challenge profile and priority sequence.`;
     }
     
     // Philosophy/Transformation questions
@@ -258,7 +267,7 @@ I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ p
               </div>
               <div>
                 <h3 className="font-bold text-white">Omnis</h3>
-                <p className="text-xs text-white/70">Smart Factory AI Assistant</p>
+                <p className="text-xs text-white/70">Guidance Without Boundaries</p>
               </div>
             </div>
             <Button 
@@ -361,7 +370,7 @@ I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ p
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask Omnis about Smart Factory's transformation approach..."
+              placeholder="Describe your strategic objective or transformation challenge..."
               className="flex-1 p-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
               rows={2}
               disabled={isLoading}

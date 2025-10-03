@@ -243,8 +243,18 @@ I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ p
         <div className="p-6 border-b border-white/10 bg-gradient-to-r from-primary/10 to-secondary/10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary/20 rounded-2xl flex items-center justify-center">
-                <Bot className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 bg-white/10 rounded-2xl flex items-center justify-center p-1">
+                <img 
+                  src="/images/omnis-logo.jpg" 
+                  alt="Omnis AI Assistant" 
+                  className="w-full h-full object-contain rounded-xl"
+                  onError={(e) => {
+                    // Fallback to Bot icon if image doesn't load
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.removeAttribute('style');
+                  }}
+                />
+                <Bot className="w-5 h-5 text-primary" style={{ display: 'none' }} />
               </div>
               <div>
                 <h3 className="font-bold text-white">Omnis</h3>
@@ -278,7 +288,18 @@ I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ p
                   {message.role === 'user' ? (
                     <User className="w-4 h-4 text-secondary" />
                   ) : (
-                    <Bot className="w-4 h-4 text-primary" />
+                    <div className="w-4 h-4 relative">
+                      <img 
+                        src="/images/omnis-logo.jpg" 
+                        alt="Omnis" 
+                        className="w-full h-full object-contain rounded-sm"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.nextElementSibling?.removeAttribute('style');
+                        }}
+                      />
+                      <Bot className="w-4 h-4 text-primary" style={{ display: 'none' }} />
+                    </div>
                   )}
                 </div>
                 <div className={`p-3 rounded-2xl ${
@@ -298,8 +319,17 @@ I know everything about our Smart Suite™ consulting teams, AI Synthesizer™ p
           {isLoading && (
             <div className="flex justify-start">
               <div className="flex items-start space-x-2">
-                <div className="w-8 h-8 bg-primary/20 rounded-xl flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 bg-white/10 rounded-xl flex items-center justify-center p-1">
+                  <img 
+                    src="/images/omnis-logo.jpg" 
+                    alt="Omnis" 
+                    className="w-full h-full object-contain rounded-md"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.nextElementSibling?.removeAttribute('style');
+                    }}
+                  />
+                  <Bot className="w-4 h-4 text-primary" style={{ display: 'none' }} />
                 </div>
                 <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
                   <div className="flex space-x-1">

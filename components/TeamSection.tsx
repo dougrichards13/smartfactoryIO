@@ -29,6 +29,17 @@ export function TeamSection() {
       email: "heather@smartfactory.io", 
       image: "/heather-richards-headshot.jpg"
     },
+    {
+      name: "Jeffrey Kupper",
+      title: "Managing Director",
+      background: "Global Operations & Strategic Growth Executive",
+      expertise: ["Company Scaling", "International Expansion", "Operational Excellence", "Exit Strategy"],
+      bio: "Seasoned executive with a proven track record of driving exponential growth and successful exits across multiple industries. Specializes in scaling operations, international market expansion, and orchestrating complex turnarounds. With experience spanning petrochemical, insurance, and industrial manufacturing sectors, Jeffrey brings strategic insight and operational expertise to companies seeking transformational growth and exit readiness.",
+      achievements: ["Scaled a petrochemical company 450% over 3 years leading to a 10.1x exit", "Built US operations of a global insurance marketplace with 3 funding rounds", "Turned around a US industrial manufacturer via 1200% growth through global expansion"],
+      linkedin: "https://linkedin.com/in/jeffreykupper",
+      email: "jeffrey.kupper@smartfactory.io",
+      image: "/JK Headshot2.JPG"
+    },
   ];
 
   const teamStats = [
@@ -139,7 +150,7 @@ export function TeamSection() {
         </div>
 
         {/* Leadership Profiles */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
           {leadership.map((leader, index) => (
             <motion.div
               key={index}
@@ -207,7 +218,7 @@ export function TeamSection() {
                   </div>
 
                   {/* Contact Links */}
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 relative z-20">
                     <Button 
                       variant="outline" 
                       size="sm" 

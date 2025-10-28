@@ -1,0 +1,14 @@
+cd /public_html
+mkdir backup_$(date +%Y%m%d_%H%M)
+lcd .\dist
+put *.html
+put *.txt
+put *.xml
+put *.webmanifest
+put *.svg
+put *.png
+put *.jpg
+put -r assets
+put -r data
+put -r images
+quit

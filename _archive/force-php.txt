@@ -1,0 +1,3 @@
+put force-redirect.php index.php
+ls
+quit

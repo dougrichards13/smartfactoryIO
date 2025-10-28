@@ -1,0 +1,4 @@
+put test-index.html index.html
+put test-index.html test.html
+ls
+quit

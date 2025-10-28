@@ -1,0 +1,32 @@
+# Smart Factory Override System
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# SSL Redirects (keeping existing)
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_USER_AGENT} ^(.+)$
+RewriteCond %{SERVER_NAME} ^www\.smartfactory\.io$ [OR]
+RewriteCond %{SERVER_NAME} ^h8p\.480\.myftpupload\.com$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+# Force our override for root requests
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /override.php [L]
+
+# Let /site/ directory work normally
+RewriteCond %{REQUEST_URI} !^/site/
+RewriteCond %{REQUEST_URI} !^/override\.php$
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /site/$1 [L]
+
+</IfModule>
+
+Header add Strict-Transport-Security "max-age=300"
+Header always set Content-Security-Policy "upgrade-insecure-requests"

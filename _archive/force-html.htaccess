@@ -1,0 +1,71 @@
+# Force HTML over PHP - Smart Factory Static Site
+
+# Disable PHP processing for index files
+<Files "index.php">
+    Require all denied
+</Files>
+
+# Force index.html as the only directory index
+DirectoryIndex index.html
+
+# Rewrite rules to force static site
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Force redirect from any WordPress URLs to home
+RewriteRule ^wp-(.*)$ / [R=301,L]
+RewriteRule ^wp$ / [R=301,L]
+
+# Force any request for index.php to serve index.html instead
+RewriteRule ^index\.php$ /index.html [R=301,L]
+
+# SSL Redirect (keeping existing)
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# GD-SSL (keeping existing)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_USER_AGENT} ^(.+)$
+RewriteCond %{SERVER_NAME} ^www\.smartfactory\.io$ [OR]
+RewriteCond %{SERVER_NAME} ^h8p\.480\.myftpupload\.com$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# Security Headers
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+Header add Strict-Transport-Security "max-age=300"
+Header always set Content-Security-Policy "upgrade-insecure-requests"
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>

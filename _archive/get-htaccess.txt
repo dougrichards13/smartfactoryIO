@@ -1,0 +1,2 @@
+get .htaccess current-htaccess.txt
+quit

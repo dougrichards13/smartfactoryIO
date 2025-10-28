@@ -1,0 +1,3 @@
+rename index.php index.php.bak
+ls
+quit

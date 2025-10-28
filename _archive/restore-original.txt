@@ -1,0 +1,2 @@
+put htaccess-backup.txt .htaccess
+quit

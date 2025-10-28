@@ -1,0 +1,4 @@
+put new-htaccess.txt .htaccess
+rm index.php
+ls
+quit

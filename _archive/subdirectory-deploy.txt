@@ -1,0 +1,10 @@
+mkdir site
+cd site
+lcd .\dist
+mput *
+mput -r assets
+mput -r data
+mput -r images
+cd ..
+ls site
+quit

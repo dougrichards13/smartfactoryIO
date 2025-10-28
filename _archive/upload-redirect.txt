@@ -1,0 +1,2 @@
+put root-redirect.htaccess .htaccess
+quit

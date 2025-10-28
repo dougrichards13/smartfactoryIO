@@ -1,0 +1,7 @@
+pwd
+ls -la
+lcd .\dist
+lpwd
+lls
+mput *
+quit

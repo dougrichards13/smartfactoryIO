@@ -1,0 +1,9 @@
+ls -la
+mkdir backup_wp_$(date +%Y%m%d_%H%M)
+mv wp-* backup_wp_*/
+mv xmlrpc.php backup_wp_*/
+mv gd-*.php backup_wp_*/
+mv license.txt backup_wp_*/
+mv readme.html backup_wp_*/
+ls -la
+quit

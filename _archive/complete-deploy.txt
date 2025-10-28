@@ -1,0 +1,5 @@
+lcd .\dist
+mput -r assets
+mput -r data  
+mput -r images
+quit

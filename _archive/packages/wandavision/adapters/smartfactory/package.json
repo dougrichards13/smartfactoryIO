@@ -1,0 +1,39 @@
+{
+  "name": "@smartfactory/wandavision-adapter",
+  "version": "1.0.0-beta.0",
+  "description": "WandaVision Smart Factory Adapter - Site-specific content intelligence",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@smartfactory/wandavision-core": "workspace:*",
+    "@smartfactory/wandavision-react": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
+    "rimraf": "^5.0.5"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "wandavision",
+    "smart-factory",
+    "content-management",
+    "content-intelligence",
+    "live-editing"
+  ],
+  "author": "Smart Factory Intelligence",
+  "license": "Proprietary"
+}

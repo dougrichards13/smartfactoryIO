@@ -1,0 +1,21 @@
+cd /public_html
+mkdir /public_html_backup_20251003_1904
+mget * /public_html_backup_20251003_1904/
+rm -rf wp-*
+rm -rf xmlrpc.php
+rm -rf index.php
+rm -rf .htaccess
+lcd ./dist
+mput *
+put index.html
+put robots.txt
+put sitemap.xml
+put site.webmanifest
+put favicon.svg
+put apple-touch-icon.png
+put doug-richards-headshot.png
+put heather-richards-headshot.jpg
+put -r assets
+put -r data
+put -r images
+bye

@@ -1,0 +1,2 @@
+get .htaccess htaccess-backup.txt
+quit

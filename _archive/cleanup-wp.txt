@@ -1,0 +1,25 @@
+ls
+rm index.php
+rm wp-activate.php
+rm wp-blog-header.php
+rm wp-cli.yml
+rm wp-comments-post.php
+rm wp-config.php
+rm wp-cron.php
+rm wp-links-opml.php
+rm wp-load.php
+rm wp-login.php
+rm wp-mail.php
+rm wp-settings.php
+rm wp-signup.php
+rm wp-trackback.php
+rm xmlrpc.php
+rm gd-config.php
+rm gd-preload-cli.php
+rm license.txt
+rm readme.html
+rmdir wp-admin
+rmdir wp-content
+rmdir wp-includes
+ls
+quit

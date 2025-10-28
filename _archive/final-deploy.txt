@@ -1,0 +1,5 @@
+put force-html.htaccess .htaccess
+lcd .\dist
+put index.html
+ls
+quit

@@ -1,7 +1,7 @@
 {
-  "name": "smart-factory-wanda",
+  "name": "smartfactory-io",
   "version": "2.5.0",
-  "description": "Smart Factory - AI Consulting Website with WandaVision Universal Intelligence",
+  "description": "Smart Factory - AI Consulting Website for Enterprise Leaders",
   "type": "module",
   "private": true,
   "scripts": {
